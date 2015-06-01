@@ -1,0 +1,14 @@
+*{
+	margin:0;
+	padding: 0;
+}
+
+header{
+	background-color: #1F211D;
+	color: #E7E6E8;
+	height: 90px;
+	width: 100%;
+	position: fixed;
+	top: 0px;
+	text-align: center;
+}
