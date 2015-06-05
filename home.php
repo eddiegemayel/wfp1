@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php
+session_start();
+
+//display their profile page populated with their unique information
+echo '<!DOCTYPE html>
 <html>
 	<head>
 		<title>Home</title>
@@ -21,19 +25,19 @@
 
 			<div class="content col-xs-12">
 				<p>Albums with pictures will be displayed here</p>
-				<?php
-					session_start();
-					 echo '<p>'.$_SESSION['username'].'</p>';
-				?>
-				<form method="POST" action="upload.php">
+				
+					 <p>Welcome, '.$_SESSION['username'].'</p>
+				
+				<form method="POST" action="upload.php" enctype="multipart/form-data">
 					<p>Upload</p>
-					<input type="file" accept="image/*" capture="camera"/>
+					<input  type="file" name="filename" accept="image/*" capture="camera"/>
+					<button type="submit">Submit</button>
 				</form>
 			</div>
 		</div>
 	</body>
+</html>'
+            ;
 
-	<script type="text/javascript">
-    	<?php echo 'var msg = "'.json_encode($_SESSION['username']).'";';?>
-	</script>
-</html>
+
+?>

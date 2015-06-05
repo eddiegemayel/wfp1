@@ -3,6 +3,10 @@
 	padding: 0;
 }
 
+body{
+	padding-bottom: 70px;
+}
+
 header{
 	background-color: #1F211D;
 	color: #E7E6E8;
@@ -11,4 +15,15 @@ header{
 	position: fixed;
 	top: 0px;
 	text-align: center;
+}
+
+.wrapper{
+	/*position: fixed;*/
+	height:900px;
+}
+
+.content{
+	padding-top: 50px;
+	margin-top: 50px;
+	height: 900px;
 }

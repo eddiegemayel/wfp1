@@ -5,6 +5,7 @@
 	//collect user's inputs
 	$new_username = $_POST['newUsername'];
 	$new_password = $_POST['newPassword'];
+	$new_email = $_POST['newEmail'];
 
 	//check to make sure fields are not empty
 
@@ -16,10 +17,11 @@
 			//calling out the specific database and tables
 			$dbh = new PDO("mysql:host=localhost; dbname=Retrospective; port=8889;", $user,$pass);
 
-			$stmt = $dbh->prepare("INSERT INTO users (username, password)
-				VALUES (:name, :value)");
+			$stmt = $dbh->prepare("INSERT INTO users (username, password, email)
+				VALUES (:name, :pass, :email)");
 			$stmt->bindParam(":name",$new_username);
-			$stmt->bindParam(":value",$new_password);
+			$stmt->bindParam(":pass",$new_password);
+			$stmt->bindParam(":email", $new_email);
 
 			//execute action
 			$stmt->execute();
@@ -30,7 +32,7 @@
 		}
 		else{
 			//something went wrong!
-			echo "<p>Uh oh!</p>";
+			echo "<p>User already exists</p>";
 		}
 			
 
