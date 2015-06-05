@@ -2,18 +2,16 @@
 	session_start();
 	// ob_start();
 
-	//upload directory
-	$uploaddDirectory = "uploads/";
+	//path to upload directory
+	$uploadDirectory = "uploads/";
 
-	//up
-	$_SESSION["uploadfile"] = $uploaddir.basename($_FILES["filename"]["name"]);
+	//total upload path in db
+	$_SESSION["uploadfile"] = $uploadDirectory.basename($_FILES["filename"]["name"]);
 
 	//trying to explode tags
 	// $tags = explode(" ",$_POST["tags"]);
 
-
-
-	//if file uploads successfully
+	// //if file uploads successfully
 	if(move_uploaded_file($_FILES["filename"]["tmp_name"], $_SESSION["uploadfile"])){
 
 			//connect to database
@@ -47,7 +45,6 @@
 		else{
 			//if the upload failed	
 			echo "Failed to upload.";
-			var_dump($_SESSION["uploadfile"]);
 		}
 
 ?>
