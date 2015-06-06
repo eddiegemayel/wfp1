@@ -16,14 +16,14 @@ echo '<!DOCTYPE html>
 	
 	<body>
 		<div class="wrapper tabs col-xs-12">
-			<header class="navbar navbar-fixed-top">
+			<header class="navbar navbar-fixed-top col-xs-12">
 				<!-- Logo here -->
-				<nav>
-					<ul class="tab-links">
-        				<li class="active"><a href="#tab1">Albums</a></li>
-        				<li><a href="#tab2">Add</a></li>
-        				<li><a href="#tab3">Search</a></li>
-        				<li><a href="#tab4">Logout</a></li>
+				<nav class="col-xs-12">
+					<ul class="tab-links col-md-7 col-md-offset-4">
+        				<li id="albums" class="active"><a href="#tab1"></a></li>
+        				<li id="add"><a href="#tab2"></a></li>
+        				<li id="search"><a href="#tab3"></a></li>
+        				<li id="menu"><a href="#tab4"></a></li>
     				</ul>
 				</nav>
 			</header>
