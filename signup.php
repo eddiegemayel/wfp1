@@ -27,8 +27,10 @@
 			$stmt->execute();
 			$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+			$_SESSION['username'] = $new_username;
+
 			// point them to home logged in page
-			header("Location: home.html");
+			header("Location: home.php");
 		}
 		else{
 			//something went wrong!

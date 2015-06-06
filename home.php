@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+ob_start();
 //display their profile page populated with their unique information
 echo '<!DOCTYPE html>
 <html>
@@ -33,11 +33,39 @@ echo '<!DOCTYPE html>
 					<input  type="file" name="filename" accept="image/*" capture="camera"/>
 					<button type="submit">Submit</button>
 				</form>
-			</div>
-		</div>
-	</body>
-</html>'
+			
+
+'
             ;
 
+         //connect to database
+        $user="root";
+        $pass="root";
+        $dbh=new PDO('mysql:host=localhost; dbname=Retrospective; port=8889;', $user, $pass);
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);   
+        //select everything in the photo table where created by equals currently logged in user   
+        $stmt = $dbh ->prepare("SELECT * from photos  WHERE uploadedBy = :username ORDER BY id DESC");
+        $stmt->bindParam(':username', $_SESSION['username'], PDO::PARAM_STR);
+        $stmt->execute();     
+        //fetch all the results and put them into an associative arraay
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // var_dump($results);
+        
+        //loop and display
+        foreach($results as $key){
+         	// var_dump($key);
+            echo '<div class="image">'; 
+            // echo '<h3>'.$key['id'].'</h3>';
+            echo '<img height="300px" width="300px" src="'.$key['photoUrl'].'"/>';
+            echo '<p><strong>Uploaded By:</strong> '.$key['uploadedBy'].'</p>';
+            echo '<p><a href="delete.php?photoId='.$key['id'].'">Delete</a></p>';
+            echo '</div>';
+         
+        }
 
 ?>
+		</div>
+		</div>
+	</body>
+</html>

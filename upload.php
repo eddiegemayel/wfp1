@@ -3,7 +3,7 @@
 	// ob_start();
 
 	//path to upload directory
-	$uploadDirectory = "uploads/";
+	$uploadDirectory = "./uploads/";
 
 	//total upload path in db
 	$_SESSION["uploadfile"] = $uploadDirectory.basename($_FILES["filename"]["name"]);
