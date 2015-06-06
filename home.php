@@ -15,30 +15,24 @@ echo '<!DOCTYPE html>
 	</head>
 	
 	<body>
-		<div class="wrapper">
+		<div class="wrapper tabs col-xs-12">
 			<header class="navbar navbar-fixed-top">
 				<!-- Logo here -->
 				<nav>
-					<h1 class="col-xs-12">navbar</h1>
+					<ul class="tab-links">
+        				<li class="active"><a href="#tab1">Albums</a></li>
+        				<li><a href="#tab2">Add</a></li>
+        				<li><a href="#tab3">Search</a></li>
+        				<li><a href="#tab4">Logout</a></li>
+    				</ul>
 				</nav>
 			</header>
 
-			<div class="content col-xs-12">
-				<p>Albums with pictures will be displayed here</p>
-				
-					 <p>Welcome, '.$_SESSION['username'].'</p>
-				
-				<form method="POST" action="upload.php" enctype="multipart/form-data">
-					<p>Upload</p>
-					<input  type="file" name="filename" accept="image/*" capture="camera"/>
-					<button type="submit">Submit</button>
-				</form>
-			
+			<div class="content tab-content col-xs-12">
+				<div id="tab1" class="tab active">
+					<p>Welcome, '.$_SESSION['username'].'</p>';
 
-'
-            ;
-
-         //connect to database
+		//connect to database
         $user="root";
         $pass="root";
         $dbh=new PDO('mysql:host=localhost; dbname=Retrospective; port=8889;', $user, $pass);
@@ -65,7 +59,35 @@ echo '<!DOCTYPE html>
         }
 
 ?>
+
+
+<?php
+		echo '
+				</div>
+
+				<div id="tab2" class="tab">
+					<form method="POST" action="upload.php" enctype="multipart/form-data">
+						<p>Upload</p>
+						<input type="file" name="filename" accept="image/*" capture="camera"/>
+						<input type="submit"/>
+					</form>
+				</div>
+
+				<div id="tab3" class="tab">
+					<p>Search</p>
+				</div>
+
+				<div id="tab4" class="tab">
+					<a href="logout.php">Logout</a>
+				</div>
+				
+				';
+?>
+      
 		</div>
 		</div>
 	</body>
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="main.js"></script>
 </html>

@@ -10,27 +10,36 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<div class="wrapper">
-			<h1>Sign Up</h1>
-			<form method="POST" action="signup.php">
-				<p>Email </p>
-				<p><input type="text" name="newEmail"/></p>
-				<p>Username </p>
-				<p><input type="text" name="newUsername"/></p>
-				<p>Password </p>
-				<p><input type="password" name="newPassword"/></p>
-				<button class="btn">Sign Up</button>
-			</form>
+		<div id="logoContainer" class="col-xs-12">
+			<img id="logo" height="307" width="959" src="images/logoMain.png"/>
+		</div>
 
-			<h1>Login</h1>
-			<form method="POST" action="login.php">
-				<p>Username </p>
-				<p><input type="text" name="username"/></p>
-				<p>Password </p>
-				<p><input type="password" name="password"/></p>
-				<button class="btn">Login</button>
-			</form>
+		<div class="wrapper col-xs-12">
+			<div class="call to action col-xs-12">
+				<div class="signup col-xs-6">
+					<h1>Sign Up</h1>
+					<form method="POST" action="signup.php">
+						<p>Email </p>
+						<p><input type="text" name="newEmail"/></p>
+						<p>Username </p>
+						<p><input type="text" name="newUsername"/></p>
+						<p>Password </p>
+						<p><input type="password" name="newPassword"/></p>
+						<button class="btn">Sign Up</button>
+					</form>
+				</div>
 
+				<div class="login col-xs-6 ">
+					<h1>Login</h1>
+					<form method="POST" action="login.php">
+						<p>Username </p>
+						<p><input type="text" name="username"/></p>
+						<p>Password </p>
+						<p><input type="password" name="password"/></p>
+						<button class="btn">Login</button>
+					</form>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
