@@ -48,20 +48,26 @@ echo '<!DOCTYPE html>
         
         //loop and display
         foreach($results as $key){
-         	// var_dump($key);
-            echo '<div class="image">'; 
-            // echo '<h3>'.$key['id'].'</h3>';
-            echo '<img height="300px" width="300px" src="'.$key['photoUrl'].'"/>';
-            echo '<p><strong>Uploaded By:</strong> '.$key['uploadedBy'].'</p>';
-            echo '<p><a href="delete.php?photoId='.$key['id'].'">Delete</a></p>';
-            echo '</div>';
+         	
+            echo '<div class="image col-lg-6 col-lg-offset-4">
+        		<div class="flip-container" id="flip-toggle" >
+					<div class="flipper">
+						<div class="front">
+							<!--FRONT -->
+							<img height="300px" width="300px" src="'.$key['photoUrl'].'"/>
+						</div>
+						<div class="back">
+							<!-- BACK-->
+							<p><strong>Uploaded By:</strong> '.$key['uploadedBy'].'</p>
+						</div>
+					</div>
+					<button id="toggle" onclick="document.querySelector("#flip-toggle").classList.toggle("active");">Flip</button>
+				</div>
+				<p><a href="delete.php?photoId='.$key['id'].'">Delete</a> </p>
+			</div>';
          
         }
 
-?>
-
-
-<?php
 		echo '
 				</div>
 
@@ -82,9 +88,8 @@ echo '<!DOCTYPE html>
 				</div>
 				
 				';
-?>
-      
-		</div>
+?>  
+		</div><!-- end of content div-->
 		</div>
 	</body>
 	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
