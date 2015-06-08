@@ -10,11 +10,12 @@ body{
 header{
 	background-color: #1F211D;
 	color: #E7E6E8;
-	height: 90px;
+	height: 64px;
 	width: 100%;
 	position: fixed;
 	top: 0px;
 	text-align: center;
+	vertical-align: middle;
 }
 
 .wrapper{
@@ -35,18 +36,8 @@ header{
 	vertical-align: middle;
 }
 
-/*.signup{
-	float: left;
-}
-
-.login{
-	float: right;
-}*/
-
-
 /*----- Tabs -----*/
 .tabs {
-    width:100%;
     display:inline-block;
 }
  
@@ -55,35 +46,39 @@ header{
     .tab-links:after {
         display:block;
         clear:both;
-        content:'';
+        /*content:'';*/
     }
  
     .tab-links li {
-        margin:0px 5px;
         float:left;
         list-style:none;
+        text-align: center;
+         width:90px;
+    	height:60px;
     }
  
         .tab-links a {
-            padding:9px 15px;
+            /*padding:9px 15px;*/
             display:inline-block;
-            border-radius:3px 3px 0px 0px;
-            background:#7FB5DA;
+            border-radius:0px 0px 0px 0px;
+             width:90px;
+    		height:64px;
+            /*background:#7FB5DA;*/
             font-size:16px;
             font-weight:600;
-            color:#4c4c4c;
+            color:#86cba4;
             transition:all linear 0.15s;
         }
  
         .tab-links a:hover {
-            background:#a7cce5;
+            /*background:#86cba4;*/
+            background: rgba(134, 203, 164, .5);
             text-decoration:none;
         }
- 
-    li.active a, li.active a:hover {
-        background:#fff;
-        color:#4c4c4c;
-    }
+
+     li.active a{
+     	background: rgba(134, 203, 164, .5);
+     }
  
     /*----- Content of Tabs -----*/
     .tab-content {
@@ -100,3 +95,28 @@ header{
         .tab.active {
             display:block;
         }
+
+        .tab-links.active a{
+        	background: rgba(134, 203, 164, .5);
+        }
+
+#albums{
+	background-image: url(../images/albums.png);
+}	
+
+#add{
+	background-image: url(../images/add.png);
+}
+
+#search{
+	background-image: url(../images/search.png);
+}
+
+#menu{
+	background-image: url(../images/menu.png);
+}
+
+.navbar{
+	text-align: center;
+	vertical-align: middle;
+}
