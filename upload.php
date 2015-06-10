@@ -19,12 +19,13 @@
 			$pass="root";
 			$dbh = new PDO("mysql:host=localhost; dbname=Retrospective; port=8889;", $user,$pass);
 			//insert photo and info
-			$stmt = $dbh->prepare("INSERT INTO photos (photoUrl, uploadedBy, title)
-				VALUES (:image, :by, :title)");
+			$stmt = $dbh->prepare("INSERT INTO photos (photoUrl, uploadedBy, title, description)
+				VALUES (:image, :by, :title, :description)");
 			// $stmt->bindParam(":name",$_POST["title"]);
 			$stmt->bindParam(":image",$_SESSION["uploadfile"]);
 			$stmt->bindParam(":by",$_SESSION["username"]);
 			$stmt->bindParam(":title", $_POST['title']);
+			$stmt->bindParam(":description", $_POST['desc']);
 			// $stmt->bindParam(":tags",$_POST["tags"]);
 			$stmt->execute();
 			$user_id = $stmt->fetchAll(PDO::FETCH_ASSOC);

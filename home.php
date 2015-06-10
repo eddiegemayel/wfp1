@@ -58,12 +58,13 @@ echo '<!DOCTYPE html>
 					<div class="flipper">
 						<div class="front">
 							<!--FRONT -->
-							<img height="300px" width="300px" src="'.$key['photoUrl'].'"/>
+							<img height="150px" width="150px" src="'.$key['photoUrl'].'"/>
 							<h3>'.$key['title'].'</h3>
 						</div>
 						<div class="back">
 							<!-- BACK-->
 							<p><strong>Uploaded By:</strong> '.$key['uploadedBy'].'</p>
+							<p><strong>Description:</strong> '.$key['description'].'</p>
 						</div>
 					</div>
 					<button id="toggle" onclick="document.querySelector("#flip-toggle").classList.toggle("active");">Flip</button>
@@ -81,6 +82,7 @@ echo '<!DOCTYPE html>
 						<p>Upload</p>
 						<p><input type="file" name="filename" accept="image/*" capture="camera"/></p>
 						<p><input type="text" name="title" placeholder="Title of Image"/></p>
+						<p><input type="text" name="desc" placeholder="Description"/></p>
 						<!--<input type="text" />-->
 						<input type="submit"/>
 					</form>
@@ -114,6 +116,7 @@ echo '<!DOCTYPE html>
 						<div class="back">
 							<!-- BACK-->
 							<p><strong>Uploaded By:</strong> '.$searchKey['uploadedBy'].'</p>
+							<p><strong>Description:</strong> '.$searchKey['description'].'</p>
 						</div>
 					</div>
 					<button id="toggle" onclick="document.querySelector("#flip-toggle").classList.toggle("active");">Flip</button>
