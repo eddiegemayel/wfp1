@@ -1,7 +1,9 @@
 <?php
+//start the session
 session_start();
 ob_start();
-//display their profile page populated with their unique information
+
+//display their collection
 echo '<!DOCTYPE html>
 <html>
 	<head>
@@ -30,6 +32,8 @@ echo '<!DOCTYPE html>
 
 			<div class="content tab-content col-xs-12">
 				<div id="tab1" class="tab active">
+				<button onclick="test();">Hello</button>
+				 <input type="radio" id="tab-1" name="tab-group-1" checked>
 					<p>Welcome, '.$_SESSION['username'].'</p>';
 
 		//connect to database
@@ -46,7 +50,7 @@ echo '<!DOCTYPE html>
 
         // var_dump($results);
         
-        //loop and display
+        //loop and display recent images
         foreach($results as $key){
          	
             echo '<div class="image col-lg-6 col-lg-offset-4">
@@ -55,6 +59,7 @@ echo '<!DOCTYPE html>
 						<div class="front">
 							<!--FRONT -->
 							<img height="300px" width="300px" src="'.$key['photoUrl'].'"/>
+							<h3>'.$key['title'].'</h3>
 						</div>
 						<div class="back">
 							<!-- BACK-->
@@ -74,19 +79,28 @@ echo '<!DOCTYPE html>
 				<div id="tab2" class="tab">
 					<form method="POST" action="upload.php" enctype="multipart/form-data">
 						<p>Upload</p>
-						<input type="file" name="filename" accept="image/*" capture="camera"/>
+						<p><input type="file" name="filename" accept="image/*" capture="camera"/></p>
+						<p><input type="text" name="title" placeholder="Title of Image"/></p>
+						<!--<input type="text" />-->
 						<input type="submit"/>
 					</form>
 				</div>
 
 				<div id="tab3" class="tab">
 					<p>Search</p>
-					<form method="POST" action="search.php">
+					<form id="searchForm" method="POST" action="search.php" >
 						<input type="text" placeholder="Search.." name="q"/>
+						<input type="Submit" value="Search" />
 					</form>';
-		
+
+
+			//onSubmit="$test();"
+
+
+		//if statement to see if the user has searched for anything
 		if($_SESSION['searchResults'] != ''){
-			
+
+			//if so, echo the results
 			echo '<h3>Search Results for: "'.$_SESSION['q'].'"</h3>';
 			foreach($_SESSION['searchResults'] as $searchKey){
 				echo '<div class="image col-lg-6 col-lg-offset-4">
@@ -95,6 +109,7 @@ echo '<!DOCTYPE html>
 						<div class="front">
 							<!--FRONT -->
 							<img height="300px" width="300px" src="'.$searchKey['photoUrl'].'"/>
+							<h3>'.$searchKey['title'].'</h3>
 						</div>
 						<div class="back">
 							<!-- BACK-->
@@ -103,30 +118,30 @@ echo '<!DOCTYPE html>
 					</div>
 					<button id="toggle" onclick="document.querySelector("#flip-toggle").classList.toggle("active");">Flip</button>
 				</div>
-				<p><a href="delete.php?photoId='.$serachKey['id'].'">Delete</a> </p>
+				<p><a href="delete.php?photoId='.$searchKey['id'].'">Delete</a> </p>
 			</div>
-
-
 				';
 			}
 		}
 		else{
+
+			//tell them if there are no results
 			echo 'No search Results!';
 		}
 
-		echo '
-				</div>
+		echo '</div>
 
-				<div id="tab4" class="tab">
-					<a href="logout.php">Logout</a>
-				</div>
-				
-				';
+			<div id="tab4" class="tab">
+				<a href="logout.php"><p>Logout</p></a>
+				<a><p>Settings</p></a>
+			</div>';
 ?>  
+
+
 		</div><!-- end of content div-->
 		</div><!-- end of wrapper div -->
 	</body>
 	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	<script src="main.js"></script>
+	<script type="text/javascript" src="main.js"></script>
 </html>

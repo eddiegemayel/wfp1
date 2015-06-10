@@ -20,8 +20,12 @@
 	//store results into session to be referenced later
 	$_SESSION['searchResults'] = $results;
 
-	// var_dump($_SESSION['searchResults']);
-
+	// var_dump($_SESSION['searchResults'])
+	
 	header('Location: home.php');
-
 ?>
+
+<!-- <script type="text/javascript" src="main.js">
+// test();
+
+// </script>-->
