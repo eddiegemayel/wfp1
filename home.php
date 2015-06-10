@@ -50,7 +50,7 @@ echo '<!DOCTYPE html>
         foreach($results as $key){
          	
             echo '<div class="image col-lg-6 col-lg-offset-4">
-        		<div class="flip-container" id="flip-toggle" >
+        		<div class="flip-container" id="flip-toggle">
 					<div class="flipper">
 						<div class="front">
 							<!--FRONT -->
@@ -81,6 +81,40 @@ echo '<!DOCTYPE html>
 
 				<div id="tab3" class="tab">
 					<p>Search</p>
+					<form method="POST" action="search.php">
+						<input type="text" placeholder="Search.." name="q"/>
+					</form>';
+		
+		if($_SESSION['searchResults'] != ''){
+			
+			echo '<h3>Search Results for: "'.$_SESSION['q'].'"</h3>';
+			foreach($_SESSION['searchResults'] as $searchKey){
+				echo '<div class="image col-lg-6 col-lg-offset-4">
+        		<div class="flip-container" id="flip-toggle">
+					<div class="flipper">
+						<div class="front">
+							<!--FRONT -->
+							<img height="300px" width="300px" src="'.$searchKey['photoUrl'].'"/>
+						</div>
+						<div class="back">
+							<!-- BACK-->
+							<p><strong>Uploaded By:</strong> '.$searchKey['uploadedBy'].'</p>
+						</div>
+					</div>
+					<button id="toggle" onclick="document.querySelector("#flip-toggle").classList.toggle("active");">Flip</button>
+				</div>
+				<p><a href="delete.php?photoId='.$serachKey['id'].'">Delete</a> </p>
+			</div>
+
+
+				';
+			}
+		}
+		else{
+			echo 'No search Results!';
+		}
+
+		echo '
 				</div>
 
 				<div id="tab4" class="tab">
