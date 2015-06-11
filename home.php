@@ -2,7 +2,6 @@
 //start the session
 session_start();
 
-
 //display their collection
 echo '<!DOCTYPE html>
 <html>
@@ -141,6 +140,8 @@ echo '<!DOCTYPE html>
 				<a href="logout.php"><p>Logout</p></a>
 				<a><p>Settings</p></a>
 			</div>';
+
+			echo 'hi';
 ?>  
 
 
