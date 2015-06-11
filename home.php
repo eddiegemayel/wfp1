@@ -1,7 +1,7 @@
 <?php
 //start the session
 session_start();
-ob_start();
+
 
 //display their collection
 echo '<!DOCTYPE html>
@@ -31,9 +31,9 @@ echo '<!DOCTYPE html>
 			</header>
 
 			<div class="content tab-content col-xs-12">
+				<!-- Tab 1 Content -->
 				<div id="tab1" class="tab active">
-				<button onclick="test();">Hello</button>
-				 <input type="radio" id="tab-1" name="tab-group-1" checked>
+				<button click="test();">Hello</button>
 					<p>Welcome, '.$_SESSION['username'].'</p>';
 
 		//connect to database
@@ -41,21 +41,22 @@ echo '<!DOCTYPE html>
         $pass="root";
         $dbh=new PDO('mysql:host=localhost; dbname=Retrospective; port=8889;', $user, $pass);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);   
+
         //select everything in the photo table where created by equals currently logged in user   
-        $stmt = $dbh ->prepare("SELECT * from photos  WHERE uploadedBy = :username ORDER BY id DESC");
+        $stmt = $dbh->prepare("SELECT * from photos  WHERE uploadedBy = :username ORDER BY id DESC");
         $stmt->bindParam(':username', $_SESSION['username'], PDO::PARAM_STR);
         $stmt->execute();     
+
         //fetch all the results and put them into an associative arraay
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        // var_dump($results);
         
         //loop and display recent images
         foreach($results as $key){
          	
             echo '<div class="image col-lg-6 col-lg-offset-4">
         		<div class="flip-container" id="flip-toggle">
-					<div class="flipper">
+					<div class="flipper" id="photo">
 						<div class="front">
 							<!--FRONT -->
 							<img height="150px" width="150px" src="'.$key['photoUrl'].'"/>
@@ -67,16 +68,17 @@ echo '<!DOCTYPE html>
 							<p><strong>Description:</strong> '.$key['description'].'</p>
 						</div>
 					</div>
-					<button id="toggle" onclick="document.querySelector("#flip-toggle").classList.toggle("active");">Flip</button>
-				</div>
+					<button id="toggle" click="$("#flip-toggle").toggleClass("active");”>Flip</button>
+				</div><!-- End of flip div -->
 				<p><a href="delete.php?photoId='.$key['id'].'">Delete</a> </p>
-			</div>';
+			</div><!-- End of whole image div -->';
          
         }
 
 		echo '
-				</div>
+				</div><!--  Tab 1 Content Ends -->
 
+				<!-- Tab 2 Content Begins -->
 				<div id="tab2" class="tab">
 					<form method="POST" action="upload.php" enctype="multipart/form-data">
 						<p>Upload</p>
@@ -104,6 +106,8 @@ echo '<!DOCTYPE html>
 
 			//if so, echo the results
 			echo '<h3>Search Results for: "'.$_SESSION['q'].'"</h3>';
+
+			//loop through results
 			foreach($_SESSION['searchResults'] as $searchKey){
 				echo '<div class="image col-lg-6 col-lg-offset-4">
         		<div class="flip-container" id="flip-toggle">
@@ -119,11 +123,10 @@ echo '<!DOCTYPE html>
 							<p><strong>Description:</strong> '.$searchKey['description'].'</p>
 						</div>
 					</div>
-					<button id="toggle" onclick="document.querySelector("#flip-toggle").classList.toggle("active");">Flip</button>
+					<button id="toggleFlip" >Flip</button>
 				</div>
 				<p><a href="delete.php?photoId='.$searchKey['id'].'">Delete</a> </p>
-			</div>
-				';
+			</div>';
 			}
 		}
 		else{
@@ -144,7 +147,8 @@ echo '<!DOCTYPE html>
 		</div><!-- end of content div-->
 		</div><!-- end of wrapper div -->
 	</body>
-	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="jquery.flip.js"></script>
 	<script type="text/javascript" src="main.js"></script>
 </html>

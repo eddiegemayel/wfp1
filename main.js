@@ -22,12 +22,14 @@ $(document).ready(function() {
     	// e.preventDefault(e);
     });
 
-	function test() {
-  		// do stuff
-  		$(this).addClass('active');
-  		e.preventDefault(e);
-	}
+	// function test() {
+ //  		// do stuff
+ //  		$(this).addClass('active');
+ //  		e.preventDefault(e);
+	// }
+
+	$('#toggleFlip').click(function(){
+		$('#photo').flip();
+	});
 
 });
-
-
