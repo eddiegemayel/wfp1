@@ -68,7 +68,7 @@ echo '<!DOCTYPE html>
 							<p><strong>Description:</strong> '.$key['description'].'</p>
 						</div>
 					</div>
-					<button id="toggle" click="$("#flip-toggle").toggleClass("active");”>Flip</button>
+					<button id="toggle" onclick="$(\'#flip-toggle\').toggleClass(\'active\');">Flip</button>
 				</div><!-- End of flip div -->
 				<p><a href="delete.php?photoId='.$key['id'].'">Delete</a> </p>
 			</div><!-- End of whole image div -->';

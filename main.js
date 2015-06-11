@@ -32,4 +32,10 @@ $(document).ready(function() {
 		$('#photo').flip();
 	});
 
+	function flip(){
+		$(this).toggleClass("active");
+		// "#flip-toggle"
+	};
+	
+
 });
