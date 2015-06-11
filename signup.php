@@ -30,7 +30,7 @@
 			$_SESSION['username'] = $new_username;
 
 			// point them to home logged in page
-			header("Location: home.php");
+			header("Location: index.html");
 		}
 		else{
 			//something went wrong!

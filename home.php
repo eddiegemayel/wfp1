@@ -20,7 +20,7 @@ echo '<!DOCTYPE html>
 			<header class="navbar navbar-fixed-top col-xs-12">
 				<!-- Logo here -->
 				<nav class="col-xs-12">
-					<ul class="tab-links col-md-7 col-md-offset-4">
+					<ul class="tab-links col-md-7 col-md-offset-4 col-xs-12">
         				<li id="albums" class="active"><a href="#tab1"></a></li>
         				<li id="add"><a href="#tab2"></a></li>
         				<li id="search"><a href="#tab3"></a></li>
@@ -30,9 +30,9 @@ echo '<!DOCTYPE html>
 			</header>
 
 			<div class="content tab-content col-xs-12">
-				<!-- Tab 1 Content -->
+				<!--------------------------------------------------------------------------------------------------------------------	Tab 1(Album Feed) Content -->
 				<div id="tab1" class="tab active">
-				<button click="test();">Hello</button>
+				<!--<button click="test();">Hello</button>-->
 					<p>Welcome, '.$_SESSION['username'].'</p>';
 
 		//connect to database
@@ -43,7 +43,7 @@ echo '<!DOCTYPE html>
 
         //select everything in the photo table where created by equals currently logged in user   
         $stmt = $dbh->prepare("SELECT * from photos  WHERE uploadedBy = :username ORDER BY id DESC");
-        $stmt->bindParam(':username', $_SESSION['username'], PDO::PARAM_STR);
+        $stmt->bindParam(':username', $_SESSION['user_id'], PDO::PARAM_STR);
         $stmt->execute();     
 
         //fetch all the results and put them into an associative arraay
@@ -67,9 +67,9 @@ echo '<!DOCTYPE html>
 							<p><strong>Description:</strong> '.$key['description'].'</p>
 						</div>
 					</div>
-					<button id="toggle" onclick="$(\'#flip-toggle\').toggleClass(\'active\');">Flip</button>
+					<!--<button id="toggle" onclick="$(\'#flip-toggle\').toggleClass(\'active\');">Flip</button>-->
 				</div><!-- End of flip div -->
-				<p><a href="delete.php?photoId='.$key['id'].'">Delete</a> </p>
+				<!--<p><a href="delete.php?photoId='.$key['id'].'">Delete</a> </p>-->
 			</div><!-- End of whole image div -->';
          
         }
@@ -77,19 +77,53 @@ echo '<!DOCTYPE html>
 		echo '
 				</div><!--  Tab 1 Content Ends -->
 
-				<!-- Tab 2 Content Begins -->
+				<!------------------------------------------------------------------------------------------------------------	 Tab 2(Add) Content Begins -->
 				<div id="tab2" class="tab">
-					<form method="POST" action="upload.php" enctype="multipart/form-data">
-						<p>Upload</p>
-						<p><input type="file" name="filename" accept="image/*" capture="camera"/></p>
-						<p><input type="text" name="title" placeholder="Title of Image"/></p>
-						<p><input type="text" name="desc" placeholder="Description"/></p>
-						<!--<input type="text" />-->
-						<input type="submit"/>
-					</form>
+					<div class="col-xs-6">
+						<form method="POST" action="upload.php" enctype="multipart/form-data">
+							<p>Upload</p>
+							<p><input type="file" name="filename" accept="image/*" capture="camera"/></p>
+							<p><input type="text" name="title" placeholder="Title of Image"/></p>
+							<p><input type="text" name="desc" placeholder="Description"/></p>
+							<p>
+								<select name="album" required>';
+
+									$dbh=new PDO('mysql:host=localhost; dbname=Retrospective; port=8889;', $user, $pass);
+        							$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);   
+
+        							//select everything in the photo table where created by equals currently logged in user   
+        							$stmt = $dbh->prepare("SELECT * from albums  WHERE createdBy = :userid ORDER BY id DESC");
+        							$stmt->bindParam(':userid', $_SESSION['user_id'], PDO::PARAM_STR);
+        							$stmt->execute();     
+
+        							//fetch all the results and put them into an associative arraay
+        							$albumResults = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        							//loop and display recent images
+        							foreach($albumResults as $albumKey){
+         	
+           				 				echo '<option value='.$albumKey['id'].'>'.$albumKey['albumTitle'].' ('.$albumKey['albumYear'].')</option>';
+        							}
+
+						echo '			
+								</select>
+
+							</p>
+							<input type="submit"/>
+						</form>
+					</div>
+					<div class="col-xs-6">
+						<p>Create an Album</p>
+						<form method="POST" action="albumCreate.php">
+							<p><input type="text" name="albumTitle" placeholder="Album Title Here"/></p>
+							<p><input type="text" name="albumYear" placeholder="Album Year"/></p>
+							<input type="Submit"/>
+						</form>
+					</div>
 				</div>
 
 				<div id="tab3" class="tab">
+				<!------------------------------------------------------------------------------------------------------------	 Tab 3(Search) Content Begins -->
 					<p>Search</p>
 					<form id="searchForm" method="POST" action="search.php" >
 						<input type="text" placeholder="Search.." name="q"/>
@@ -108,7 +142,8 @@ echo '<!DOCTYPE html>
 
 			//loop through results
 			foreach($_SESSION['searchResults'] as $searchKey){
-				echo '<div class="image col-lg-6 col-lg-offset-4">
+				echo '
+				<div class="image col-lg-6 col-lg-offset-4">
         		<div class="flip-container" id="flip-toggle">
 					<div class="flipper">
 						<div class="front">
@@ -137,11 +172,10 @@ echo '<!DOCTYPE html>
 		echo '</div>
 
 			<div id="tab4" class="tab">
+			<!------------------------------------------------------------------------------------------------------------	 Tab 4 Logout Content Begins -->
 				<a href="logout.php"><p>Logout</p></a>
 				<a><p>Settings</p></a>
 			</div>';
-
-			echo 'hi';
 ?>  
 
 

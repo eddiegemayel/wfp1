@@ -36,7 +36,7 @@
        	}
        	//if the login is correct store into session variables for easy global access across all php files
         else{
-                // $_SESSION['user_id'] = $id;
+                $_SESSION['user_id'] = $id;
                 $_SESSION['username'] = $username;
                 // $_SESSION['password']= $pass_word;
                // var_dump($_SESSION['username']);
