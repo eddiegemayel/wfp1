@@ -11,7 +11,7 @@ if($_SESSION['sortVariable']===''){
 echo '<!DOCTYPE html>
 <html>
 	<head>
-		<title>Home</title>
+		<title>Albums</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<link rel="stylesheet" href="css/main.css" type="text/css"/>
@@ -65,7 +65,7 @@ echo '<!DOCTYPE html>
         //loop and display albums
         foreach($results as $key){
          	
-            echo '<a id="albumDiv" class="album col-lg-6 col-lg-offset-3" href="album.php?albumId='.$key['id'].'">
+            echo '<a id="albumDiv" class="album col-lg-6 col-lg-offset-3" href="album.php?albumId='.$key['id'].'&albumTitle='.$key['albumTitle'].'&albumYear='.$key['albumYear'].'">
             	<h3>'.$key['albumTitle'].'</h3>
             	<p>('.$key['albumYear'].')</p>';
 
@@ -111,6 +111,5 @@ echo '<!DOCTYPE html>
 	</body>
 	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	<script src="jquery.flip.js"></script>
 	<script type="text/javascript" src="main.js"></script>
 </html>

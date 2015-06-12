@@ -24,10 +24,16 @@ header{
 }
 
 .content{
-	padding-top: 79px;
-	margin-top: 79px;
+	padding-top: 59px;
+	margin-top: 59px;
 	vertical-align: middle;
 	text-align: center;
+}
+
+.image{
+	margin-top: 10px;
+	margin-bottom: 300px ;
+	/*margin-left: 50px;*/
 }
 
 .album{
@@ -140,11 +146,6 @@ header{
 .navbar{
 	text-align: center;
 	vertical-align: middle;
-}
-
-.image{
-	margin-top: 10px;
-	margin-bottom: 300px ;
 }
 
 /*DIV FLIP CSS ----------------------------------------------------------------------------------------------------------------*/

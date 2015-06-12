@@ -6,7 +6,7 @@
 echo '<!DOCTYPE html>
 <html>
 	<head>
-		<title>Home</title>
+		<title>Search</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<link rel="stylesheet" href="css/main.css" type="text/css"/>
@@ -37,7 +37,6 @@ echo '<!DOCTYPE html>
 			<div class="content col-xs-12"/>
 				<div >
 				<!------------------------------------------------------------------------------------------------------------	 Tab 3(Search) Content Begins -->
-					<p>Search</p>
 					<form id="searchForm" method="POST" action="actions/search.php" >
 						<input type="text" placeholder="Search.." name="q"/>
 						<input type="Submit" value="Search" />
@@ -51,7 +50,7 @@ echo '<!DOCTYPE html>
 		if($_SESSION['searchResults'] != ''){
 
 			//if so, echo the results
-			echo '<h3>Search Results for: "'.$_SESSION['q'].'"</h3>';
+			echo '<h3>Results for: "'.$_SESSION['q'].'"</h3>';
 
 			//loop through results
 			foreach($_SESSION['searchResults'] as $searchKey){
@@ -92,6 +91,5 @@ echo '<!DOCTYPE html>
 	</body>
 	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	<script src="jquery.flip.js"></script>
 	<script type="text/javascript" src="main.js"></script>
 </html>
