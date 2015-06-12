@@ -16,5 +16,5 @@
 	session_destroy();
 
 	//put them back to login screen
-	header("Location: index.html");
+	header("Location: ../index.html");
 ?>

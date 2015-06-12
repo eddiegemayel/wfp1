@@ -28,7 +28,7 @@ session_start();
 		// }
 			
 		//push back to their profile
-		header("Location: home.php");
+		header("Location: ../home.php");
 
 
 ?>

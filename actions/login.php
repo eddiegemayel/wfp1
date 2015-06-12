@@ -41,7 +41,7 @@
                 // $_SESSION['password']= $pass_word;
                // var_dump($_SESSION['username']);
                //go their profile page
-               header('Location: home.php'); 
+               header('Location: ../home.php'); 
         }
        //if something goes wrong
 	} catch(Exception $e) {

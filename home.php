@@ -2,6 +2,10 @@
 //start the session
 session_start();
 
+if($_SESSION['sortVariable']===''){
+	$_SESSION['sortVariable'] = 'year';
+
+}
 
 //display their collection
 echo '<!DOCTYPE html>
@@ -22,15 +26,15 @@ echo '<!DOCTYPE html>
 				<!-- Logo here -->
 				<nav class="col-xs-12">
 					<ul class="tab-links col-md-7 col-md-offset-4 col-xs-12">
-        				<li id="albums" class="active"><a href="#tab1"></a></li>
-        				<li id="add"><a href="#tab2"></a></li>
-        				<li id="search"><a href="#tab3"></a></li>
-        				<li id="menu"><a href="#tab4"></a></li>
+        				<li id="albums" class="active"><a href="home.php"></a></li>
+        				<li id="add"><a href="create.php"></a></li>
+        				<li id="search"><a href="searchPage.php"></a></li>
+        				<li id="menu"><a href="menu.php"></a></li>
     				</ul>
 				</nav>
 			</header>
 
-			<div class="content tab-content col-xs-12">
+			<div class="content col-xs-12">
 				<!--------------------------------------------------------------------------------------------------------------------	Tab 1(Album Feed) Content -->
 				<div id="tab1" class="tab active">
 				<form action="sort.php" method="POST">
@@ -97,94 +101,8 @@ echo '<!DOCTYPE html>
         }
 
 		echo '
-				</div><!--  Tab 1 Content Ends -->
+				</div><!--  Tab 1 Content Ends -->'; 
 
-				<!------------------------------------------------------------------------------------------------------------	 Tab 2(Add) Content Begins -->
-				<div id="tab2" class="tab">
-					<div class="col-xs-6">
-						<form method="POST" action="upload.php" enctype="multipart/form-data">
-							<p>Upload</p>
-							<p><input type="file" name="filename" accept="image/*" capture="camera"/></p>
-							<p><input type="text" name="title" placeholder="Title of Image"/></p>
-							<p><input type="text" name="desc" placeholder="Description"/></p>
-							<p>
-								<select name="album" required>';
-        							//loop and display all albums this user has created
-        							foreach($results as $key){
-         	
-           				 				echo '<option value='.$key['id'].'>'.$key['albumTitle'].' ('.$key['albumYear'].')</option>';
-        							}
-
-						echo '			
-								</select>
-
-							</p>
-							<input type="submit"/>
-						</form>
-					</div>
-					<div class="col-xs-6">
-						<p>Create an Album</p>
-						<form method="POST" action="albumCreate.php">
-							<p><input type="text" name="albumTitle" placeholder="Album Title Here"/></p>
-							<p><input type="text" name="albumYear" placeholder="Album Year"/></p>
-							<input type="Submit"/>
-						</form>
-					</div>
-				</div>
-
-				<div id="tab3" class="tab">
-				<!------------------------------------------------------------------------------------------------------------	 Tab 3(Search) Content Begins -->
-					<p>Search</p>
-					<form id="searchForm" method="POST" action="search.php" >
-						<input type="text" placeholder="Search.." name="q"/>
-						<input type="Submit" value="Search" />
-					</form>';
-
-
-			//onSubmit="$test();"
-
-
-		//if statement to see if the user has searched for anything
-		if($_SESSION['searchResults'] != ''){
-
-			//if so, echo the results
-			echo '<h3>Search Results for: "'.$_SESSION['q'].'"</h3>';
-
-			//loop through results
-			foreach($_SESSION['searchResults'] as $searchKey){
-				echo '
-				<div class="image col-lg-6 col-lg-offset-4">
-        		<div class="flip-container" id="flip-toggle">
-					<div class="flipper">
-						<div class="front">
-							<!--FRONT -->
-							<img height="300px" width="300px" src="'.$searchKey['photoUrl'].'"/>
-							<h3>'.$searchKey['title'].'</h3>
-						</div>
-						<div class="back">
-							<!-- BACK-->
-							<p><strong>Description:</strong> '.$searchKey['description'].'</p>
-						</div>
-					</div>
-					<button id="toggleFlip" >Flip</button>
-				</div>
-				<p><a href="delete.php?photoId='.$searchKey['id'].'">Delete</a> </p>
-			</div>';
-			}
-		}
-		else{
-
-			//tell them if there are no results
-			echo 'No search Results!';
-		}
-
-		echo '</div>
-
-			<div id="tab4" class="tab">
-			<!------------------------------------------------------------------------------------------------------------	 Tab 4 Logout Content Begins -->
-				<a href="logout.php"><p>Logout</p></a>
-				<a><p>Settings</p></a>
-			</div>';
 ?>  
 
 

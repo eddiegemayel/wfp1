@@ -11,6 +11,6 @@
 	$stmt->bindParam(':id', $_GET["photoId"], PDO::PARAM_STR);
     $stmt->execute();     
     //push them back to profile php with updated information
-	header("Location: home.php");
+	header("Location: ../home.php");
 
 ?>

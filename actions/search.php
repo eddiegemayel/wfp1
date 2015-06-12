@@ -22,7 +22,7 @@
 
 	// var_dump($_SESSION['searchResults'])
 	
-	header('Location: home.php');
+	header('Location: ../searchPage.php');
 ?>
 
 <!-- <script type="text/javascript" src="main.js">
