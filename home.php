@@ -42,7 +42,7 @@ echo '<!DOCTYPE html>
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);   
 
         //select everything in the photo table where created by equals currently logged in user   
-        $stmt = $dbh->prepare("SELECT * from photos  WHERE uploadedBy = :username ORDER BY id DESC");
+        $stmt = $dbh->prepare("SELECT * from albums WHERE createdBy = :username ORDER BY id DESC");
         $stmt->bindParam(':username', $_SESSION['user_id'], PDO::PARAM_STR);
         $stmt->execute();     
 
@@ -50,27 +50,14 @@ echo '<!DOCTYPE html>
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         
-        //loop and display recent images
+        //loop and display albums
         foreach($results as $key){
          	
-            echo '<div class="image col-lg-6 col-lg-offset-4">
-        		<div class="flip-container" id="flip-toggle">
-					<div class="flipper" id="photo">
-						<div class="front">
-							<!--FRONT -->
-							<img height="150px" width="150px" src="'.$key['photoUrl'].'"/>
-							<h3>'.$key['title'].'</h3>
-						</div>
-						<div class="back">
-							<!-- BACK-->
-							<p><strong>Uploaded By:</strong> '.$key['uploadedBy'].'</p>
-							<p><strong>Description:</strong> '.$key['description'].'</p>
-						</div>
-					</div>
-					<!--<button id="toggle" onclick="$(\'#flip-toggle\').toggleClass(\'active\');">Flip</button>-->
-				</div><!-- End of flip div -->
-				<!--<p><a href="delete.php?photoId='.$key['id'].'">Delete</a> </p>-->
-			</div><!-- End of whole image div -->';
+            echo '<div class="album col-lg-6 col-lg-offset-3">
+            	<h3>'.$key['albumTitle'].'</h3>
+            	<p>('.$key['albumYear'].')</p>
+        		
+			</div><!-- End of whole album div -->';
          
         }
 
