@@ -55,9 +55,36 @@ echo '<!DOCTYPE html>
          	
             echo '<div class="album col-lg-6 col-lg-offset-3">
             	<h3>'.$key['albumTitle'].'</h3>
-            	<p>('.$key['albumYear'].')</p>
+            	<p>('.$key['albumYear'].')</p>';
+
+				$dbh = new PDO("mysql:host=localhost; dbname=Retrospective; port=8889;", $user,$pass);
+				//display anything that matches what user searched for.
+				//tags, photoname, username, whatever they searched for
+				$stmt = $dbh->prepare("SELECT * FROM photos WHERE (albumId = :albumId)");
+				$stmt->bindParam(":albumId", $key['id'], PDO::PARAM_STR);
+				$stmt->execute();
+				$photoResults = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            	foreach($photoResults as $photoKey){
+            		      echo '<div class="imageInAlbum">
+        					<div class="flip-ContainerSmall" id="flip-toggle">
+							<div class="flipperSmall" id="photo">
+							<div class="frontSmall">
+								<!--FRONT -->
+								<img height="100px" width="100px" src="'.$photoKey['photoUrl'].'"/>
+								<h3>'.$photoKey['title'].'</h3>
+							</div>
+							<!--<div class="backSmall">
+								<!-- BACK-->
+								<!--<p><strong>Description:</strong> '.$photoKey['description'].'</p> 
+							</div>-->
+							</div><!-- end of small flipper div -->
+							</div><!-- End of small flip container-->
+						</div><!-- End of whole image div -->';
+         
+            	}
         		
-			</div><!-- End of whole album div -->';
+			echo '</div><!-- End of whole album div -->';
          
         }
 
@@ -74,22 +101,10 @@ echo '<!DOCTYPE html>
 							<p><input type="text" name="desc" placeholder="Description"/></p>
 							<p>
 								<select name="album" required>';
-
-									$dbh=new PDO('mysql:host=localhost; dbname=Retrospective; port=8889;', $user, $pass);
-        							$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);   
-
-        							//select everything in the photo table where created by equals currently logged in user   
-        							$stmt = $dbh->prepare("SELECT * from albums  WHERE createdBy = :userid ORDER BY id DESC");
-        							$stmt->bindParam(':userid', $_SESSION['user_id'], PDO::PARAM_STR);
-        							$stmt->execute();     
-
-        							//fetch all the results and put them into an associative arraay
-        							$albumResults = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        							//loop and display recent images
-        							foreach($albumResults as $albumKey){
+        							//loop and display all albums this user has created
+        							foreach($results as $key){
          	
-           				 				echo '<option value='.$albumKey['id'].'>'.$albumKey['albumTitle'].' ('.$albumKey['albumYear'].')</option>';
+           				 				echo '<option value='.$key['id'].'>'.$key['albumTitle'].' ('.$key['albumYear'].')</option>';
         							}
 
 						echo '			
@@ -140,7 +155,6 @@ echo '<!DOCTYPE html>
 						</div>
 						<div class="back">
 							<!-- BACK-->
-							<p><strong>Uploaded By:</strong> '.$searchKey['uploadedBy'].'</p>
 							<p><strong>Description:</strong> '.$searchKey['description'].'</p>
 						</div>
 					</div>
