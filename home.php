@@ -2,6 +2,7 @@
 //start the session
 session_start();
 
+
 //display their collection
 echo '<!DOCTYPE html>
 <html>
@@ -32,7 +33,14 @@ echo '<!DOCTYPE html>
 			<div class="content tab-content col-xs-12">
 				<!--------------------------------------------------------------------------------------------------------------------	Tab 1(Album Feed) Content -->
 				<div id="tab1" class="tab active">
-				<!--<button click="test();">Hello</button>-->
+				<form action="sort.php" method="POST">
+				<p>Sort By:</p>
+					<select name="sort">
+						<option value="albumYear">Most Recent</option>
+						<option value="albumTitle">Title</option>
+					</select>
+					<input type="submit" value="Sort"/>
+				</form>
 					<p>Welcome, '.$_SESSION['username'].'</p>';
 
 		//connect to database
@@ -42,7 +50,7 @@ echo '<!DOCTYPE html>
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);   
 
         //select everything in the photo table where created by equals currently logged in user   
-        $stmt = $dbh->prepare("SELECT * from albums WHERE createdBy = :username ORDER BY id DESC");
+        $stmt = $dbh->prepare("SELECT * from albums WHERE createdBy = :username ORDER BY ".$_SESSION['sortVariable']." DESC");
         $stmt->bindParam(':username', $_SESSION['user_id'], PDO::PARAM_STR);
         $stmt->execute();     
 
