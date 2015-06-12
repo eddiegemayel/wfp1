@@ -48,6 +48,14 @@ header{
 	float: left;
 }
 
+
+#albumDiv{
+	display: block;
+	text-decoration: none;
+	color: inherit;
+}
+
+
 /*----- Tabs -----*/
 .tabs {
     display:inline-block;

@@ -61,7 +61,7 @@ echo '<!DOCTYPE html>
         //loop and display albums
         foreach($results as $key){
          	
-            echo '<div class="album col-lg-6 col-lg-offset-3">
+            echo '<a id="albumDiv" class="album col-lg-6 col-lg-offset-3" href="album.php?albumId='.$key['id'].'">
             	<h3>'.$key['albumTitle'].'</h3>
             	<p>('.$key['albumYear'].')</p>';
 
@@ -92,7 +92,7 @@ echo '<!DOCTYPE html>
          
             	}
         		
-			echo '</div><!-- End of whole album div -->';
+			echo '</a><!-- End of whole album div -->';
          
         }
 
