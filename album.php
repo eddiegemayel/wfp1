@@ -1,13 +1,15 @@
 <?php
+	//always start session
 	session_start();
 
-
+	//This page displays an album a user has clicked on and all the photos inside it
+	//Get the albums information from the GET anchor link
 	$albumId = $_GET['albumId'];
 	$albumTitle = $_GET['albumTitle'];
 	$albumYear = $_GET['albumYear'];
 
 
-//display their collection
+//display the header and nav
 echo '<!DOCTYPE html>
 <html>
 	<head>

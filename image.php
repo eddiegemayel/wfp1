@@ -1,9 +1,12 @@
 <?php
+	//start session
 	session_start();
 
+	//This page displays a specific photo a user has clicked on
+	//retrieve the id of the photo here to display it
 	$photoId = $_GET['id'];
 
-//display their collection
+//display the header and nav
 echo '<!DOCTYPE html>
 <html>
 	<head>
@@ -72,7 +75,7 @@ echo '<!DOCTYPE html>
         	
         	  echo '<div>
 
-        	<p><a href="download.php?url='.$key['photoUrl'].'">Download</a></p>
+        	<p><a href="actions/download.php?url='.$key['photoUrl'].'">Download</a></p>
 
 
         	</div>

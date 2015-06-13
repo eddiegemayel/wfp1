@@ -2,12 +2,7 @@
 //start the session
 session_start();
 
-if($_SESSION['sortVariable']===''){
-	$_SESSION['sortVariable'] = 'year';
-
-}
-
-//display their collection
+//display the header and nav
 echo '<!DOCTYPE html>
 <html>
 	<head>

@@ -1,7 +1,10 @@
 <?php
+//start session
+session_start();
 
+	//this page allows user to edit settings or logout
 
-//display their collection
+//display the header and nav
 echo '<!DOCTYPE html>
 <html>
 	<head>
@@ -58,6 +61,5 @@ echo '<!DOCTYPE html>
 	</body>
 	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	<script src="jquery.flip.js"></script>
 	<script type="text/javascript" src="main.js"></script>
 </html>

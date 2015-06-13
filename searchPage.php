@@ -1,8 +1,9 @@
 <?php
+	//starts up the session
 	session_start();
 
 
-//display their collection
+//display the header and nav
 echo '<!DOCTYPE html>
 <html>
 	<head>
