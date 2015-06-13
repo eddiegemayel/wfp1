@@ -61,6 +61,13 @@ header{
 	color: inherit;
 }
 
+#photoDiv{
+	display: block;
+	text-decoration: none;
+	color: inherit;
+	
+}
+
 
 /*----- Tabs -----*/
 .tabs {

@@ -1,11 +1,7 @@
 <?php
 	session_start();
 
-
-	$albumId = $_GET['albumId'];
-	$albumTitle = $_GET['albumTitle'];
-	$albumYear = $_GET['albumYear'];
-
+	$photoId = $_GET['id'];
 
 //display their collection
 echo '<!DOCTYPE html>
@@ -34,19 +30,19 @@ echo '<!DOCTYPE html>
 				</nav>
 			</header>
 			<div class="content col-xs-12">
-			<h2>'.$albumTitle.'</h2>
-			<h3>('.$albumYear.')</h3>
+		
 			';
 
-		//connect to database
+
+			//connect to database
         $user="root";
         $pass="root";
         $dbh=new PDO('mysql:host=localhost; dbname=Retrospective; port=8889;', $user, $pass);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);   
 
         //select everything in the photo table where created by equals currently logged in user   
-        $stmt = $dbh->prepare("SELECT * from photos WHERE albumId = :id");
-        $stmt->bindParam(':id', $albumId, PDO::PARAM_STR);
+        $stmt = $dbh->prepare("SELECT * from photos WHERE id = :id");
+        $stmt->bindParam(':id', $photoId, PDO::PARAM_STR);
         $stmt->execute();     
 
         //fetch all the results and put them into an associative arraay
@@ -55,36 +51,25 @@ echo '<!DOCTYPE html>
            foreach($results as $key){
          
             echo '
-            <a id="photoDiv" href="image.php?id='.$key['id'].'" >
-            <div class="imageInAlbum col-xs-3">
-        <div class="flip-containerSmall" id="flip-toggle">
-			<div class="flipperSmall" id="photo">
-				<div class="frontSmall">
+            <div class="image col-xs-3">
+        <div class="flip-container" id="flip-toggle">
+			<div class="flipper" id="photo">
+				<div class="front">
 					<!--FRONT -->
 					<img height="150px" width="150px" src="'.$key['photoUrl'].'"/>
 					<h3>'.$key['title'].'</h3>
 				</div>
-				<!--<div class="backSmall">
+				<div class="back">
 					<!-- BACK-->
-					<!--<p><strong>Description:</strong> '.$key['description'].'</p>
-				</div>-->
+					<p><strong>Description:</strong> '.$key['description'].'</p>
+				</div>
 			</div>
 			<!--<button id="toggle" onclick="$(\'#flip-toggle\').toggleClass(\'active\');">Flip</button>-->
 			</div><!-- End of flip div -->
 			<!--<p><a href="delete.php?photoId='.$key['id'].'">Delete</a> </p>-->
 		</div><!-- End of whole image div -->
-		</a>';
+		';
          
         }
 
-
 ?>
-
-
-		</div><!-- end of content div-->
-		</div><!-- end of wrapper div -->
-	</body>
-	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	<script type="text/javascript" src="main.js"></script>
-</html>

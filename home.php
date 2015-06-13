@@ -37,7 +37,7 @@ echo '<!DOCTYPE html>
 			<div class="content col-xs-12">
 				<!--------------------------------------------------------------------------------------------------------------------	Tab 1(Album Feed) Content -->
 				<div id="tab1" class="tab active">
-				<form action="sort.php" method="POST">
+				<form action="actions/sort.php" method="POST">
 				<p>Sort By:</p>
 					<select name="sort">
 						<option value="albumYear">Most Recent</option>
