@@ -51,12 +51,12 @@ echo '<!DOCTYPE html>
            foreach($results as $key){
          
             echo '
-            <div class="image col-xs-3">
+            <div class="image col-xs-3 col-xs-offset-4">
         <div class="flip-container" id="flip-toggle">
 			<div class="flipper" id="photo">
 				<div class="front">
 					<!--FRONT -->
-					<img height="150px" width="150px" src="'.$key['photoUrl'].'"/>
+					<img height="300px" width="300px" src="'.$key['photoUrl'].'"/>
 					<h3>'.$key['title'].'</h3>
 				</div>
 				<div class="back">
@@ -69,7 +69,19 @@ echo '<!DOCTYPE html>
 			<!--<p><a href="delete.php?photoId='.$key['id'].'">Delete</a> </p>-->
 		</div><!-- End of whole image div -->
 		';
-         
+        	
+        	  echo '<div>
+
+        	<p><a href="download.php?url='.$key['photoUrl'].'">Download</a></p>
+
+
+        	</div>
+        	'; 
+
+
         }
+
+
+
 
 ?>

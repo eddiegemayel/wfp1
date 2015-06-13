@@ -31,8 +31,7 @@ header{
 }
 
 .image{
-	margin-top: 10px;
-	margin-bottom: 300px ;
+	margin-bottom: 200px ;
 	/*margin-left: 50px;*/
 }
 
@@ -65,7 +64,7 @@ header{
 	display: block;
 	text-decoration: none;
 	color: inherit;
-	
+
 }
 
 
@@ -176,8 +175,8 @@ header{
 }
 
 .flip-container, .front, .back{
-	width: 250px;
-	height: 303px;
+	width: 380px;
+	height: 453px;
 }
 
 .front, .back{
