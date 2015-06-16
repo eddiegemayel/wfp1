@@ -22,12 +22,11 @@ echo '<!DOCTYPE html>
 	<body>
 		<div class="wrapper tabs col-xs-12">
 			<header class="navbar navbar-fixed-top col-xs-12">
-				<!-- Logo here -->
 				<nav class="col-xs-12">
 					<ul class="tab-links col-md-7 col-md-offset-4 col-xs-12">
         				<li id="albums" class="active"><a href="home.php"></a></li>
-        				<li id="add"><a href="create.php"></a></li>
-        				<li id="search"><a href="searchPage.php"></a></li>
+        				<li id="add" ><a href="create.php"></a></li>
+        				<li id="search" ><a href="searchPage.php"></a></li>
         				<li id="menu"><a href="menu.php"></a></li>
     				</ul>
 				</nav>
@@ -65,26 +64,32 @@ echo '<!DOCTYPE html>
 				<div class="back">
 					<!-- BACK-->
 					<p><strong>Description:</strong> '.$key['description'].'</p>
+					<p><strong>Date:</strong> '.$key['date'].' </p>
+					<p><strong>People:</strong> '.$key['people'].' </p>
+					<p><strong>Tags:</strong> '.$key['tags'].'</p>
 				</div>
 			</div>
-			<!--<button id="toggle" onclick="$(\'#flip-toggle\').toggleClass(\'active\');">Flip</button>-->
+				
 			</div><!-- End of flip div -->
-			<!--<p><a href="delete.php?photoId='.$key['id'].'">Delete</a> </p>-->
+
+
 		</div><!-- End of whole image div -->
 		';
         	
-        	  echo '<div>
-
-        	<p><a href="actions/download.php?url='.$key['photoUrl'].'">Download</a></p>
-
-
+        echo '<div>	
+        		<button id="toggle" onclick="$(\'#flip-toggle\').toggleClass(\'active\');">Flip</button>
+				<p><a href="actions/delete.php?photoId='.$key['id'].'">Delete</a></p>
+        		<p><a href="actions/download.php?url='.$key['photoUrl'].'">Download</a></p>
         	</div>
         	'; 
-
-
         }
-
-
-
-
 ?>
+
+
+		</div><!-- end of content div-->
+		</div><!-- end of wrapper div -->
+	</body>
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+</html>

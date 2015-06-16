@@ -28,9 +28,9 @@ $(document).ready(function() {
  //  		e.preventDefault(e);
 	// }
 
-	$('#toggleFlip').click(function(){
-		$('#photo').flip();
-	});
+	// $('#toggleFlip').click(function(){
+	// 	$('#photo').flip();
+	// });
 
 	function flip(){
 		$(this).toggleClass("active");

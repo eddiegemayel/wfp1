@@ -25,7 +25,6 @@ echo '<!DOCTYPE html>
 	<body>
 		<div class="wrapper tabs col-xs-12">
 			<header class="navbar navbar-fixed-top col-xs-12">
-				<!-- Logo here -->
 				<nav class="col-xs-12">
 					<ul class="tab-links col-md-7 col-md-offset-4 col-xs-12">
         				<li id="albums" class="active"><a href="home.php"></a></li>
@@ -35,6 +34,7 @@ echo '<!DOCTYPE html>
     				</ul>
 				</nav>
 			</header>
+
 			<div class="content col-xs-12">
 			<h2>'.$albumTitle.'</h2>
 			<h3>('.$albumYear.')</h3>
@@ -66,14 +66,14 @@ echo '<!DOCTYPE html>
 					<img height="150px" width="150px" src="'.$key['photoUrl'].'"/>
 					<h3>'.$key['title'].'</h3>
 				</div>
-				<!--<div class="backSmall">
+				<div class="backSmall">
 					<!-- BACK-->
-					<!--<p><strong>Description:</strong> '.$key['description'].'</p>
-				</div>-->
+					<p><strong>Description:</strong> '.$key['description'].'</p>
+					<p><strong></strong></p>
+				</div>
 			</div>
-			<!--<button id="toggle" onclick="$(\'#flip-toggle\').toggleClass(\'active\');">Flip</button>-->
+			
 			</div><!-- End of flip div -->
-			<!--<p><a href="delete.php?photoId='.$key['id'].'">Delete</a> </p>-->
 		</div><!-- End of whole image div -->
 		</a>';
          

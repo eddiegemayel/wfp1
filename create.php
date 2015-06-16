@@ -19,12 +19,11 @@ echo '<!DOCTYPE html>
 	<body>
 		<div class="wrapper tabs col-xs-12">
 			<header class="navbar navbar-fixed-top col-xs-12">
-				<!-- Logo here -->
 				<nav class="col-xs-12">
 					<ul class="tab-links col-md-7 col-md-offset-4 col-xs-12">
         				<li id="albums" ><a href="home.php"></a></li>
         				<li id="add" class="active"><a href="create.php"></a></li>
-        				<li id="search"><a href="searchPage.php"></a></li>
+        				<li id="search" ><a href="searchPage.php"></a></li>
         				<li id="menu"><a href="menu.php"></a></li>
     				</ul>
 				</nav>
@@ -50,13 +49,17 @@ echo '<!DOCTYPE html>
 				<div class="wrapper col-xs-12">
 					<div class="content" />
 					<div class="col-xs-6">
-						<form method="POST" action="actions/upload.php" enctype="multipart/form-data">
+						<form method="POST" action="upload.php" enctype="multipart/form-data">
 							<p>Upload</p>
 							<p><input type="file" name="filename" accept="image/*" capture="camera"/></p>
 							<p><input type="text" name="title" placeholder="Title of Image"/></p>
-							<p><input type="text" name="desc" placeholder="Description"/></p>
+							<p><textarea name="desc" placeholder="Description"></textarea></p>
+							<p><input type="text" name="month" placeholder="MM"/> - <input type="text" name ="day" placeholder="DD"/> - <input type="text" name ="year" placeholder="YYYY"/></p>
+							<p><input type="text" name="people" placeholder="People" /></p>
+							<p><input type="text" name="tags" placeholder="Tags"/></p>
 							<p>
-								<select name="album" required>';
+								<select name="album" required>
+								';
         							//loop and display all albums this user has created
         							foreach($results as $key){
          	
@@ -75,6 +78,7 @@ echo '<!DOCTYPE html>
 						<form method="POST" action="actions/albumCreate.php">
 							<p><input type="text" name="albumTitle" placeholder="Album Title Here"/></p>
 							<p><input type="text" name="albumYear" placeholder="Album Year"/></p>
+
 							<input type="Submit"/>
 						</form>
 					</div>

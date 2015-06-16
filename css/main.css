@@ -18,6 +18,13 @@ header{
 	vertical-align: middle;
 }
 
+textarea{
+	width: 200px;
+	max-width: 200px;
+	height: 100px;
+	max-height: 100px;
+}
+
 .wrapper{
 	/*position: fixed;*/
 	height:900px;
@@ -85,7 +92,7 @@ header{
         float:left;
         list-style:none;
         text-align: center;
-         width:90px;
+        width:90px;
     	height:60px;
     }
  
@@ -93,7 +100,7 @@ header{
             /*padding:9px 15px;*/
             display:inline-block;
             border-radius:0px 0px 0px 0px;
-             width:90px;
+            width:90px;
     		height:64px;
             /*background:#7FB5DA;*/
             font-size:16px;
@@ -135,18 +142,22 @@ header{
 /*Icons*/
 #albums{
 	background-image: url(../images/albums.png);
+	background-repeat: no-repeat;
 }	
 
 #add{
 	background-image: url(../images/add.png);
+	background-repeat: no-repeat;
 }
 
 #search{
 	background-image: url(../images/search.png);
+	background-repeat: no-repeat;
 }
 
 #menu{
 	background-image: url(../images/menu.png);
+	background-repeat: no-repeat;
 }
 
 .navbar{
@@ -154,8 +165,7 @@ header{
 	vertical-align: middle;
 }
 
-/*DIV FLIP CSS ----------------------------------------------------------------------------------------------------------------*/
-
+/*DIV FLIP CSS --------------------------------------------------------------------------------------------------------------------*/
 #toggle{
 	position: relative;
 	left: 200px;
@@ -183,6 +193,8 @@ header{
 	border:1px black solid;
 }
 
+/*flip code------------------------------------------*/
+
 /*flip speed goes here*/
 .flipper{
 	-webkit-transition: 0.7s;
@@ -209,6 +221,9 @@ header{
 /*back, hidden pane*/
 .back{
 	-webkit-transform: rotateY(180deg);
+	text-align: left;
+	padding-left: 10px;
+	padding-top: 10px;
 	/*background-color: #E0A32C;*/
 	/*background-image: url(../images/p1back.jpg);*/
 }
@@ -231,6 +246,9 @@ header{
 /*back, hidden pane*/
 .backSmall{
 	-webkit-transform: rotateY(180deg);
+	text-align: left;
+	padding-left: 10px;
+	padding-top: 10px;
 	/*background-color: #E0A32C;*/
 	/*background-image: url(../images/p1back.jpg);*/
 }
@@ -252,7 +270,6 @@ header{
 	width: 150px;
 	height: 200px;
 }
-
 
 /*flip pane when activeed*/
 .flip-containerSmall:active .flipperSmall, .flip-containerSmall.active .flipperSmall{
