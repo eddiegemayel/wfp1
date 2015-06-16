@@ -9,22 +9,23 @@
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 	</head>
-	<body>
-		<div id="logoContainer" class="col-xs-12 col-lg-offset-2">
+	<body id="landingPageContent">
+		<div id="bgWrapper">
+		<div id="logoContainer" class="col-xs-12 col-lg-8 col-lg-offset-2">
 			<img id="logo" class="img-responsive" height="307" width="959" src="images/logoMain.png"/>
 		</div>
 
 		<div class="wrapper col-xs-12">
-			<div class="call to action col-xs-12">
+			<div class="CTA col-xs-12">
 				<div class="signup col-xs-6 col-lg-4 col-lg-offset-2">
 					<h1>Sign Up</h1>
 					<form method="POST" action="actions/signup.php">
 						<p>Email </p>
-						<p><input type="text" name="newEmail"/></p>
+						<p><input type="email" name="newEmail" placeholder="example@email.com"/></p>
 						<p>Username </p>
-						<p><input type="text" name="newUsername"/></p>
+						<p><input type="text" name="newUsername" placeholder="6-12 Characters"/></p>
 						<p>Password </p>
-						<p><input type="password" name="newPassword"/></p>
+						<p><input type="password" name="newPassword" placeholder="*******"/></p>
 						<button class="btn">Sign Up</button>
 					</form>
 				</div>
@@ -32,14 +33,13 @@
 				<div class="login col-xs-6 col-lg-4">
 					<h1>Login</h1>
 					<form method="POST" action="actions/login.php">
-						<p>Username </p>
-						<p><input type="text" name="username"/></p>
-						<p>Password </p>
-						<p><input type="password" name="password"/></p>
+						<p><input type="text" name="username" placeholder="Username"/></p>
+						<p><input type="password" name="password" placeholder="Password"/></p>
 						<button class="btn">Login</button>
 					</form>
 				</div>
 			</div>
 		</div>
+	</div>
 	</body>
 </html>

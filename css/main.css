@@ -27,7 +27,19 @@ textarea{
 
 .wrapper{
 	/*position: fixed;*/
-	height:900px;
+	height:800px;
+}
+
+.CTA h1, p{
+	color: white;
+}
+
+.CTA{
+	background-color: gray;
+	/*opacity: .3;*/
+	background-color:rgba(0, 0, 0, 0.34);
+	height: 425px;
+	border-radius: 10px;
 }
 
 .content{
@@ -73,6 +85,14 @@ textarea{
 	color: inherit;
 
 }
+
+#landingPageContent{
+	background-image: url(../images/background.jpg);
+	background-repeat: no-repeat;
+	background-color: #080808;
+	background-position: center bottom;
+}
+
 
 
 /*----- Tabs -----*/
