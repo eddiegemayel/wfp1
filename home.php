@@ -66,11 +66,12 @@ echo '<!DOCTYPE html>
 				$dbh = new PDO("mysql:host=localhost; dbname=Retrospective; port=8889;", $user,$pass);
 				//display anything that matches what user searched for.
 				//tags, photoname, username, whatever they searched for
-				$stmt = $dbh->prepare("SELECT * FROM photos WHERE (albumId = :albumId)");
+				$stmt = $dbh->prepare("SELECT * FROM photos WHERE (albumId = :albumId) LIMIT 4");
 				$stmt->bindParam(":albumId", $key['id'], PDO::PARAM_STR);
 				$stmt->execute();
 				$photoResults = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+				// var_dump($count($photoResults, COUNT_RECURSIVE));
             	foreach($photoResults as $photoKey){
             		      echo '<div class="imageInAlbum">
         					<div class="flip-ContainerSmall" id="flip-toggle">
@@ -87,18 +88,13 @@ echo '<!DOCTYPE html>
 							</div><!-- end of small flipper div -->
 							</div><!-- End of small flip container-->
 						</div><!-- End of whole image div -->';
-         
             	}
-        		
+            	// echo '<p>+'.$photoCount.' More...</p>';
 			echo '</a><!-- End of whole album div -->';
-         
         }
-
 		echo '
 				</div><!--  Tab 1 Content Ends -->'; 
-
 ?>  
-
 
 		</div><!-- end of content div-->
 		</div><!-- end of wrapper div -->

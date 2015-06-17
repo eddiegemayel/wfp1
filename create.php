@@ -21,9 +21,9 @@ echo '<!DOCTYPE html>
 			<header class="navbar navbar-fixed-top col-xs-12">
 				<nav class="col-xs-12">
 					<ul class="tab-links col-md-7 col-md-offset-4 col-xs-12">
-        				<li id="albums" ><a href="home.php"></a></li>
+        				<li id="albums"><a href="home.php"></a></li>
         				<li id="add" class="active"><a href="create.php"></a></li>
-        				<li id="search" ><a href="searchPage.php"></a></li>
+        				<li id="search"><a href="searchPage.php"></a></li>
         				<li id="menu"><a href="menu.php"></a></li>
     				</ul>
 				</nav>
@@ -48,15 +48,15 @@ echo '<!DOCTYPE html>
 			echo'	<!------------------------------------------------------------------------------------------------------------	 Tab 2(Add) Content Begins -->
 				<div class="wrapper col-xs-12">
 					<div class="content" />
-					<div class="col-xs-6">
+					<div class="col-xs-6 uploadPicture">
 						<form method="POST" action="upload.php" enctype="multipart/form-data">
-							<p>Upload</p>
-							<p><input type="file" name="filename" accept="image/*" capture="camera"/></p>
-							<p><input type="text" name="title" placeholder="Title of Image"/></p>
-							<p><textarea name="desc" placeholder="Description"></textarea></p>
-							<p><input type="text" name="month" placeholder="MM"/> - <input type="text" name ="day" placeholder="DD"/> - <input type="text" name ="year" placeholder="YYYY"/></p>
+							<h2>Upload</h2>
+							<p><input id="upload" type="file" name="filename" accept="image/*" capture="camera"/></p>
+							<p><input type="text" name="title" placeholder="Title" required/></p>
+							<p><textarea name="desc" placeholder="Description" required></textarea></p>
+							<p><input id="month" type="text" name="month" placeholder="MM"/> - <input id="day" type="text" name="day" placeholder="DD"/> - <input id="year" type="text" name ="year" placeholder="YYYY"/></p>
 							<p><input type="text" name="people" placeholder="People" /></p>
-							<p><input type="text" name="tags" placeholder="Tags"/></p>
+							<p><input type="text" name="tags" placeholder="Tags" required/></p>
 							<p>
 								<select name="album" required>
 								';
@@ -73,8 +73,8 @@ echo '<!DOCTYPE html>
 							<input type="submit"/>
 						</form>
 					</div>
-					<div class="col-xs-6">
-						<p>Create an Album</p>
+					<div class="col-xs-6 createAlbum">
+						<h2>Create an Album</h2>
 						<form method="POST" action="actions/albumCreate.php">
 							<p><input type="text" name="albumTitle" placeholder="Album Title Here"/></p>
 							<p><input type="text" name="albumYear" placeholder="Album Year"/></p>

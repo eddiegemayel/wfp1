@@ -60,6 +60,11 @@ textarea{
 	height: 300px; 
 }
 
+.navbar{
+	text-align: center;
+	vertical-align: middle;
+}
+
 
 #logoContainer{
 	text-align: center;
@@ -92,6 +97,35 @@ textarea{
 	background-color: #080808;
 	background-position: center bottom;
 }
+
+
+/*Input Fields*/
+
+#month{
+	width: 40px;
+}
+
+#day{
+	width:40px;
+}
+
+#year{
+	width: 55px;
+}
+
+#uploads{
+	text-align: right;
+}
+
+.uploadPicture{
+	text-align: right;
+}
+
+.createAlbum{
+	text-align: left;
+}
+
+
 
 
 
@@ -180,10 +214,7 @@ textarea{
 	background-repeat: no-repeat;
 }
 
-.navbar{
-	text-align: center;
-	vertical-align: middle;
-}
+
 
 /*DIV FLIP CSS --------------------------------------------------------------------------------------------------------------------*/
 #toggle{

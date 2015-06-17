@@ -69,7 +69,9 @@ echo '<!DOCTYPE html>
 				<div class="backSmall">
 					<!-- BACK-->
 					<p><strong>Description:</strong> '.$key['description'].'</p>
-					<p><strong></strong></p>
+					<p><strong>Date:</strong> '.$key['date'].'</p>
+					<p><strong>People:</strong> '.$key['people'].'</p>
+					<p><strong>Tags:</strong> '.$key['tags'].'</p>
 				</div>
 			</div>
 			
@@ -81,7 +83,6 @@ echo '<!DOCTYPE html>
 
 
 ?>
-
 
 		</div><!-- end of content div-->
 		</div><!-- end of wrapper div -->
