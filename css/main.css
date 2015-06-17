@@ -5,6 +5,8 @@
 
 body{
 	padding-bottom: 70px;
+	margin-right: 10%;
+	margin-left: 10%;
 }
 
 header{
@@ -88,6 +90,11 @@ textarea{
 	display: block;
 	text-decoration: none;
 	color: inherit;
+	float: left;
+	clear:none;
+	margin-right: 2%;
+	margin-bottom: 55px;
+	margin-top: 1%;
 
 }
 
@@ -102,15 +109,15 @@ textarea{
 /*Input Fields*/
 
 #month{
-	width: 40px;
+	width: 30px;
 }
 
 #day{
-	width:40px;
+	width:30px;
 }
 
 #year{
-	width: 55px;
+	width: 45px;
 }
 
 #uploads{
@@ -293,7 +300,7 @@ textarea{
 }
 
 .flip-containerSmall, .frontSmall, .backSmall{
-	width: 150px;
+	width: 153px;
 	height: 200px;
 }
 

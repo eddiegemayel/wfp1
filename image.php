@@ -66,6 +66,7 @@ echo '<!DOCTYPE html>
 					<p><strong>Description:</strong> '.$key['description'].'</p>
 					<p><strong>Date:</strong> '.$key['date'].' </p>
 					<p><strong>People:</strong> '.$key['people'].' </p>
+					<!--<p><input value='.$key['people'].'/></p>-->
 					<p><strong>Tags:</strong> '.$key['tags'].'</p>
 				</div>
 			</div>

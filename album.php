@@ -59,8 +59,8 @@ echo '<!DOCTYPE html>
            foreach($results as $key){
          
             echo '
-            <a id="photoDiv" class="col-lg-2" href="image.php?id='.$key['id'].'" >
-            <div class="imageInAlbum ">
+            <a id="photoDiv" class="col-lg-2 col-xs-5" href="image.php?id='.$key['id'].'" >
+            <div class="imageInAlbum">
         <div class="flip-containerSmall" id="flip-toggle">
 			<div class="flipperSmall" id="photo">
 				<div class="frontSmall">
