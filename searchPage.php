@@ -55,23 +55,25 @@ echo '<!DOCTYPE html>
 			//loop through results
 			foreach($_SESSION['searchResults'] as $searchKey){
 				echo '
-				<div class="image col-lg-6 col-lg-offset-4">
-        		<div class="flip-container" id="flip-toggle">
-					<div class="flipper">
-						<div class="front">
-							<!--FRONT -->
-							<img height="300px" width="300px" src="'.$searchKey['photoUrl'].'"/>
-							<h3>'.$searchKey['title'].'</h3>
-						</div>
-						<div class="back">
-							<!-- BACK-->
-							<p><strong>Description:</strong> '.$searchKey['description'].'</p>
-						</div>
-					</div>
-					<button id="toggleFlip" >Flip</button>
+				<a id="photoDiv" href="image.php?id='.$searchKey['id'].'" >
+            <div class="imageInAlbum col-xs-3">
+        <div class="flip-containerSmall" id="flip-toggle">
+			<div class="flipperSmall" id="photo">
+				<div class="frontSmall">
+					<!--FRONT -->
+					<img height="150px" width="150px" src="'.$searchKey['photoUrl'].'"/>
+					<h3>'.$searchKey['title'].'</h3>
 				</div>
-				<p><a href="delete.php?photoId='.$searchKey['id'].'">Delete</a> </p>
-			</div>';
+				<div class="backSmall">
+					<!-- BACK-->
+					<p><strong>Description:</strong> '.$searchKey['description'].'</p>
+					<p><strong></strong></p>
+				</div>
+			</div>
+			
+			</div><!-- End of flip div -->
+		</div><!-- End of whole image div -->
+		</a>';
 			}
 		}
 		else{
