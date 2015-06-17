@@ -1,3 +1,14 @@
+/*
+Some Colors
+	#86cba4 - light green
+	#c69838 - orange
+	#7b76b7 - blue ink pen
+	#c88484 - light red
+	#5d5443 - brown
+	#e4e4dc - white
+*/
+
+
 *{
 	margin:0;
 	padding: 0;
@@ -7,6 +18,7 @@ body{
 	padding-bottom: 70px;
 	margin-right: 10%;
 	margin-left: 10%;
+	background-color: #e4e4dc;
 }
 
 header{
@@ -33,7 +45,7 @@ textarea{
 }
 
 .CTA h1{
-	color: white;
+	color: #e4e4dc;
 }
 
 .CTA{
@@ -66,6 +78,18 @@ textarea{
 	text-align: center;
 	vertical-align: middle;
 }
+
+.white{
+	color: #e4e4dc;
+}
+
+.highlight{
+	color: #c69838 ;
+}
+
+.red{
+	color:#c88484 ;
+};
 
 
 #logoContainer{

@@ -94,7 +94,7 @@ echo '<!DOCTYPE html>
 
             	if($key['photoTotal'] > 4){
             		$total = $key['photoTotal'] - 4 ;
-            		echo '<p>+'.$total.' More...</p>';
+            		echo '<p><span class="highlight">+'.$total.'</span> More...</p>';
             	}else{
 
             		echo '';
