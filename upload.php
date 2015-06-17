@@ -34,15 +34,13 @@
 			$stmt->execute();
 			$user_id = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-			//for dev
-			// echo "<p>DONE!!</p>";
-
-			// var_dump($_SESSION["username"]);
-			//redirect them to login page
-
-			// foreach ($tags as $item) {
-   			// 	echo "<li>$item</li>";
-			// }
+			
+			$dbh2 = new PDO("mysql:host=localhost; dbname=Retrospective; port=8889;", $user,$pass);
+        	$dbh2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);   
+        	//select everything in the photo table where created by equals currently logged in user   
+        	$stmt2 = $dbh2->prepare("UPDATE albums SET photoTotal = photoTotal + 1 WHERE id = ".$_POST['album']."");
+        	$stmt2->execute();     
+        
 			
 			//push back to their profile
 			header("Location: home.php");

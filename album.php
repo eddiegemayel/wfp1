@@ -54,11 +54,13 @@ echo '<!DOCTYPE html>
         //fetch all the results and put them into an associative arraay
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+        $_SESSION['deleteResults'] = $results;
+
            foreach($results as $key){
          
             echo '
-            <a id="photoDiv" href="image.php?id='.$key['id'].'" >
-            <div class="imageInAlbum col-xs-3">
+            <a id="photoDiv" class="col-lg-2" href="image.php?id='.$key['id'].'" >
+            <div class="imageInAlbum ">
         <div class="flip-containerSmall" id="flip-toggle">
 			<div class="flipperSmall" id="photo">
 				<div class="frontSmall">

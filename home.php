@@ -48,7 +48,7 @@ echo '<!DOCTYPE html>
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);   
 
         //select everything in the photo table where created by equals currently logged in user   
-        $stmt = $dbh->prepare("SELECT * from albums WHERE createdBy = :username ORDER BY ".$_SESSION['sortVariable']." DESC");
+        $stmt = $dbh->prepare("SELECT * from albums WHERE createdBy = :username ORDER BY ".$_SESSION['sortVariable1']." ".$_SESSION['sortVariable2']." ");
         $stmt->bindParam(':username', $_SESSION['user_id'], PDO::PARAM_STR);
         $stmt->execute();     
 
@@ -58,6 +58,8 @@ echo '<!DOCTYPE html>
         
         //loop and display albums
         foreach($results as $key){
+
+
          	
             echo '<a id="albumDiv" class="album col-lg-6 col-lg-offset-3" href="album.php?albumId='.$key['id'].'&albumTitle='.$key['albumTitle'].'&albumYear='.$key['albumYear'].'">
             	<h3>'.$key['albumTitle'].'</h3>
@@ -89,7 +91,16 @@ echo '<!DOCTYPE html>
 							</div><!-- End of small flip container-->
 						</div><!-- End of whole image div -->';
             	}
-            	// echo '<p>+'.$photoCount.' More...</p>';
+
+            	if($key['photoTotal'] > 4){
+            		$total = $key['photoTotal'] - 4 ;
+            		echo '<p>+'.$total.' More...</p>';
+            	}else{
+
+            		echo '';
+            	}
+
+            	
 			echo '</a><!-- End of whole album div -->';
         }
 		echo '
