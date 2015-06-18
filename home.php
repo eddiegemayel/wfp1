@@ -58,8 +58,6 @@ echo '<!DOCTYPE html>
         
         //loop and display albums
         foreach($results as $key){
-
-
          	
             echo '<a id="albumDiv" class="album col-lg-6 col-lg-offset-3" href="album.php?albumId='.$key['id'].'&albumTitle='.$key['albumTitle'].'&albumYear='.$key['albumYear'].'">
             	<h3>'.$key['albumTitle'].'</h3>
@@ -91,16 +89,15 @@ echo '<!DOCTYPE html>
 							</div><!-- End of small flip container-->
 						</div><!-- End of whole image div -->';
             	}
-
+            	//check to see how many photos are in this album
             	if($key['photoTotal'] > 4){
+            		//Subtract four to show user how many more photos are in the album
             		$total = $key['photoTotal'] - 4 ;
+            		//echo it out
             		echo '<p><span class="highlight">+'.$total.'</span> More...</p>';
             	}else{
-
             		echo '';
             	}
-
-            	
 			echo '</a><!-- End of whole album div -->';
         }
 		echo '
