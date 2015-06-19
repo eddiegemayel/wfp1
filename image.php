@@ -59,12 +59,12 @@ echo '<!DOCTYPE html>
 				<div class="front">
 					<!--FRONT -->
 					<img height="300px" width="300px" src="'.$key['photoUrl'].'"/>
-					<h3>'.$key['title'].'</h3>
+					<h3 id="handwriting">'.$key['title'].'</h3>
 				</div>
 				<div class="back">
 					<!-- BACK-->
-					<p><strong>Description:</strong> '.$key['description'].'</p>
-					<p><strong>Date:</strong> '.$key['date'].' </p>
+					<p id="handwriting"><strong>Description:</strong> '.$key['description'].'</p>
+					<p id="handwriting"><strong>Date:</strong> '.$key['date'].' </p>
 					<p><strong>People:</strong> '.$key['people'].' </p>
 					<!--<p><input value='.$key['people'].'/></p>-->
 					<p><strong>Tags:</strong> '.$key['tags'].'</p>

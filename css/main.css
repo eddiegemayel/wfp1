@@ -19,6 +19,7 @@ body{
 	margin-right: 10%;
 	margin-left: 10%;
 	/*background-color: #e4e4dc;*/
+	font-family: Helvetica;
 }
 
 header{
@@ -77,6 +78,15 @@ textarea{
 .navbar{
 	text-align: center;
 	vertical-align: middle;
+}
+
+@font-face{
+	font-family: MarkerFelt;
+	src:url(fonts/MarkerFelt.ttc);
+}
+
+#handwriting{
+	font-family: MarkerFelt;
 }
 
 .white{
