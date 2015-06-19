@@ -14,6 +14,9 @@
 		$_SESSION['sortVariable1'] = $_POST['sort'];
 		$_SESSION['sortVariable2'] = 'ASC';
 	}
+	// else if(){
+		
+	// }
 
 	//push them back to home page
 	header("Location: ../home.php");

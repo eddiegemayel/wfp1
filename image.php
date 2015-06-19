@@ -81,6 +81,7 @@ echo '<!DOCTYPE html>
         		<button id="toggle" onclick="$(\'#flip-toggle\').toggleClass(\'active\');">Flip</button>
 				<p><a class="red" href="actions/delete.php?photoId='.$key['id'].'">Delete</a></p>
         		<p><a class="highlight" href="actions/download.php?url='.$key['photoUrl'].'">Download</a></p>
+        		<p><a href="edit.php?photoId='.$key['id'].'">Edit</a></p>
         	</div>
         	'; 
         }
