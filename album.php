@@ -39,7 +39,7 @@ echo '<!DOCTYPE html>
 	<body>
 		<div class="wrapper tabs col-xs-12">
 			<header class="navbar navbar-fixed-top col-xs-12">
-				<nav class="col-lg-10 col-md-9 col-md-offset-1 col-sm-9 col-sm-offset-3 col-xs-12">
+				<nav class="col-lg-8 col-lg-offset-2 col-md-9 col-md-offset-1 col-sm-9 col-sm-offset-3 col-xs-12">
 					<ul class="tab-links col-md-7 col-md-offset-4 col-xs-12">
         				<li id="albums" class="active"><a href="home.php"></a></li>
         				<li id="add"><a href="create.php"></a></li>
@@ -53,15 +53,16 @@ echo '<!DOCTYPE html>
 			<h2>'.$albumTitle.'</h2>
 			<h3>('.$albumYear.')</h3>
 			<form method="POST" action="actions/multiple.php">
-				<select name="multiple[]" multiple required>';
+				<select id="deleteMultiple" name="multiple[]" multiple required>';
 				//loop and display all albums this user has created
         		foreach($results as $key){
          	
-           				echo '<option value='.$key['id'].'>'.$key['title'].'</option>';
+           				echo '<option value='.$key['id'].'>"'.$key['title'].'"</option>';
         		}
 		echo'	</select>
 				<input type="submit" value="Delete Selected"/>
 			</form>
+			<a href="actions/deleteAlbum.php">x</a>
 			';
 
 

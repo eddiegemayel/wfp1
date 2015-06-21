@@ -19,7 +19,7 @@ echo '<!DOCTYPE html>
 	<body>
 		<div class="wrapper tabs col-xs-12">
 			<header class="navbar navbar-fixed-top col-xs-12">
-				<nav class="col-lg-10 col-md-9 col-md-offset-1 col-sm-9 col-sm-offset-3 col-xs-12">
+				<nav class="col-lg-8 col-lg-offset-2 col-md-9 col-md-offset-1 col-sm-9 col-sm-offset-3 col-xs-12">
 					<ul class="tab-links col-md-7 col-md-offset-4 col-xs-12">
         				<li id="albums" ><a href="home.php"></a></li>
         				<li id="add" ><a href="create.php"></a></li>
