@@ -18,7 +18,7 @@ echo '<!DOCTYPE html>
 	<body>
 		<div class="wrapper tabs col-xs-12">
 			<header class="navbar navbar-fixed-top col-xs-12">
-				<nav class="col-xs-12">
+				<nav class="col-lg-10 col-md-9 col-md-offset-1 col-sm-9 col-sm-offset-3 col-xs-12">
 					<ul class="tab-links col-md-7 col-md-offset-4 col-xs-12">
         				<li id="albums" class="active"><a href="home.php"></a></li>
         				<li id="add" ><a href="create.php"></a></li>
@@ -59,7 +59,7 @@ echo '<!DOCTYPE html>
         //loop and display albums
         foreach($results as $key){
          	
-            echo '<a id="albumDiv" class="album col-lg-6 col-lg-offset-3" href="album.php?albumId='.$key['id'].'&albumTitle='.$key['albumTitle'].'&albumYear='.$key['albumYear'].'">
+            echo '<a id="albumDiv" class="album col-xl-7 col-xl-offset-3 col-lg-7 col-lg-offset-2 col-md-10 col-sm-12 col-xs-12" href="album.php?albumId='.$key['id'].'&albumTitle='.$key['albumTitle'].'&albumYear='.$key['albumYear'].'">
             	<h3>'.$key['albumTitle'].'</h3>
             	<p>('.$key['albumYear'].')</p>';
 
