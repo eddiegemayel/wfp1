@@ -59,7 +59,7 @@ echo '<!DOCTYPE html>
         //loop and display albums
         foreach($results as $key){
          	
-            echo '<a id="albumDiv" class="album col-xl-7 col-xl-offset-3 col-lg-7 col-lg-offset-2 col-md-10 col-sm-12 col-xs-12" href="album.php?albumId='.$key['id'].'&albumTitle='.$key['albumTitle'].'&albumYear='.$key['albumYear'].'">
+            echo '<a id="albumDiv" class="album col-lg-6 col-lg-offset-3 col-md-10 col-sm-12 col-xs-12" href="album.php?albumId='.$key['id'].'&albumTitle='.$key['albumTitle'].'&albumYear='.$key['albumYear'].'">
             	<h3>'.$key['albumTitle'].'</h3>
             	<p>('.$key['albumYear'].')</p>';
 

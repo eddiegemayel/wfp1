@@ -25,7 +25,7 @@ body{
 header{
 	background-color: #1F211D;
 	color: #E7E6E8;
-	height: 64px;
+	height: 48px;
 	width: 100%;
 	position: fixed;
 	top: 0px;
@@ -58,8 +58,8 @@ textarea{
 }
 
 .content{
-	padding-top: 59px;
-	margin-top: 59px;
+	padding-top: 40px;
+	margin-top: 40px;
 	vertical-align: middle;
 	text-align: center;
 }
@@ -180,7 +180,26 @@ textarea{
 	text-align: left;
 }
 
+/*Icons*/
+#albums{
+	background-image: url(../images/albums.png);
+	background-repeat: no-repeat;
+}	
 
+#add{
+	background-image: url(../images/add.png);
+	background-repeat: no-repeat;
+}
+
+#search{
+	background-image: url(../images/search.png);
+	background-repeat: no-repeat;
+}
+
+#menu{
+	background-image: url(../images/menu.png);
+	background-repeat: no-repeat;
+}
 
 
 
@@ -201,16 +220,16 @@ textarea{
         float:left;
         list-style:none;
         text-align: center;
-        width:90px;
-    	height:60px;
+        width:72px;
+    	height:48px;
     }
  
         .tab-links a {
             /*padding:9px 15px;*/
             display:inline-block;
             border-radius:0px 0px 0px 0px;
-            width:90px;
-    		height:64px;
+            width:72px;
+    		height:48px;
             /*background:#7FB5DA;*/
             font-size:16px;
             font-weight:600;
@@ -247,29 +266,6 @@ textarea{
         .tab-links.active a{
         	background: rgba(134, 203, 164, .5);
         }
-
-
-
-/*Icons*/
-#albums{
-	background-image: url(../images/albums.png);
-	background-repeat: no-repeat;
-}	
-
-#add{
-	background-image: url(../images/add.png);
-	background-repeat: no-repeat;
-}
-
-#search{
-	background-image: url(../images/search.png);
-	background-repeat: no-repeat;
-}
-
-#menu{
-	background-image: url(../images/menu.png);
-	background-repeat: no-repeat;
-}
 
 
 
