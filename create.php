@@ -70,7 +70,7 @@ echo '<!DOCTYPE html>
 								</select>
 
 							</p>
-							<input type="submit"/>
+							<input type="submit" value="Upload"/>
 						</form>
 					</div>
 					<div class="col-xs-6 createAlbum">
@@ -79,7 +79,7 @@ echo '<!DOCTYPE html>
 							<p><input type="text" name="albumTitle" placeholder="Album Title Here"/></p>
 							<p><input type="text" name="albumYear" placeholder="Album Year"/></p>
 
-							<input type="Submit"/>
+							<input type="submit" value="Create"/>
 						</form>
 					</div>
 				</div>';

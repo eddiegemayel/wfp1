@@ -9,6 +9,19 @@
 	$albumYear = $_GET['albumYear'];
 	$idCount = 0;
 
+	//connect to database
+    $user="root";
+    $pass="root";
+    $dbh=new PDO('mysql:host=localhost; dbname=Retrospective; port=8889;', $user, $pass);
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);   
+
+    //select everything in the photo table where created by equals currently logged in user   
+    $stmt = $dbh->prepare("SELECT * from photos WHERE albumId = :id");
+    $stmt->bindParam(':id', $albumId, PDO::PARAM_STR);
+    $stmt->execute();     
+
+    //fetch all the results and put them into an associative arraay
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 //display the header and nav
 echo '<!DOCTYPE html>
@@ -39,22 +52,17 @@ echo '<!DOCTYPE html>
 			<div class="content col-xs-12">
 			<h2>'.$albumTitle.'</h2>
 			<h3>('.$albumYear.')</h3>
-			<button>Select</button>
+			<form method="POST" action="multiple.php">
+				<select name="multiple[]" multiple required>';
+				//loop and display all albums this user has created
+        		foreach($results as $key){
+         	
+           				echo '<option value='.$key['id'].'>'.$key['title'].'</option>';
+        		}
+		echo'	</select>
+				<input type="submit" value="Delete Selected"/>
+			</form>
 			';
-
-		//connect to database
-        $user="root";
-        $pass="root";
-        $dbh=new PDO('mysql:host=localhost; dbname=Retrospective; port=8889;', $user, $pass);
-        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);   
-
-        //select everything in the photo table where created by equals currently logged in user   
-        $stmt = $dbh->prepare("SELECT * from photos WHERE albumId = :id");
-        $stmt->bindParam(':id', $albumId, PDO::PARAM_STR);
-        $stmt->execute();     
-
-        //fetch all the results and put them into an associative arraay
-        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
         //store ids in session variable to be referenced later when picture is deleted
@@ -64,25 +72,25 @@ echo '<!DOCTYPE html>
          	$idCount = $idCount + 1; 
             echo '
             <a id="photoDiv"  class="col-lg-2 col-xs-5" href="image.php?id='.$key['id'].'" >
-            <div id="'.$idCount.'" class="imageInAlbum2">
-        <div class="flip-containerSmall" id="flip-toggle">
-			<div class="flipperSmall" id="photo">
-				<div class="frontSmall">
-					<!--FRONT -->
-					<img height="150px" width="150px" src="'.$key['photoUrl'].'"/>
-					<h3>'.$key['title'].'</h3>
-				</div>
-				<div class="backSmall">
-					<!-- BACK-->
-					<p><strong>Description:</strong> '.$key['description'].'</p>
-					<p><strong>Date:</strong> '.$key['date'].'</p>
-					<p><strong>People:</strong> '.$key['people'].'</p>
-					<p><strong>Tags:</strong> '.$key['tags'].'</p>
-				</div>
-			</div>
+            	<div id="'.$idCount.'" class="imageInAlbum2">
+        			<div class="flip-containerSmall" id="flip-toggle">
+						<div class="flipperSmall" id="photo">
+							<div class="frontSmall">
+								<!--FRONT -->
+								<img height="150px" width="150px" src="'.$key['photoUrl'].'"/>
+								<h3>'.$key['title'].'</h3>
+							</div>
+						<div class="backSmall">
+							<!-- BACK-->
+							<p><strong>Description:</strong> '.$key['description'].'</p>
+							<p><strong>Date:</strong> '.$key['date'].'</p>
+							<p><strong>People:</strong> '.$key['people'].'</p>
+							<p><strong>Tags:</strong> '.$key['tags'].'</p>
+						</div>
+					</div>
 			
-			</div><!-- End of flip div -->
-		</div><!-- End of whole image div -->
+					</div><!-- End of flip div -->
+				</div><!-- End of whole image div -->
 		</a>';
          
         }

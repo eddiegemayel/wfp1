@@ -89,6 +89,7 @@ textarea{
 	font-family: MarkerFelt;
 }
 
+/*Colors*/
 .white{
 	color: #e4e4dc;
 }
@@ -113,6 +114,13 @@ textarea{
 	float: left;
 }
 
+.imageInAlbum2{
+	width: 150px;
+	height: 150px;
+	float: left;
+	margin-top: 50px;
+}
+
 
 #albumDiv{
 	display: block;
@@ -127,7 +135,7 @@ textarea{
 	float: left;
 	clear:none;
 	margin-right: 2%;
-	margin-bottom: 55px;
+	margin-bottom: 45px;
 	margin-top: 1%;
 
 }
@@ -137,6 +145,12 @@ textarea{
 	background-repeat: no-repeat;
 	background-color: #080808;
 	background-position: center bottom;
+}
+
+#upload{
+	/*text-align: right;
+	margin-left: 470px;*/
+	position: relative;
 }
 
 
@@ -233,6 +247,8 @@ textarea{
         .tab-links.active a{
         	background: rgba(134, 203, 164, .5);
         }
+
+
 
 /*Icons*/
 #albums{
