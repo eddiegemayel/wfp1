@@ -52,7 +52,7 @@ echo '<!DOCTYPE html>
 			<div class="content col-xs-12">
 			<h2>'.$albumTitle.'</h2>
 			<h3>('.$albumYear.')</h3>
-			<form method="POST" action="multiple.php">
+			<form method="POST" action="actions/multiple.php">
 				<select name="multiple[]" multiple required>';
 				//loop and display all albums this user has created
         		foreach($results as $key){
