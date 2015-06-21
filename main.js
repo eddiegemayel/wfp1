@@ -17,10 +17,10 @@ $(document).ready(function() {
    //      e.preventDefault();
    //  });
 
-    $('#searchForm').on('submit', function(e){
-    	$(this).addClass('active');
-    	// e.preventDefault(e);
-    });
+    // $('#searchForm').on('submit', function(e){
+    // 	$(this).addClass('active');
+    // 	// e.preventDefault(e);
+    // });
 
 	// function test() {
  //  		// do stuff
@@ -32,10 +32,10 @@ $(document).ready(function() {
 	// 	$('#photo').flip();
 	// });
 
-	function flip(){
-		$(this).toggleClass("active");
-		// "#flip-toggle"
-	};
+	// function flip(){
+	// 	$(this).toggleClass("active");
+	// 	// "#flip-toggle"
+	// };
 	
 
 });

@@ -36,7 +36,7 @@ echo '<!DOCTYPE html>
 
 			<div class="content col-xs-12"/>
 				<div >
-				<!------------------------------------------------------------------------------------------------------------	 Tab 3(Search) Content Begins -->
+				<!-----------------------------------------------------------------------------------------	 Tab 3(Search) Content Begins -->
 					<form id="searchForm" method="POST" action="actions/search.php" >
 						<input type="text" placeholder="Search.." name="q"/>
 						<input type="Submit" value="Search" />
@@ -55,24 +55,26 @@ echo '<!DOCTYPE html>
 			//loop through results
 			foreach($_SESSION['searchResults'] as $searchKey){
 				echo '
-				<a id="photoDiv" href="image.php?id='.$searchKey['id'].'" >
-            <div class="imageInAlbum col-xs-3">
-        <div class="flip-containerSmall" id="flip-toggle">
-			<div class="flipperSmall" id="photo">
-				<div class="frontSmall">
-					<!--FRONT -->
-					<img height="150px" width="150px" src="'.$searchKey['photoUrl'].'"/>
-					<h3>'.$searchKey['title'].'</h3>
-				</div>
-				<div class="backSmall">
-					<!-- BACK-->
-					<p><strong>Description:</strong> '.$searchKey['description'].'</p>
-					<p><strong></strong></p>
-				</div>
-			</div>
+				 <a id="photoDiv"  class="col-lg-2 col-xs-5" href="image.php?id='.$searchKey['id'].'" >
+            	<div class="imageInAlbum2">
+        			<div class="flip-containerSmall" id="flip-toggle">
+						<div class="flipperSmall" id="photo">
+							<div class="frontSmall">
+								<!--FRONT -->
+								<img height="150px" width="150px" src="'.$searchKey['photoUrl'].'"/>
+								<h3>'.$searchKey['title'].'</h3>
+							</div>
+						<div class="backSmall">
+							<!-- BACK-->
+							<p><strong>Description:</strong> '.$searchKey['description'].'</p>
+							<p><strong>Date:</strong> '.$searchKey['date'].'</p>
+							<p><strong>People:</strong> '.$searchKey['people'].'</p>
+							<p><strong>Tags:</strong> '.$searchKey['tags'].'</p>
+						</div>
+					</div>
 			
-			</div><!-- End of flip div -->
-		</div><!-- End of whole image div -->
+					</div><!-- End of flip div -->
+				</div><!-- End of whole image div -->
 		</a>';
 			}
 		}
