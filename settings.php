@@ -1,8 +1,24 @@
 <?php
 //start session
 session_start();
+ 
 
-	//this page allows user to edit settings or logout
+ //connect to database
+ $user="root";
+ $pass="root";
+ $dbh=new PDO('mysql:host=localhost; dbname=Retrospective; port=8889;', $user, $pass);
+ $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);   
+
+ //select everything in the photo table where created by equals currently logged in user   
+ $stmt = $dbh->prepare("SELECT * from users WHERE id = :id");
+ $stmt->bindParam(':id', $_SESSION['user_id'], PDO::PARAM_STR);
+ $stmt->execute();     
+
+ //fetch all the results and put them into an associative arraay
+ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+//this page allows user to edit email or username
 
 //display the header and nav
 echo '<!DOCTYPE html>
@@ -35,12 +51,24 @@ echo '<!DOCTYPE html>
 			echo'
 
 			<div class="content col-xs-12"/>
-			<div>
+			
 			<!------------------------------------------------------------------------------------------------------------	 Tab 4 Logout Content Begins -->
-				<h2>Settings</h2>
-				<p><input type="text" /></p>
-				<p><input type="text" /></p>
-			</div>';
+				<h2>Settings</h2>';
+				echo '<form method="POST" action="updateInfo.php" >';
+ 				foreach($results as $key){
+				?>
+			<p>Email: <input type="text" name ="email" maxlength="10" value="<?=$key['email']?>"/></p>
+	 		<p>Username: <input type="text" name ="username" value="<?=$key['username']?>"/></p>
+	 		
+						 
+			<p><input type="submit" value ="Update Info"/></p>	
+	
+			</form> 
+
+
+
+<?php 
+			}
 
 
 ?>
