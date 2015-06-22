@@ -72,7 +72,7 @@ echo '<!DOCTYPE html>
            foreach($results as $key){
          	$idCount = $idCount + 1; 
             echo '
-            <a id="photoDiv"  class="col-lg-2 col-xs-5" href="image.php?id='.$key['id'].'" >
+            <a id="photoDiv"  class="col-lg-1 col-lg-offset-1 col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1 col-xs-3 col-xs-offset-3" href="image.php?id='.$key['id'].'" >
             	<div id="'.$idCount.'" class="imageInAlbum2">
         			<div class="flip-containerSmall" id="flip-toggle">
 						<div class="flipperSmall" id="photo">

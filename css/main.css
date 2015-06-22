@@ -7,8 +7,6 @@ Some Colors
 	#5d5443 - brown
 	#e4e4dc - white
 */
-
-
 *{
 	margin:0;
 	padding: 0;
@@ -57,8 +55,8 @@ textarea{
 }
 
 .content{
-	padding-top: 40px;
-	margin-top: 40px;
+	padding-top: 30px;
+	margin-top: 30px;
 	vertical-align: middle;
 	text-align: center;
 }
