@@ -62,7 +62,7 @@ echo '<!DOCTYPE html>
 		echo'	</select>
 				<input type="submit" value="Delete Selected"/>
 			</form>
-			<a href="actions/deleteAlbum.php">Delete Album</a>
+			<a class="red" href="actions/deleteAlbum.php">Delete Album</a>
 			';
 
 

@@ -89,6 +89,15 @@ textarea{
 	font-family: MarkerFelt;
 }
 
+@font-face{
+	font-family:Helvetica;
+	src:url(../fonts/Helvetica.dfont);
+}
+
+#normalFont{
+	font-family: Helvetica;
+}
+
 /*Colors*/
 .white{
 	color: #e4e4dc;
@@ -126,6 +135,7 @@ textarea{
 	display: block;
 	text-decoration: none;
 	color: inherit;
+	margin-top: 15px;
 }
 
 #photoDiv{

@@ -58,7 +58,7 @@ echo '<!DOCTYPE html>
 
 ?>
 	
-	 		<p>Title: <input type="text" name ="photoName" value="<?=$key['title']?>"/></p>
+	 		<p>Title: <input type="text" name ="photoName" maxlength="10" value="<?=$key['title']?>"/></p>
 	 		<p>Description: <input type="text" name ="photoDescription" value="<?=$key['description']?>"/></p>
 	 		<!--<p>Date: <input type="text" name ="photoName" value="<?=$key['date']?>"/></p>-->
 	 		<p>People: <input type="text" name ="photoPeople" value="<?=$key['people']?>"/></p>

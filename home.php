@@ -31,6 +31,7 @@ echo '<!DOCTYPE html>
 			<div class="content col-xs-12">
 				<!--------------------------------------------------------------------------------------------------------------------	Tab 1(Album Feed) Content -->
 				<div id="tab1" class="tab active">
+				<p>Welcome, "'.$_SESSION['username'].'"!</p>
 				<form action="actions/sort.php" method="POST">
 				<p>Sort By:</p>
 					<select name="sort">
@@ -39,7 +40,7 @@ echo '<!DOCTYPE html>
 					</select>
 					<input type="submit" value="Sort"/>
 				</form>
-					<p>Welcome, '.$_SESSION['username'].'</p>';
+					';
 
 		//connect to database
         $user="root";

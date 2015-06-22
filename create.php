@@ -52,7 +52,7 @@ echo '<!DOCTYPE html>
 						<form method="POST" action="upload.php" enctype="multipart/form-data">
 							<h2>Upload</h2>
 							<p><input id="upload" type="file" name="filename" accept="image/*" capture="camera"/></p>
-							<p><input type="text" name="title" placeholder="Title" maxlength="9" required/></p>
+							<p><input type="text" name="title" placeholder="Title" maxlength="10" required/></p>
 							<p><textarea name="desc" placeholder="Description" required></textarea></p>
 							<p><input id="month" type="text" name="month" placeholder="MM" maxlength="2"/> - <input id="day" type="text" name="day" placeholder="DD" maxlength="2"/> - <input id="year" type="text" name ="year" placeholder="YYYY" maxlength="4"/></p>
 							<p><input type="text" name="people" placeholder="People" /></p>
