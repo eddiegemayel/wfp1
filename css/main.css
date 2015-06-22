@@ -51,7 +51,6 @@ textarea{
 
 .CTA{
 	background-color: gray;
-	/*opacity: .3;*/
 	background-color:rgba(0, 0, 0, 0.34);
 	height: 425px;
 	border-radius: 10px;
@@ -82,7 +81,10 @@ textarea{
 
 @font-face{
 	font-family: MarkerFelt;
-	src:url(fonts/MarkerFelt.ttc);
+	src:url(../fonts/MarkerFelt.ttc);
+	src:  url(../fonts/MarkerFelt.ttf.woff);
+    font-weight: normal;
+    font-style: normal;
 }
 
 #handwriting{
@@ -153,6 +155,10 @@ textarea{
 	position: relative;
 }
 
+#deleteMultiple{
+	width: 90px;
+	height: 100px;
+}
 
 /*Input Fields*/
 
@@ -229,7 +235,7 @@ textarea{
             display:inline-block;
             border-radius:0px 0px 0px 0px;
             width:72px;
-    		height:48px;
+    		height:50px;
             /*background:#7FB5DA;*/
             font-size:16px;
             font-weight:600;

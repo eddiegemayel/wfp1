@@ -62,7 +62,7 @@ echo '<!DOCTYPE html>
 		echo'	</select>
 				<input type="submit" value="Delete Selected"/>
 			</form>
-			<a href="actions/deleteAlbum.php">x</a>
+			<a href="actions/deleteAlbum.php">Delete Album</a>
 			';
 
 
@@ -79,14 +79,14 @@ echo '<!DOCTYPE html>
 							<div class="frontSmall">
 								<!--FRONT -->
 								<img height="150px" width="150px" src="'.$key['photoUrl'].'"/>
-								<h3>'.$key['title'].'</h3>
+								<h3 id="handwriting">'.$key['title'].'</h3>
 							</div>
 						<div class="backSmall">
 							<!-- BACK-->
-							<p><strong>Description:</strong> '.$key['description'].'</p>
-							<p><strong>Date:</strong> '.$key['date'].'</p>
-							<p><strong>People:</strong> '.$key['people'].'</p>
-							<p><strong>Tags:</strong> '.$key['tags'].'</p>
+							<p id="handwriting"><strong>Description:</strong> <em>'.$key['description'].'</em></p>
+							<p id="handwriting"><strong>Date:</strong> <em>'.$key['date'].'</em></p>
+							<p id="handwriting"><strong>People:</strong> <em>'.$key['people'].'</em></p>
+							<p id="handwriting"><strong>Tags:</strong> <em>'.$key['tags'].'</em></p>
 						</div>
 					</div>
 			

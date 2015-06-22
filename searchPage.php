@@ -62,14 +62,14 @@ echo '<!DOCTYPE html>
 							<div class="frontSmall">
 								<!--FRONT -->
 								<img height="150px" width="150px" src="'.$searchKey['photoUrl'].'"/>
-								<h3>'.$searchKey['title'].'</h3>
+								<h3 id="handwriting">'.$searchKey['title'].'</h3>
 							</div>
 						<div class="backSmall">
 							<!-- BACK-->
-							<p><strong>Description:</strong> '.$searchKey['description'].'</p>
-							<p><strong>Date:</strong> '.$searchKey['date'].'</p>
-							<p><strong>People:</strong> '.$searchKey['people'].'</p>
-							<p><strong>Tags:</strong> '.$searchKey['tags'].'</p>
+							<p id="handwriting"><strong>Description:</strong> <em>'.$searchKey['description'].'</em></p>
+							<p id="handwriting"><strong>Date:</strong> <em>'.$searchKey['date'].'</em></p>
+							<p id="handwriting"><strong>People:</strong> <em>'.$searchKey['people'].'</em></p>
+							<p id="handwriting"><strong>Tags:</strong> <em>'.$searchKey['tags'].'</em></p>
 						</div>
 					</div>
 			

@@ -79,7 +79,7 @@ echo '<!DOCTYPE html>
 							<div class="frontSmall">
 								<!--FRONT -->
 								<img height="100px" width="100px" src="'.$photoKey['photoUrl'].'"/>
-								<h3>'.$photoKey['title'].'</h3>
+								<h3 id="handwriting">'.$photoKey['title'].'</h3>
 							</div>
 							<!--<div class="backSmall">
 								<!-- BACK-->
