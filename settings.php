@@ -31,23 +31,21 @@ echo '<!DOCTYPE html>
 			</header>';
 
 
+		
 			echo'
 
 			<div class="content col-xs-12"/>
 			<div>
 			<!------------------------------------------------------------------------------------------------------------	 Tab 4 Logout Content Begins -->
-				<a href="actions/logout.php"><p>Logout</p></a>
-				<a href="settings.php"><p>Settings</p></a>
+				<h2>Settings</h2>
+				<p><input type="text" /></p>
+				<p><input type="text" /></p>
 			</div>';
-
-
-	
 
 
 ?>
 
-
-		</div><!-- end of content div-->
+	</div><!-- end of content div-->
 		</div><!-- end of wrapper div -->
 	</body>
 	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
