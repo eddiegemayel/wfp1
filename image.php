@@ -53,7 +53,7 @@ echo '<!DOCTYPE html>
            foreach($results as $key){
          
             echo '
-            <div class="image col-xs-3 col-xs-offset-4">
+            <div class="image row col-lg-1 col-lg-offset-4">
         <div class="flip-container" id="flip-toggle">
 			<div class="flipper" id="photo">
 				<div class="front">
@@ -75,15 +75,24 @@ echo '<!DOCTYPE html>
 
 		</div><!-- End of whole image div -->
 		';
-        	
-        echo '<div>	
+        }
+
+
+        echo '
+        	<div class="col-lg-1">
         		<button id="toggle" onclick="$(\'#flip-toggle\').toggleClass(\'active\');">Flip</button>
-				<p><a class="red" href="actions/delete.php?photoId='.$key['id'].'">Delete</a></p>
-        		<p><a class="highlight" href="actions/download.php?url='.$key['photoUrl'].'">Download</a></p>
+        	</div>
+        	<div class="col-lg-1">
+				<p><a class="deleteBtn" href="actions/delete.php?photoId='.$key['id'].'">Delete</a></p>
+			</div>
+			<div class="col-lg-1">
+        		<p><a class="downloadBtn" href="actions/download.php?url='.$key['photoUrl'].'">Download</a></p>
+        	</div>
+        	<div class="col-lg-1">
         		<p><a href="edit.php?photoId='.$key['id'].'">Edit</a></p>
         	</div>
+        
         	'; 
-        }
 ?>
 
 

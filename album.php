@@ -50,8 +50,8 @@ echo '<!DOCTYPE html>
 			</header>
 
 			<div class="content col-xs-12">
-			<h2>'.$albumTitle.'</h2>
-			<h3>('.$albumYear.')</h3>
+			<h2 id="normalFont">'.$albumTitle.'</h2>
+			<h3 id="normalFont">('.$albumYear.')</h3>
 			<form method="POST" action="actions/multiple.php">
 				<select id="deleteMultiple" name="multiple[]" multiple required>';
 				//loop and display all albums this user has created
@@ -63,17 +63,18 @@ echo '<!DOCTYPE html>
 				<input type="submit" value="Delete Selected"/>
 			</form>
 			<a class="red" href="actions/deleteAlbum.php">Delete Album</a>
-			';
+
+			<div  class="albumWrapper col-xs-12 >"';
 
 
         //store ids in session variable to be referenced later when picture is deleted
         $_SESSION['deleteResults'] = $results;
 
            foreach($results as $key){
-         	$idCount = $idCount + 1; 
+         	// $idCount = $idCount + 1; 
             echo '
-            <a id="photoDiv"  class="col-lg-1 col-lg-offset-1 col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1 col-xs-3 col-xs-offset-3" href="image.php?id='.$key['id'].'" >
-            	<div id="'.$idCount.'" class="imageInAlbum2">
+            <a id="photoDiv"  class="col-lg-1 col-md-1 col-md-offset-1 col-sm-2 col-sm-offset-1 col-xs-3 col-xs-offset-3" href="image.php?id='.$key['id'].'" >
+            	<!--<div id="'.$idCount.'" class="imageInAlbum2">-->
         			<div class="flip-containerSmall" id="flip-toggle">
 						<div class="flipperSmall" id="photo">
 							<div class="frontSmall">
@@ -90,15 +91,15 @@ echo '<!DOCTYPE html>
 						</div>
 					</div>
 			
-					</div><!-- End of flip div -->
+					<!--</div>--><!-- End of flip div -->
 				</div><!-- End of whole image div -->
 		</a>';
          
         }
-
+        echo '</div><!-- end of album wrapper div -->';
 
 ?>
-
+			
 		</div><!-- end of content div-->
 		</div><!-- end of wrapper div -->
 	</body>

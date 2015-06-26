@@ -2,7 +2,7 @@
 Some Colors
 	#86cba4 - light green
 	#c69838 - orange
-	#7b76b7 - blue ink pen
+	#000f55? - blue ink pen
 	#c88484 - light red
 	#5d5443 - brown
 	#e4e4dc - white
@@ -38,45 +38,7 @@ textarea{
 	max-height: 100px;
 }
 
-.wrapper{
-	/*position: fixed;*/
-	height:800px;
-}
-
-.CTA h1{
-	color: #e4e4dc;
-}
-
-.CTA{
-	background-color: gray;
-	background-color:rgba(0, 0, 0, 0.34);
-	height: 425px;
-	border-radius: 10px;
-}
-
-.content{
-	padding-top: 30px;
-	margin-top: 30px;
-	vertical-align: middle;
-	text-align: center;
-}
-
-.image{
-	margin-bottom: 200px ;
-	/*margin-left: 50px;*/
-}
-
-.album{
-	border: 1px solid black;
-	width: 150px;
-	height: 300px; 
-}
-
-.navbar{
-	text-align: center;
-	vertical-align: middle;
-}
-
+/*Fonts*/
 @font-face{
 	font-family: MarkerFelt;
 	src:url(../fonts/MarkerFelt.ttc);
@@ -87,6 +49,7 @@ textarea{
 
 #handwriting{
 	font-family: MarkerFelt;
+	/*color: #000f55 ;*/
 }
 
 @font-face{
@@ -96,7 +59,71 @@ textarea{
 
 #normalFont{
 	font-family: Helvetica;
+	/*color:#7b76b7 ;*/
 }
+
+/*Wrapper*/
+.wrapper{
+	/*position: fixed;*/
+	height:800px;
+}
+
+/*Content*/
+.content{
+	padding-top: 30px;
+	margin-top: 30px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+/*Call to action*/
+.CTA h1{
+	color: #e4e4dc;
+}
+
+.CTA{
+	background-color:rgba(0, 0, 0, 0.30);
+	border-radius: 9px;
+	height: 490px;
+	border-radius: 10px;
+}
+
+/*image styling*/
+.image{
+	margin-bottom: 200px ;
+	clear: none;
+	/*margin-left: 50px;*/
+}
+
+/*album styling*/
+.album{
+	/*border: 1px solid black;*/
+	border-radius: 9px;
+	background-color:rgba(50, 50, 50, 0.21);
+	width: 150px;
+	height: 350px; 
+}
+
+#albumDiv{
+	display: block;
+	text-decoration: none;
+	color: inherit;
+	margin-top: 15px;
+}
+
+.albumWrapper{
+	border-radius: 9px;
+	background-color:rgba(50, 50, 50, 0.21);
+	margin: 0;
+	padding: 0;
+	height: 650px; 
+}
+
+.navbar{
+	text-align: center;
+	vertical-align: middle;
+}
+
 
 /*Colors*/
 .white{
@@ -127,15 +154,7 @@ textarea{
 	width: 150px;
 	height: 150px;
 	float: left;
-	margin-top: 50px;
-}
-
-
-#albumDiv{
-	display: block;
-	text-decoration: none;
-	color: inherit;
-	margin-top: 15px;
+	/*margin-top: 50px;*/
 }
 
 #photoDiv{
@@ -158,8 +177,8 @@ textarea{
 }
 
 #upload{
-	/*text-align: right;
-	margin-left: 470px;*/
+	text-align: right;
+	margin-left: 470px;
 	position: relative;
 }
 
@@ -399,4 +418,78 @@ textarea{
 	padding-top: 10px;
 	/*background-color: #E0A32C;*/
 	/*background-image: url(../images/p1back.jpg);*/
+}
+
+/*Buttons*/
+.downloadBtn {
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 17px;
+  background: #c69838;
+  padding: 2px 13px 2px 13px;
+  border: solid #2b2b2b 2px;
+  text-decoration: none;
+}
+
+.downloadBtn:hover {
+  background: #b87e09;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+
+.deleteBtn {
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 17px;
+  background: #c47373;
+  padding: 1px 10px 1px 10px;
+  border: solid #2b2b2b 2px;
+  text-decoration: none;
+}
+
+.deleteBtn:hover {
+  background: #bd3b3b;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+
+.loginBtn {
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 26px;
+  background: #86cba4;
+  padding: 1px 28px 1px 28px;
+  border: solid #2b2b2b 2px;
+  text-decoration: none;
+}
+
+.loginBtn:hover {
+  background: #42bd77;
+  text-decoration: none;
+}
+
+
+.signupBtn {
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 26px;
+  background: #86cba4;
+  padding: 1px 28px 1px 28px;
+  border: solid #2b2b2b 2px;
+  text-decoration: none;
+}
+
+.signupBtn:hover {
+  background: #42bd77;
+  text-decoration: none;
 }

@@ -2,6 +2,7 @@
 //start the session
 session_start();
 
+
 //display the header and nav
 echo '<!DOCTYPE html>
 <html>
@@ -31,9 +32,9 @@ echo '<!DOCTYPE html>
 			<div class="content col-xs-12">
 				<!--------------------------------------------------------------------------------------------------------------------	Tab 1(Album Feed) Content -->
 				<div id="tab1" class="tab active">
-				<p>Welcome, "'.$_SESSION['username'].'"!</p>
+				<p id="normalFont">Welcome, "'.$_SESSION['username'].'"!</p>
 				<form action="actions/sort.php" method="POST">
-				<p>Sort By:</p>
+				<p id="normalFont">Sort By:</p>
 					<select name="sort">
 						<option value="albumYear">Most Recent</option>
 						<option value="albumTitle">Title</option>
@@ -61,8 +62,8 @@ echo '<!DOCTYPE html>
         foreach($results as $key){
          	
             echo '<a id="albumDiv" class="album col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1 col-sm-12 col-xs-12" href="album.php?albumId='.$key['id'].'&albumTitle='.$key['albumTitle'].'&albumYear='.$key['albumYear'].'">
-            	<h3>'.$key['albumTitle'].'</h3>
-            	<p>('.$key['albumYear'].')</p>';
+            	<h3 id="normalFont">'.$key['albumTitle'].'</h3>
+            	<p id="normalFont">('.$key['albumYear'].')</p>';
 
 				$dbh = new PDO("mysql:host=localhost; dbname=Retrospective; port=8889;", $user,$pass);
 				//display anything that matches what user searched for.

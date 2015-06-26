@@ -17,8 +17,12 @@
 
 		<div class="wrapper col-xs-12">
 			<div class="CTA col-xs-12">
+				<!-- Signup Form -->
 				<div class="signup col-xs-6 col-lg-4 col-lg-offset-2">
-					<h1 id="normalFont">Sign Up</h1>
+					<h1 id="normalFont">Signup!</h1>
+					<p class="white"><span class="highlight">+</span> Store and organize your photos  </p>
+					<p class="white"><span class="highlight">+</span> Search through your memories effectively </p>
+					<p class="white"><span class="highlight">+</span> Redownload your photos at any time </p>
 					<form id="normalFont" method="POST" action="actions/signup.php">
 						<p class="white">Email </p>
 						<p><input type="email" name="newEmail" placeholder="example@email.com"/></p>
@@ -26,16 +30,17 @@
 						<p><input type="text" name="newUsername" placeholder="6-12 Characters"/></p>
 						<p class="white">Password </p>
 						<p><input type="password" name="newPassword" placeholder="*******"/></p>
-						<button class="btn">Sign Up</button>
+						<button class="signupBtn">Join</button>
 					</form>
 				</div>
 
+				<!-- Login form -->
 				<div class="login col-xs-6 col-lg-4">
-					<h1 id="normalFont">Login</h1>
+					<h1 id="normalFont">Already A User?</h1>
 					<form id="normalFont" method="POST" action="actions/login.php">
 						<p><input type="text" name="username" placeholder="Username"/></p>
 						<p><input type="password" name="password" placeholder="*******"/></p>
-						<button class="btn">Login</button>
+						<button class="loginBtn">Login</button>
 					</form>
 				</div>
 			</div>
