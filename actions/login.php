@@ -4,8 +4,13 @@
 	session_start();
 	ob_start();
 
+  //store username and password entered
 	$username = $_POST['username'];
 	$password = $_POST['password'];
+
+  //default album sort settings
+  $_SESSION['sortVariable1'] = 'albumYear';
+  $_SESSION['sortVariable2'] = 'DESC';
 
 	try{
         //connnect to database, check login against users table in the database

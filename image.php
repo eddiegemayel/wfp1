@@ -31,8 +31,8 @@ echo '<!DOCTYPE html>
     				</ul>
 				</nav>
 			</header>
-			<div class="content col-xs-12">
-		
+			<div class="content container-fluid col-xs-12">
+				<!--<button class="editBtn" id="toggle" onclick="$(\'#flip-toggle\').toggleClass(\'active\');">Flip</button>-->
 			';
 
 
@@ -53,7 +53,8 @@ echo '<!DOCTYPE html>
            foreach($results as $key){
          
             echo '
-            <div class="image row col-lg-1 col-lg-offset-4">
+            <div class="row">
+            <div class="image col-lg-2 col-lg-offset-4">
         <div class="flip-container" id="flip-toggle">
 			<div class="flipper" id="photo">
 				<div class="front">
@@ -74,24 +75,19 @@ echo '<!DOCTYPE html>
 
 
 		</div><!-- End of whole image div -->
+
+		</div><!-- end of row -->
 		';
         }
 
 
         echo '
-        	<div class="col-lg-1">
-        		<button id="toggle" onclick="$(\'#flip-toggle\').toggleClass(\'active\');">Flip</button>
+        	<div class="buttons container">
+				<a class="deleteBtn" href="actions/delete.php?photoId='.$key['id'].'">Delete</a>
+        		<a class="downloadBtn" href="actions/download.php?url='.$key['photoUrl'].'">Download</a>
+        		<a class="editBtn " href="edit.php?photoId='.$key['id'].'">Edit</a>
+        		<a class="editBtn" id="toggle" onclick="$(\'#flip-toggle\').toggleClass(\'active\');">Flip!</a>
         	</div>
-        	<div class="col-lg-1">
-				<p><a class="deleteBtn" href="actions/delete.php?photoId='.$key['id'].'">Delete</a></p>
-			</div>
-			<div class="col-lg-1">
-        		<p><a class="downloadBtn" href="actions/download.php?url='.$key['photoUrl'].'">Download</a></p>
-        	</div>
-        	<div class="col-lg-1">
-        		<p><a href="edit.php?photoId='.$key['id'].'">Edit</a></p>
-        	</div>
-        
         	'; 
 ?>
 

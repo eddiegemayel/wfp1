@@ -17,7 +17,7 @@ echo '<!DOCTYPE html>
 	</head>
 	
 	<body>
-		<div class="wrapper tabs col-xs-12">
+		<div class="wrapper container-fluid tabs col-xs-12">
 			<header class="navbar navbar-fixed-top col-xs-12">
 				<nav class="col-lg-8 col-lg-offset-2 col-md-9 col-md-offset-1 col-sm-9 col-sm-offset-3 col-xs-12">
 					<ul class="tab-links col-md-7 col-md-offset-4 col-xs-12">
@@ -34,12 +34,11 @@ echo '<!DOCTYPE html>
 				<div id="tab1" class="tab active">
 				<p id="normalFont">Welcome, "'.$_SESSION['username'].'"!</p>
 				<form action="actions/sort.php" method="POST">
-				<p id="normalFont">Sort By:</p>
 					<select name="sort">
 						<option value="albumYear">Most Recent</option>
 						<option value="albumTitle">Title</option>
 					</select>
-					<input type="submit" value="Sort"/>
+					<input class="sortBtn" type="submit" value="Sort"/>
 				</form>
 					';
 

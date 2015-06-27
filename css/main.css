@@ -38,7 +38,7 @@ textarea{
 	max-height: 100px;
 }
 
-/*Fonts*/
+/*--------------------------------------------------------------------Fonts*/
 @font-face{
 	font-family: MarkerFelt;
 	src:url(../fonts/MarkerFelt.ttc);
@@ -76,6 +76,14 @@ textarea{
 	text-align: center;
 }
 
+
+#landingPageContent{
+	background-image: url(../images/background.jpg);
+	background-repeat: no-repeat;
+	background-color: #080808;
+	background-position: center bottom;
+}
+
 /*Call to action*/
 .CTA h1{
 	color: #e4e4dc;
@@ -88,11 +96,18 @@ textarea{
 	border-radius: 10px;
 }
 
-/*image styling*/
+/*image page styling*/
 .image{
-	margin-bottom: 200px ;
-	clear: none;
-	/*margin-left: 50px;*/
+	margin-top: -90px;
+}
+
+.buttons{
+	margin-top: 540px;
+}
+
+#toggle{
+	margin: 0;
+	cursor: pointer;
 }
 
 /*album styling*/
@@ -125,7 +140,7 @@ textarea{
 }
 
 
-/*Colors*/
+/*-------------------------------------------------------------------------------------Colors*/
 .white{
 	color: #e4e4dc;
 }
@@ -169,11 +184,13 @@ textarea{
 
 }
 
-#landingPageContent{
-	background-image: url(../images/background.jpg);
-	background-repeat: no-repeat;
-	background-color: #080808;
-	background-position: center bottom;
+.uploadPicture{
+	text-align: right;
+	border-right: solid 1px black;
+}
+
+.createAlbum{
+	text-align: left;
 }
 
 #upload{
@@ -187,7 +204,7 @@ textarea{
 	height: 100px;
 }
 
-/*Input Fields*/
+/*--------------------------------------------------------------------------------------Input Fields*/
 
 #month{
 	width: 30px;
@@ -205,15 +222,7 @@ textarea{
 	text-align: right;
 }
 
-.uploadPicture{
-	text-align: right;
-}
-
-.createAlbum{
-	text-align: left;
-}
-
-/*Icons*/
+/*----------------------------------------------------------------------------------------------Icons*/
 #albums{
 	background-image: url(../images/albums.png);
 	background-repeat: no-repeat;
@@ -236,7 +245,7 @@ textarea{
 
 
 
-/*----- Tabs -----*/
+/*--------------------------------------------------------------------------------------------Tabs -----*/
 .tabs {
     display:inline-block;
 }
@@ -302,7 +311,7 @@ textarea{
 
 
 
-/*DIV FLIP CSS --------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------DIV FLIP CSS */
 #toggle{
 	position: relative;
 	left: 200px;
@@ -363,7 +372,7 @@ textarea{
 	/*background-image: url(../images/p1back.jpg);*/
 }
 
-/*--------------------------------------------------------- SMALL FLIPPER*/
+/*---------------------------------------------------------------------------------- SMALL FLIPPER*/
 
 /*container, keeps perspective*/
 .flip-containerSmall{
@@ -420,7 +429,7 @@ textarea{
 	/*background-image: url(../images/p1back.jpg);*/
 }
 
-/*Buttons*/
+/*-------------------------------------------------------------------------------------------------------Button classes*/
 .downloadBtn {
   -webkit-border-radius: 6;
   -moz-border-radius: 6;
@@ -458,6 +467,24 @@ textarea{
   color: #ffffff;
 }
 
+.editBtn {
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 17px;
+  background: #4ccf85;
+  padding: 1px 10px 1px 10px;
+  border: solid #2b2b2b 2px;
+  text-decoration: none;
+}
+
+.editBtn:hover {
+  background: #12cc63;
+  text-decoration: none;
+  color: #ffffff;
+}
+
 
 .loginBtn {
   -webkit-border-radius: 6;
@@ -465,14 +492,15 @@ textarea{
   border-radius: 6px;
   color: #ffffff;
   font-size: 26px;
-  background: #86cba4;
+  background: #4ccf85;
   padding: 1px 28px 1px 28px;
   border: solid #2b2b2b 2px;
   text-decoration: none;
 }
 
 .loginBtn:hover {
-  background: #42bd77;
+  /*background: #42bd77;*/
+  background: #12cc63;
   text-decoration: none;
 }
 
@@ -483,13 +511,81 @@ textarea{
   border-radius: 6px;
   color: #ffffff;
   font-size: 26px;
-  background: #86cba4;
+  background: #4ccf85;
   padding: 1px 28px 1px 28px;
   border: solid #2b2b2b 2px;
   text-decoration: none;
 }
 
 .signupBtn:hover {
-  background: #42bd77;
+  background: #12cc63;
+  text-decoration: none;
+}
+
+.sortBtn {
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 12px;
+  background: #4ccf85;
+  padding: 1px 4px 1px 4px;
+  border: solid #2b2b2b 2px;
+  text-decoration: none;
+}
+
+.sortBtn:hover {
+  background: #12cc63;
+  text-decoration: none;
+}
+
+.uploadBtn {
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 15px;
+  background: #4ccf85;
+  padding: 1px 10px 1px 10px;
+  border: solid #2b2b2b 2px;
+  text-decoration: none;
+}
+
+.uploadBtn:hover {
+  background: #12cc63;
+  text-decoration: none;
+}
+
+.createBtn {
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 15px;
+  background: #4ccf85;
+  padding: 1px 10px 1px 10px;
+  border: solid #2b2b2b 2px;
+  text-decoration: none;
+}
+
+.createBtn:hover {
+  background: #12cc63;
+  text-decoration: none;
+}
+
+.searchBtn {
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 15px;
+  background: #4ccf85;
+  padding: 1px 10px 1px 10px;
+  border: solid #2b2b2b 2px;
+  text-decoration: none;
+}
+
+.searchBtn:hover {
+  background: #12cc63;
   text-decoration: none;
 }

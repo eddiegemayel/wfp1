@@ -39,7 +39,7 @@ echo '<!DOCTYPE html>
 				<!-----------------------------------------------------------------------------------------	 Tab 3(Search) Content Begins -->
 					<form id="searchForm" method="POST" action="actions/search.php" >
 						<input type="text" placeholder="Search.." name="q"/>
-						<input type="Submit" value="Search" />
+						<input class="searchBtn" type="Submit" value="Search" />
 					</form>';
 
 
@@ -50,7 +50,7 @@ echo '<!DOCTYPE html>
 		if($_SESSION['searchResults'] != ''){
 
 			//if so, echo the results
-			echo '<h3>Results for: "'.$_SESSION['q'].'"</h3>';
+			echo '<h3 id="normalFont">Results for: "'.$_SESSION['q'].'"</h3>';
 
 			//loop through results
 			foreach($_SESSION['searchResults'] as $searchKey){
@@ -81,7 +81,7 @@ echo '<!DOCTYPE html>
 		else{
 
 			//tell them if there are no results
-			echo 'No search Results!';
+			echo '<p id="normalFont">No Search Results!</p>';
 		}
 
 		echo '</div>';
