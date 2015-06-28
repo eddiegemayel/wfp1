@@ -132,6 +132,7 @@ textarea{
 	margin: 0;
 	padding: 0;
 	height: 650px; 
+	max-height: 1000px;
 }
 
 .navbar{
@@ -169,7 +170,7 @@ textarea{
 	width: 150px;
 	height: 150px;
 	float: left;
-	/*margin-top: 50px;*/
+	margin-top: 30px;
 }
 
 #photoDiv{
@@ -178,9 +179,10 @@ textarea{
 	color: inherit;
 	float: left;
 	clear:none;
-	margin-right: 2%;
-	margin-bottom: 45px;
-	margin-top: 1%;
+	margin-right: 15px;
+	margin-left: 25px;
+	margin-bottom: 35px;
+	/*margin-top: 1%;*/
 
 }
 

@@ -32,7 +32,7 @@ echo '<!DOCTYPE html>
 			<div class="content col-xs-12">
 				<!--------------------------------------------------------------------------------------------------------------------	Tab 1(Album Feed) Content -->
 				<div id="tab1" class="tab active">
-				<p id="normalFont">Welcome, "'.$_SESSION['username'].'"!</p>
+				<h2 id="normalFont">Welcome, "'.$_SESSION['username'].'"!</h2>
 				<form action="actions/sort.php" method="POST">
 					<select name="sort">
 						<option value="albumYear">Most Recent</option>
@@ -79,7 +79,7 @@ echo '<!DOCTYPE html>
 							<div class="flipperSmall" id="photo">
 							<div class="frontSmall">
 								<!--FRONT -->
-								<img height="100px" width="100px" src="'.$photoKey['photoUrl'].'"/>
+								<img height="130px" width="130px" src="'.$photoKey['photoUrl'].'"/>
 								<h3 id="handwriting">'.$photoKey['title'].'</h3>
 							</div>
 							<!--<div class="backSmall">

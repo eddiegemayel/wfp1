@@ -41,17 +41,17 @@ echo '<!DOCTYPE html>
 			<header class="navbar navbar-fixed-top col-xs-12">
 				<nav class="col-lg-8 col-lg-offset-2 col-md-9 col-md-offset-1 col-sm-9 col-sm-offset-3 col-xs-12">
 					<ul class="tab-links col-md-7 col-md-offset-4 col-xs-12">
-        				<li id="albums" class="active"><a href="home.php"></a></li>
-        				<li id="add"><a href="create.php"></a></li>
-        				<li id="search"><a href="searchPage.php"></a></li>
-        				<li id="menu"><a href="menu.php"></a></li>
+        				<li id="albums" class="active"><a title="Albums" href="home.php"></a></li>
+        				<li id="add"><a title="Create" href="create.php"></a></li>
+        				<li id="search"><a title="Search" href="searchPage.php"></a></li>
+        				<li id="menu"><a title="Menu" href="menu.php"></a></li>
     				</ul>
 				</nav>
 			</header>
 
 			<div class="content col-xs-12">
-			<h2 id="normalFont">'.$albumTitle.'</h2>
-			<h3 id="normalFont">('.$albumYear.')</h3>
+			<h2 id="normalFont">'.$albumTitle.' ('.$albumYear.')</h2>
+			<a class="deleteBtn" href="actions/deleteAlbum.php" title="Delete Album" >X</a>
 			<form method="POST" action="actions/multiple.php">
 				<select id="deleteMultiple" name="multiple[]" multiple required>';
 				//loop and display all albums this user has created
@@ -60,11 +60,11 @@ echo '<!DOCTYPE html>
            				echo '<option value='.$key['id'].'>"'.$key['title'].'"</option>';
         		}
 		echo'	</select>
-				<input type="submit" value="Delete Selected"/>
+				<input class="deleteBtn" type="submit" value="Delete Selected"/>
 			</form>
-			<a class="red" href="actions/deleteAlbum.php">Delete Album</a>
 
-			<div  class="albumWrapper col-xs-12 >"';
+			"
+			';
 
 
         //store ids in session variable to be referenced later when picture is deleted
@@ -72,9 +72,10 @@ echo '<!DOCTYPE html>
 
            foreach($results as $key){
          	// $idCount = $idCount + 1; 
-            echo '
+            echo ' <div class="clearfix visible-xs-block"></div>
+
             <a id="photoDiv"  class="col-lg-1 col-md-1 col-md-offset-1 col-sm-2 col-sm-offset-1 col-xs-3 col-xs-offset-3" href="image.php?id='.$key['id'].'" >
-            	<!--<div id="'.$idCount.'" class="imageInAlbum2">-->
+            	<div id="'.$idCount.'" class="imageInAlbum2 ">
         			<div class="flip-containerSmall" id="flip-toggle">
 						<div class="flipperSmall" id="photo">
 							<div class="frontSmall">
@@ -91,12 +92,12 @@ echo '<!DOCTYPE html>
 						</div>
 					</div>
 			
-					<!--</div>--><!-- End of flip div -->
+					</div><!-- End of flip div -->
 				</div><!-- End of whole image div -->
 		</a>';
          
         }
-        echo '</div><!-- end of album wrapper div -->';
+        echo '';
 
 ?>
 			
