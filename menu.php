@@ -2,7 +2,7 @@
 //start session
 session_start();
 
-	//this page allows user to edit settings or logout
+//this page links user to edit settings or logout
 
 //display the header and nav
 echo '<!DOCTYPE html>
@@ -22,10 +22,10 @@ echo '<!DOCTYPE html>
 			<header class="navbar navbar-fixed-top col-xs-12">
 				<nav class="col-lg-8 col-lg-offset-2 col-md-9 col-md-offset-1 col-sm-9 col-sm-offset-3 col-xs-12">
 					<ul class="tab-links col-md-7 col-md-offset-4 col-xs-12">
-        				<li id="albums" ><a href="home.php"></a></li>
-        				<li id="add" ><a href="create.php"></a></li>
-        				<li id="search" ><a href="searchPage.php"></a></li>
-        				<li id="menu" class="active"><a href="menu.php"></a></li>
+        				<li id="albums" ><a title="Albums" href="home.php"></a></li>
+        				<li id="add" ><a title="Create" href="create.php"></a></li>
+        				<li id="search" ><a title="Search" href="searchPage.php"></a></li>
+        				<li id="menu" class="active"><a title="Menu" href="menu.php"></a></li>
     				</ul>
 				</nav>
 			</header>';
@@ -39,10 +39,6 @@ echo '<!DOCTYPE html>
 				<a href="actions/logout.php"><p>Logout</p></a>
 				<a href="settings.php"><p>Settings</p></a>
 			</div>';
-
-
-	
-
 
 ?>
 

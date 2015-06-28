@@ -24,10 +24,10 @@ echo '<!DOCTYPE html>
 			<header class="navbar navbar-fixed-top col-xs-12">
 				<nav class="col-lg-8 col-lg-offset-2 col-md-9 col-md-offset-1 col-sm-9 col-sm-offset-3 col-xs-12">
 					<ul class="tab-links col-md-7 col-md-offset-4 col-xs-12">
-        				<li id="albums" class="active"><a href="home.php"></a></li>
-        				<li id="add" ><a href="create.php"></a></li>
-        				<li id="search" ><a href="searchPage.php"></a></li>
-        				<li id="menu"><a href="menu.php"></a></li>
+        				<li id="albums" class="active"><a title="Albums" href="home.php"></a></li>
+        				<li id="add" ><a title="Create" href="create.php"></a></li>
+        				<li id="search" ><a title="Search" href="searchPage.php"></a></li>
+        				<li id="menu"><a title="Menu" href="menu.php"></a></li>
     				</ul>
 				</nav>
 			</header>
@@ -59,8 +59,9 @@ echo '<!DOCTYPE html>
 			<div class="flipper" id="photo">
 				<div class="front">
 					<!--FRONT -->
-					<img height="300px" width="300px" src="'.$key['photoUrl'].'"/>
+					<img height="350px" width="350px" src="'.$key['photoUrl'].'"/>
 					<h1 id="handwriting">'.$key['title'].'</h1>
+					<a class="editBtn frontFlip" id="toggle" onclick="$(\'#flip-toggle\').toggleClass(\'active\');"><-</a>
 				</div>
 				<div class="back">
 					<!-- BACK-->
@@ -68,6 +69,7 @@ echo '<!DOCTYPE html>
 					<h3 id="handwriting">Date:</h3><p id="handwriting">'.$key['date'].' </p>
 					<h3 id="handwriting">People:</h3><p id="handwriting">'.$key['people'].' </p>
 					<h3 id="handwriting">Tags:</h3><p id="handwriting">'.$key['tags'].'</p>
+					<a class="editBtn backFlip" id="toggle" onclick="$(\'#flip-toggle\').toggleClass(\'active\');">-></a>
 				</div>
 			</div>
 				
@@ -86,7 +88,6 @@ echo '<!DOCTYPE html>
 				<a class="deleteBtn" href="actions/delete.php?photoId='.$key['id'].'">Delete</a>
         		<a class="downloadBtn" href="actions/download.php?url='.$key['photoUrl'].'">Download</a>
         		<a class="editBtn " href="edit.php?photoId='.$key['id'].'">Edit</a>
-        		<a class="editBtn" id="toggle" onclick="$(\'#flip-toggle\').toggleClass(\'active\');">Flip!</a>
         	</div>
         	'; 
 ?>

@@ -21,10 +21,10 @@ echo '<!DOCTYPE html>
 			<header class="navbar navbar-fixed-top col-xs-12">
 				<nav class="col-lg-8 col-lg-offset-2 col-md-9 col-md-offset-1 col-sm-9 col-sm-offset-3 col-xs-12">
 					<ul class="tab-links col-md-7 col-md-offset-4 col-xs-12">
-        				<li id="albums" ><a href="home.php"></a></li>
-        				<li id="add" ><a href="create.php"></a></li>
-        				<li id="search" class="active"><a href="searchPage.php"></a></li>
-        				<li id="menu"><a href="menu.php"></a></li>
+        				<li id="albums" ><a title="Albums" href="home.php"></a></li>
+        				<li id="add" ><a title="Create" href="create.php"></a></li>
+        				<li id="search" class="active"><a title="Search" href="searchPage.php"></a></li>
+        				<li id="menu"><a title="Menu" href="menu.php"></a></li>
     				</ul>
 				</nav>
 			</header>';
@@ -54,8 +54,8 @@ echo '<!DOCTYPE html>
 
 			//loop through results
 			foreach($_SESSION['searchResults'] as $searchKey){
-				echo '
-				 <a id="photoDiv"  class="col-lg-2 col-xs-5" href="image.php?id='.$searchKey['id'].'" >
+				echo '<div class="clearfix visible-xs-block"></div>
+				 <a id="photoDiv"  class="col-lg-1 col-md-1 col-md-offset-1 col-sm-2 col-sm-offset-1 col-xs-3 col-xs-offset-3" href="image.php?id='.$searchKey['id'].'" >
             	<div class="imageInAlbum2">
         			<div class="flip-containerSmall" id="flip-toggle">
 						<div class="flipperSmall" id="photo">
