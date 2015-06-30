@@ -50,8 +50,8 @@ echo '<!DOCTYPE html>
 			</header>
 
 			<div class="content col-xs-12">
-			<h2 id="normalFont">'.$albumTitle.' ('.$albumYear.')</h2>
-			<a class="deleteBtn" href="actions/deleteAlbum.php" title="Delete Album" >X</a>
+			<h2 id="normalFont">'.$albumTitle.' ('.$albumYear.') <a class="deleteBtn" href="actions/deleteAlbum.php" title="Delete This Album" >X</a></h2>
+			
 			<form method="POST" action="actions/multiple.php">
 				<select id="deleteMultiple" name="multiple[]" multiple required>';
 				//loop and display all albums this user has created
@@ -60,7 +60,7 @@ echo '<!DOCTYPE html>
            				echo '<option value='.$key['id'].'>"'.$key['title'].'"</option>';
         		}
 		echo'	</select>
-				<input class="deleteBtn" type="submit" value="Delete Selected"/>
+				<input class="deleteBtn" type="submit" value="Delete Selected" title="Delete All Selected Photos"/>
 			</form>
 
 			"

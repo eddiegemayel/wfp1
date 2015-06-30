@@ -235,6 +235,15 @@ textarea{
 	text-align: right;
 }
 
+#deleteMultiple{
+	border: 2px solid #86cba4;
+	font-family: Helvetica;
+	padding-top: 5px;
+	padding-left: 5px;
+	width: 100px;
+	height: 120px;
+}
+
 /*----------------------------------------------------------------------------------------------Icons*/
 #albums{
 	background-image: url(../images/albums.png);
