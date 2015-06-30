@@ -2,6 +2,7 @@
 	session_start();
 	// ob_start();
 
+	//make date the correct format
 	$date = $_POST['month'] ."/". $_POST['day'] ."/". $_POST['year'];
 
 	//path to upload directory

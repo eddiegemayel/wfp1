@@ -23,12 +23,12 @@ echo '<!DOCTYPE html>
 	<body>
 		<div class="wrapper tabs col-xs-12">
 			<header class="navbar navbar-fixed-top col-xs-12">
-				<nav class="col-xs-12">
+				<nav class="col-lg-8 col-lg-offset-2 col-md-9 col-md-offset-1 col-sm-9 col-sm-offset-3 col-xs-12">
 					<ul class="tab-links col-md-7 col-md-offset-4 col-xs-12">
-        				<li id="albums" class="active"><a href="home.php"></a></li>
-        				<li id="add" ><a href="create.php"></a></li>
-        				<li id="search" ><a href="searchPage.php"></a></li>
-        				<li id="menu"><a href="menu.php"></a></li>
+        				<li id="albums" class="active"><a title="Albums" href="home.php"></a></li>
+        				<li id="add" ><a title="Create" href="create.php"></a></li>
+        				<li id="search"><a title="Search" href="searchPage.php"></a></li>
+        				<li id="menu"><a title="Menu" href="menu.php"></a></li>
     				</ul>
 				</nav>
 			</header>
@@ -64,7 +64,7 @@ echo '<!DOCTYPE html>
 	 		<p>People: <input type="text" name ="photoPeople" value="<?=$key['people']?>"/></p>
 	 		<p>Tags: <input type="text" name ="photoTags" value="<?=$key['tags']?>"/></p>
 						 
-			<p><input type="submit" value ="Update"/></p>	
+			<p><input class="searchBtn" type="submit" value ="Update"/></p>	
 	
 		</form> 
 
