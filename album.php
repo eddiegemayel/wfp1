@@ -60,7 +60,7 @@ echo '<!DOCTYPE html>
            				echo '<option value='.$key['id'].'>"'.$key['title'].'"</option>';
         		}
 		echo'	</select>
-				<input class="deleteBtn" type="submit" value="Delete Selected" title="Delete All Selected Photos"/>
+				<input id="delete" class="deleteBtn hidden" type="submit" value="Delete Selected" title="Delete All Selected Photos"/>
 			</form>
 			';
 
