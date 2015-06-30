@@ -62,8 +62,6 @@ echo '<!DOCTYPE html>
 		echo'	</select>
 				<input class="deleteBtn" type="submit" value="Delete Selected" title="Delete All Selected Photos"/>
 			</form>
-
-			"
 			';
 
 
