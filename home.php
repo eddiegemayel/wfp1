@@ -56,13 +56,17 @@ echo '<!DOCTYPE html>
         //fetch all the results and put them into an associative arraay
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        
-        //loop and display albums
-        foreach($results as $key){
+        //if users have no albums
+        if($results == null){
+        	echo'<h4 style="margin-top:50px;">You Have No Albums Yet!</h4>
+        			<h5>Create an <a href="create.php">Album</a>, Then Upload Some Photos!</h5>';
+        }else{
+        	//loop and display albums
+        	foreach($results as $key){
          	
-            echo '<a id="albumDiv" class="album col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1 col-sm-12 col-xs-12" href="album.php?albumId='.$key['id'].'&albumTitle='.$key['albumTitle'].'&albumYear='.$key['albumYear'].'">
-            	<h3 id="normalFont">'.$key['albumTitle'].'</h3>
-            	<p id="normalFont">('.$key['albumYear'].')</p>';
+            	echo '<a id="albumDiv" class="album col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1 col-sm-12 col-xs-12" href="album.php?albumId='.$key['id'].'&albumTitle='.$key['albumTitle'].'&albumYear='.$key['albumYear'].'">
+            		<h3 id="normalFont">'.$key['albumTitle'].'</h3>
+            		<p id="normalFont">('.$key['albumYear'].')</p>';
 
 				$dbh = new PDO("mysql:host=localhost; dbname=Retrospective; port=8889;", $user,$pass);
 				//display anything that matches what user searched for.
@@ -99,10 +103,10 @@ echo '<!DOCTYPE html>
             	}else{
             		echo '';
             	}
-			echo '</a><!-- End of whole album div -->';
-        }
-		echo '
-				</div><!--  Tab 1 Content Ends -->'; 
+				echo '</a><!-- End of whole album div -->';
+        		}
+    	}//end of if statement
+		echo '</div><!--  Tab 1 Content Ends -->'; 
 ?>  
 
 		</div><!-- end of content div-->

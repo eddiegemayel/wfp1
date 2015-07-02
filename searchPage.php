@@ -81,7 +81,7 @@ echo '<!DOCTYPE html>
 		else{
 
 			//tell them if there are no results
-			echo '<p id="normalFont">No Search Results!</p>';
+			echo '<h4 id="normalFont" style="margin-top:50px;">No Search Results!</h4>';
 		}
 
 		echo '</div>';

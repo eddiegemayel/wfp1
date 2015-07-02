@@ -1,14 +1,14 @@
 <?php
+	//start up session
 	session_start();
 	ob_start();
 
 	//collect user's inputs
 	$new_username = $_POST['newUsername'];
-	$new_password = $_POST['newPassword'];
+	$new_password = md5($_POST['newPassword']);
 	$new_email = $_POST['newEmail'];
 
 	//check to make sure fields are not empty
-
 	if($new_username != "" && $new_password != ""){
 			//add user to the database
 			//setup admin username and password for database
@@ -34,7 +34,7 @@
 		}
 		else{
 			//something went wrong!
-			echo "<p>User already exists</p>";
+			echo "<p>Username already exists</p>";
 		}
 			
 

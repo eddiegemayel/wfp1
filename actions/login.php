@@ -6,7 +6,7 @@
 
   //store username and password entered
 	$username = $_POST['username'];
-	$password = $_POST['password'];
+	$password = md5($_POST['password']);
 
   //default album sort settings
   $_SESSION['sortVariable1'] = 'albumYear';
@@ -51,6 +51,6 @@
   //if something goes wrong
 	} catch(Exception $e) {
     	echo 'Error -'. $e->getMessage();
-    }
+  }
 	
 ?>
