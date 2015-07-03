@@ -2,6 +2,11 @@
 	//starts up the session
 	session_start();
 
+	//if user is not logged in, push them back to index
+if(!isset($_SESSION['username'])){ 
+    header("Location: index.html");
+}else{
+
 
 //display the header and nav
 echo '<!DOCTYPE html>
@@ -86,6 +91,7 @@ echo '<!DOCTYPE html>
 
 		echo '</div>';
 
+	}//end of logged in if statement
 
 ?>
 

@@ -1,7 +1,10 @@
 <?php
 	
 	session_start();
-
+	//if user is not logged in, push them back to index
+if(!isset($_SESSION['username'])){ 
+    header("Location: index.html");
+}else{
 
 		//update.php
 		//connect to database
@@ -23,5 +26,7 @@
         // var_dump($stmt);     
     	//push user back to their profile
 		header("Location: home.php");
+
+	}//end of logged in if statement
 
 ?>

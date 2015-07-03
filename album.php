@@ -1,6 +1,10 @@
 <?php
 	//always start session
 	session_start();
+	//if user is not logged in, push them back to index
+if(!isset($_SESSION['username'])){ 
+    header("Location: index.html");
+}else{
 
 	//This page displays an album a user has clicked on and all the photos inside it
 	//Get the albums information from the GET anchor link
@@ -96,6 +100,8 @@ echo '<!DOCTYPE html>
          
         }
         echo '';
+
+    }//end of logged in if statement
 
 ?>
 			

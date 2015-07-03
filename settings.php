@@ -2,6 +2,10 @@
 //start session
 session_start();
  
+ //if user is not logged in, push them back to index
+if(!isset($_SESSION['username'])){ 
+    header("Location: index.html");
+}else{
 
  //connect to database
  $user="root";
@@ -68,7 +72,9 @@ echo '<!DOCTYPE html>
 
 
 <?php 
-			}
+			}//end of forloop
+
+		}//end of logged in if statement
 
 
 ?>

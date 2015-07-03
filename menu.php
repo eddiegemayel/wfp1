@@ -2,6 +2,11 @@
 //start session
 session_start();
 
+//if user is not logged in, push them back to index
+if(!isset($_SESSION['username'])){ 
+    header("Location: index.html");
+}else{
+
 //this page links user to edit settings or logout
 
 //display the header and nav
@@ -39,6 +44,8 @@ echo '<!DOCTYPE html>
 				<a href="actions/logout.php"><p>Logout</p></a>
 				<a href="settings.php"><p>Settings</p></a>
 			</div>';
+
+		}//end of logged in if statement
 
 ?>
 

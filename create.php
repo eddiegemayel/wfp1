@@ -2,6 +2,10 @@
 //start the session
 session_start();
 
+//if user is not logged in, push them back to index
+if(!isset($_SESSION['username'])){ 
+    header("Location: index.html");
+}else{
 
 
 //display the header and nav
@@ -45,13 +49,13 @@ echo '<!DOCTYPE html>
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
-			echo'	<!------------------------------------------------------------------------------	 Tab 2(Add) Content Begins -->
+			echo'<!------------------------------------------------------------------------------	 Tab 2(Add) Content Begins -->
 				<div class="wrapper col-xs-12">
 					<div class="content col-xs-12" >
 					<div class="col-xs-6 uploadPicture">
 						<form method="POST" action="upload.php" enctype="multipart/form-data">
 							<h2 id="normalFont">Upload Photo</h2>
-							<p><input id="upload" type="file" name="filename" accept="image/*" capture="camera"/></p>
+							<p><input id="upload" type="file" name="filename" accept="image/*" capture="camera" required/></p>
 							<p><input type="text" name="title" placeholder="Title" maxlength="10" required/></p>
 							<p><textarea name="desc" placeholder="Description" required maxlength="50"></textarea></p>
 							<p><input id="month" type="text" name="month" placeholder="MM" maxlength="2"/> - <input id="day" type="text" name="day" placeholder="DD" maxlength="2"/> - <input id="year" type="text" name ="year" placeholder="YYYY" maxlength="4"/></p>
@@ -83,6 +87,7 @@ echo '<!DOCTYPE html>
 						</form>
 					</div>
 				</div>';
+			}//end of logged in if statement
 
 ?>
 

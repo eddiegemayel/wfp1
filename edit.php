@@ -2,6 +2,11 @@
 	//start session
 	session_start();
 
+	//if user is not logged in, push them back to index
+if(!isset($_SESSION['username'])){ 
+    header("Location: index.html");
+}else{
+
 	//This page displays a specific photo a user has clicked on
 	//retrieve the id of the photo here to display it
 	$photoId = $_GET['photoId'];
@@ -70,7 +75,9 @@ echo '<!DOCTYPE html>
 
 
 <?php
-			}
+			}//end of forloop
+
+		}//end of logged in if statement
 
 ?>
 
