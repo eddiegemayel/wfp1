@@ -62,12 +62,12 @@ echo '<!DOCTYPE html>
             <div class="image col-lg-2 col-lg-offset-4">
         <div class="flip-container" id="flip-toggle">
 			<div class="flipper" id="photo">
-				<div class="front">
+				<div class="front one-edge-shadow">
 					<!--FRONT -->
-					<img height="350px" width="350px" src="'.$key['photoUrl'].'" style="padding-top:3px;"/>
+					<img height="390px" width="437px" src="'.$key['photoUrl'].'" style="padding-top:3px;"/>
 					<h1 id="handwriting">'.$key['title'].'</h1>
 				</div>
-				<div class="back">
+				<div class="back one-edge-shadow">
 					<!-- BACK-->
 					<h3 id="handwriting">Description:</h3><p id="handwriting">'.$key['description'].'</p>
 					<h3 id="handwriting">Date:</h3><p id="handwriting">'.$key['date'].' </p>
@@ -91,7 +91,7 @@ echo '<!DOCTYPE html>
 				<a class="deleteBtn" href="actions/delete.php?photoId='.$key['id'].'">Delete</a>
         		<a class="downloadBtn" href="actions/download.php?url='.$key['photoUrl'].'">Download</a>
         		<a class="editBtn " href="edit.php?photoId='.$key['id'].'">Edit</a>
-        		<a class="editBtn backFlip" id="toggle" onclick="$(\'#flip-toggle\').toggleClass(\'active\');">Flip</a>
+        		<a class="editBtn" id="toggle" onclick="$(\'#flip-toggle\').toggleClass(\'active\');">Flip!</a>
         	</div>
         	';       
 ?>

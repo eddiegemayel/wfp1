@@ -78,15 +78,15 @@ echo '<!DOCTYPE html>
             echo ' <div class="clearfix visible-xs-block"></div>
 
             <a id="photoDiv"  class="col-lg-1 col-md-1 col-md-offset-1 col-sm-2 col-sm-offset-1 col-xs-3 col-xs-offset-3" href="image.php?id='.$key['id'].'" >
-            	<div id="'.$idCount.'" class="imageInAlbum2 ">
-        			<div class="flip-containerSmall" id="flip-toggle">
+            	<div id="'.$idCount.'" class="imageInAlbum2">
+        			<div class="flip-containerSmall " id="flip-toggle">
 						<div class="flipperSmall" id="photo">
-							<div class="frontSmall">
+							<div class="frontSmall one-edge-shadow">
 								<!--FRONT -->
 								<img height="150px" width="150px" src="'.$key['photoUrl'].'"/>
 								<h3 id="handwriting">'.$key['title'].'</h3>
 							</div>
-						<div class="backSmall">
+						<div class="backSmall one-edge-shadow">
 							<!-- BACK-->
 							<p id="handwriting"><strong>Description:</strong> <em>'.$key['description'].'</em></p>
 							<p id="handwriting"><strong>Date:</strong> <em>'.$key['date'].'</em></p>

@@ -136,7 +136,7 @@ textarea{
 	margin-top: 95px;
 }
 
-/*album styling*/
+/*-----------------------------------------------------------------------------album styling*/
 .album{
 	/*border: 1px solid black;*/
 	border-radius: 9px;
@@ -205,6 +205,18 @@ textarea{
 	margin-bottom: 35px;
 	/*margin-top: 1%;*/
 }
+
+.one-edge-shadow {
+	-webkit-box-shadow: 0 8px 6px -6px black;
+	   -moz-box-shadow: 0 8px 6px -6px black;
+	        box-shadow: 0 8px 6px -6px black;
+}
+
+/*.shadow{
+	-moz-box-shadow:    3px 3px 5px 6px #ccc;
+  	-webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  	box-shadow:         3px 3px 5px 6px #ccc;
+}*/
 
 .uploadPicture{
 	text-align: right;
@@ -357,8 +369,8 @@ textarea{
 }
 
 .flip-container, .front, .back{
-	width: 380px;
-	height: 453px;
+	width: 440px;
+	height: 493px;
 }
 /*flip speed goes here*/
 .flipper{
