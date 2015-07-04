@@ -206,16 +206,6 @@ textarea{
 	/*margin-top: 1%;*/
 }
 
-#photo{
-	display: block;
-	text-decoration: none;
-	color: inherit;
-	float: left;
-	clear:none;
-	margin-left: 5px;
-	margin-right: 5px;
-}
-
 .uploadPicture{
 	text-align: right;
 	border-right: solid 1px black;
@@ -370,11 +360,6 @@ textarea{
 	width: 380px;
 	height: 453px;
 }
-
-/*.front, .back{
-	border:1px black solid;
-}*/
-
 /*flip speed goes here*/
 .flipper{
 	-webkit-transition: 0.7s;
@@ -400,7 +385,7 @@ textarea{
 
 /*back, hidden pane*/
 .back{
-	-webkit-transform: rotateY(-180deg);
+	-webkit-transform: rotateY(180deg);
 	text-align: left;
 	padding-left: 10px;
 	padding-top: 10px;

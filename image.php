@@ -66,7 +66,6 @@ echo '<!DOCTYPE html>
 					<!--FRONT -->
 					<img height="350px" width="350px" src="'.$key['photoUrl'].'" style="padding-top:3px;"/>
 					<h1 id="handwriting">'.$key['title'].'</h1>
-					
 				</div>
 				<div class="back">
 					<!-- BACK-->
@@ -74,7 +73,6 @@ echo '<!DOCTYPE html>
 					<h3 id="handwriting">Date:</h3><p id="handwriting">'.$key['date'].' </p>
 					<h3 id="handwriting">People:</h3><p id="handwriting">'.$key['people'].' </p>
 					<h3 id="handwriting">Tags:</h3><p id="handwriting">'.$key['tags'].'</p>
-					
 				</div>
 			</div>
 				
@@ -82,7 +80,7 @@ echo '<!DOCTYPE html>
 
 
 		</div><!-- End of whole image div -->
-		<a class="editBtn backFlip" id="toggle" onclick="$(\'#flip-toggle\').toggleClass(\'active\');">-></a>
+		
 		
 		';
         }
@@ -93,6 +91,7 @@ echo '<!DOCTYPE html>
 				<a class="deleteBtn" href="actions/delete.php?photoId='.$key['id'].'">Delete</a>
         		<a class="downloadBtn" href="actions/download.php?url='.$key['photoUrl'].'">Download</a>
         		<a class="editBtn " href="edit.php?photoId='.$key['id'].'">Edit</a>
+        		<a class="editBtn backFlip" id="toggle" onclick="$(\'#flip-toggle\').toggleClass(\'active\');">Flip</a>
         	</div>
         	';       
 ?>
