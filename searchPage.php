@@ -64,12 +64,12 @@ echo '<!DOCTYPE html>
             	<div class="imageInAlbum2">
         			<div class="flip-containerSmall" id="flip-toggle">
 						<div class="flipperSmall" id="photo">
-							<div class="frontSmall">
+							<div class="frontSmall one-edge-shadow">
 								<!--FRONT -->
 								<img height="150px" width="150px" src="'.$searchKey['photoUrl'].'"/>
 								<h3 id="handwriting">'.$searchKey['title'].'</h3>
 							</div>
-						<div class="backSmall">
+						<div class="backSmall one-edge-shadow">
 							<!-- BACK-->
 							<p id="handwriting"><strong>Description:</strong> <em>'.$searchKey['description'].'</em></p>
 							<p id="handwriting"><strong>Date:</strong> <em>'.$searchKey['date'].'</em></p>

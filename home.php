@@ -88,7 +88,7 @@ echo '<!DOCTYPE html>
 								<div class="flipperSmall" id="photo">
 									<div class="frontSmall">
 										<!--FRONT -->
-										<img height="130px" width="130px" src="'.$photoKey['photoUrl'].'"/>
+										<img height="150px" width="150px" src="'.$photoKey['photoUrl'].'"/>
 										<h3 id="handwriting">'.$photoKey['title'].'</h3>
 									</div>
 								
