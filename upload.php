@@ -41,7 +41,6 @@
         	//select everything in the photo table where created by equals currently logged in user   
         	$stmt2 = $dbh2->prepare("UPDATE albums SET photoTotal = photoTotal + 1 WHERE id = ".$_POST['album']."");
         	$stmt2->execute();     
-        
 			
 			//push back to their profile
 			header("Location: home.php");

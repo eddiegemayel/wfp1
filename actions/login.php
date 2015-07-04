@@ -12,6 +12,8 @@
   $_SESSION['sortVariable1'] = 'albumYear';
   $_SESSION['sortVariable2'] = 'DESC';
 
+  $_SESSION['loginFail'] == false;
+
 	try{
         //connnect to database, check login against users table in the database
 		$user="root";
@@ -36,8 +38,10 @@
       	
     //see if the user exists
     if($id == false){
+            header("Location: ../index.html");
             //if they are not in database tell them the error
-            echo '<p>You are not in our database.</p>	';
+            $_SESSION['loginFail'] = true;
+            
       }
       //if the login is correct store into session variables for easy global access across all php files
     else{

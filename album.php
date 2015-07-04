@@ -70,7 +70,8 @@ echo '<!DOCTYPE html>
 
 
         //store ids in session variable to be referenced later when picture is deleted
-        $_SESSION['deleteResults'] = $results;
+        $_SESSION['deleteResults'] = $_GET['albumId'];
+
 
            foreach($results as $key){
          	// $idCount = $idCount + 1; 
@@ -100,9 +101,6 @@ echo '<!DOCTYPE html>
          
         }
         echo '';
-
-    }//end of logged in if statement
-
 ?>
 			
 		</div><!-- end of content div-->
@@ -112,3 +110,8 @@ echo '<!DOCTYPE html>
 	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<script type="text/javascript" src="main.js"></script>
 </html>
+
+<?php
+ }//end of logged in if statement
+
+ ?>

@@ -2,13 +2,9 @@
 	//retrieve session
 	session_start();
 
-	
-
 	//just in case
 	$_SESSION['username'] = '';
 	$_SESSION['q'] = '';
-
-
 
 	// var_dump($_SESSION['username']);	
 

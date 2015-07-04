@@ -37,7 +37,7 @@ echo '<!DOCTYPE html>
 				</nav>
 			</header>
 			<div class="content container-fluid col-xs-12">
-				<!--<button class="editBtn" id="toggle" onclick="$(\'#flip-toggle\').toggleClass(\'active\');">Flip</button>-->
+				
 			';
 
 
@@ -54,19 +54,19 @@ echo '<!DOCTYPE html>
 
         //fetch all the results and put them into an associative arraay
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+        //loop through only image
            foreach($results as $key){
          
             echo '
-            <div class="row">
+           
             <div class="image col-lg-2 col-lg-offset-4">
         <div class="flip-container" id="flip-toggle">
 			<div class="flipper" id="photo">
 				<div class="front">
 					<!--FRONT -->
-					<img height="350px" width="350px" src="'.$key['photoUrl'].'"/>
+					<img height="350px" width="350px" src="'.$key['photoUrl'].'" style="padding-top:3px;"/>
 					<h1 id="handwriting">'.$key['title'].'</h1>
-					<a class="editBtn frontFlip" id="toggle" onclick="$(\'#flip-toggle\').toggleClass(\'active\');"><-</a>
+					
 				</div>
 				<div class="back">
 					<!-- BACK-->
@@ -74,7 +74,7 @@ echo '<!DOCTYPE html>
 					<h3 id="handwriting">Date:</h3><p id="handwriting">'.$key['date'].' </p>
 					<h3 id="handwriting">People:</h3><p id="handwriting">'.$key['people'].' </p>
 					<h3 id="handwriting">Tags:</h3><p id="handwriting">'.$key['tags'].'</p>
-					<a class="editBtn backFlip" id="toggle" onclick="$(\'#flip-toggle\').toggleClass(\'active\');">-></a>
+					
 				</div>
 			</div>
 				
@@ -82,8 +82,8 @@ echo '<!DOCTYPE html>
 
 
 		</div><!-- End of whole image div -->
-
-		</div><!-- end of row -->
+		<a class="editBtn backFlip" id="toggle" onclick="$(\'#flip-toggle\').toggleClass(\'active\');">-></a>
+		
 		';
         }
 
@@ -94,11 +94,8 @@ echo '<!DOCTYPE html>
         		<a class="downloadBtn" href="actions/download.php?url='.$key['photoUrl'].'">Download</a>
         		<a class="editBtn " href="edit.php?photoId='.$key['id'].'">Edit</a>
         	</div>
-        	'; 
-
-        }//end of logged in if statement
+        	';       
 ?>
-
 
 		</div><!-- end of content div-->
 		</div><!-- end of wrapper div -->
@@ -107,3 +104,6 @@ echo '<!DOCTYPE html>
 	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<script type="text/javascript" src="main.js"></script>
 </html>
+<?php
+	}//end of logged in if statement
+?>

@@ -39,6 +39,7 @@ echo '<!DOCTYPE html>
 				<h2 id="normalFont">Welcome, "'.$_SESSION['username'].'"!</h2>
 				<form action="actions/sort.php" method="POST">
 					<select name="sort">
+						<option value="">Sort Albums</option>
 						<option value="albumYear">Most Recent</option>
 						<option value="albumTitle">Title</option>
 					</select>
@@ -63,7 +64,7 @@ echo '<!DOCTYPE html>
         //if users have no albums
         if($results == null){
         	echo'<h4 style="margin-top:50px;">You Have No Albums Yet!</h4>
-        			<h5>Create an <a href="create.php">Album</a>, Then Upload Some Photos!</h5>';
+        			<h5>Create an <a href="create.php">Album</a> First, Then Upload Some Photos!</h5>';
         }else{
         	//loop and display albums
         	foreach($results as $key){
@@ -82,20 +83,17 @@ echo '<!DOCTYPE html>
 
 				// var_dump($count($photoResults, COUNT_RECURSIVE));
             	foreach($photoResults as $photoKey){
-            		      echo '<div class="imageInAlbum">
-        					<div class="flip-ContainerSmall" id="flip-toggle">
-							<div class="flipperSmall" id="photo">
-							<div class="frontSmall">
-								<!--FRONT -->
-								<img height="130px" width="130px" src="'.$photoKey['photoUrl'].'"/>
-								<h3 id="handwriting">'.$photoKey['title'].'</h3>
-							</div>
-							<!--<div class="backSmall">
-								<!-- BACK-->
-								<!--<p><strong>Description:</strong> '.$photoKey['description'].'</p> 
-							</div>-->
-							</div><!-- end of small flipper div -->
-							</div><!-- End of small flip container-->
+            		echo '<div class="imageInAlbum">
+        				
+								<div class="flipperSmall" id="photo">
+									<div class="frontSmall">
+										<!--FRONT -->
+										<img height="130px" width="130px" src="'.$photoKey['photoUrl'].'"/>
+										<h3 id="handwriting">'.$photoKey['title'].'</h3>
+									</div>
+								
+								</div><!-- end of small flipper div -->
+			
 						</div><!-- End of whole image div -->';
             	}
             	//check to see how many photos are in this album
@@ -111,7 +109,7 @@ echo '<!DOCTYPE html>
         		}
     	}//end of if statement
 		echo '</div><!--  Tab 1 Content Ends -->'; 
-	}//end of logged in if statement
+	
 ?>  
 
 		</div><!-- end of content div-->
@@ -121,3 +119,7 @@ echo '<!DOCTYPE html>
 	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<script type="text/javascript" src="main.js"></script>
 </html>
+
+<?php
+}//end of logged in if statement
+?>

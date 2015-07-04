@@ -204,7 +204,16 @@ textarea{
 	margin-left: 25px;
 	margin-bottom: 35px;
 	/*margin-top: 1%;*/
+}
 
+#photo{
+	display: block;
+	text-decoration: none;
+	color: inherit;
+	float: left;
+	clear:none;
+	margin-left: 5px;
+	margin-right: 5px;
 }
 
 .uploadPicture{
@@ -344,7 +353,6 @@ textarea{
 
 
 /*--------------------------------------------------------------------------------------------------------------------DIV FLIP CSS */
-
 /*container, keeps perspective*/
 .flip-container{
 	-webkit-perspective: 1000;
@@ -363,9 +371,9 @@ textarea{
 	height: 453px;
 }
 
-.front, .back{
+/*.front, .back{
 	border:1px black solid;
-}
+}*/
 
 /*flip speed goes here*/
 .flipper{
@@ -378,8 +386,8 @@ textarea{
 .front, .back{
 	-webkit-backface-visibility: hidden;
 	position: absolute;
-	/*top: 0;
-	left: 0;*/
+	top: 0;
+	left: 0;
 }
 
 /*front pane, placed above back*/
@@ -387,20 +395,25 @@ textarea{
 	-webkit-z-index: 2;
 	-webkit-transform: rotateY(0deg);
 	/*background-color: #F7E730;*/
-	/*background-image : url(../images/p1.jpg); */
+	background-image : url(../images/p1back.jpg); 
 }
 
 /*back, hidden pane*/
 .back{
-	-webkit-transform: rotateY(180deg);
+	-webkit-transform: rotateY(-180deg);
 	text-align: left;
 	padding-left: 10px;
 	padding-top: 10px;
 	/*background-color: #E0A32C;*/
-	/*background-image: url(../images/p1back.jpg);*/
+	background-image: url(../images/p1back.jpg);
 }
 
 /*---------------------------------------------------------------------------------- SMALL FLIPPER*/
+
+/*.frontSmall{
+	width: 153px;
+	height: 200px;
+}*/
 
 /*container, keeps perspective*/
 .flip-containerSmall{
@@ -420,9 +433,10 @@ textarea{
 	height: 200px;
 }
 
+/*
 .frontSmall, .backSmall{
 	border:1px black solid;
-}
+}*/
 
 /*flip speed goes here*/
 .flipperSmall{
@@ -435,6 +449,7 @@ textarea{
 .frontSmall, .backSmall{
 	-webkit-backface-visibility: hidden;
 	position: absolute;
+	background-image : url(../images/p1back.jpg); 
 	/*top: 0;
 	left: 0;*/
 }
