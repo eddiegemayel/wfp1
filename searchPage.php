@@ -43,7 +43,7 @@ echo '<!DOCTYPE html>
 				<div >
 				<!-----------------------------------------------------------------------------------------	 Tab 3(Search) Content Begins -->
 					<form id="searchForm" method="POST" action="actions/search.php" >
-						<input type="text" placeholder="Search.." name="q"/>
+						<input class="inputStyled" type="text" placeholder="..." name="q"/>
 						<input class="searchBtn" type="Submit" value="Search" />
 					</form>';
 

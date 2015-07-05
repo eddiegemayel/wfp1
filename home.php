@@ -25,10 +25,10 @@ echo '<!DOCTYPE html>
 			<header class="navbar navbar-fixed-top col-xs-12">
 				<nav class="col-lg-8 col-lg-offset-2 col-md-9 col-md-offset-1 col-sm-9 col-sm-offset-3 col-xs-12">
 					<ul class="tab-links col-md-7 col-md-offset-4 col-xs-12">
-        				<li id="albums" class="active"><a href="home.php"></a></li>
-        				<li id="add" ><a href="create.php"></a></li>
-        				<li id="search" ><a href="searchPage.php"></a></li>
-        				<li id="menu" ><a href="menu.php"></a></li>
+        				<li id="albums" class="active"><a href="home.php" title="Albums"></a></li>
+        				<li id="add" ><a href="create.php" title="Create"></a></li>
+        				<li id="search" ><a href="searchPage.php" title="Search"></a></li>
+        				<li id="menu" ><a href="menu.php" title="Menu"></a></li>
     				</ul>
 				</nav>
 			</header>
@@ -69,7 +69,7 @@ echo '<!DOCTYPE html>
         	//loop and display albums
         	foreach($results as $key){
          	
-            	echo '<a id="albumDiv" class="album col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1 col-sm-12 col-xs-12" href="album.php?albumId='.$key['id'].'&albumTitle='.$key['albumTitle'].'&albumYear='.$key['albumYear'].'">
+            	echo '<a id="albumDiv" class="album col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 one-edge-shadow" href="album.php?albumId='.$key['id'].'&albumTitle='.$key['albumTitle'].'&albumYear='.$key['albumYear'].'">
             		<h3 id="normalFont">'.$key['albumTitle'].'</h3>
             		<p id="normalFont">('.$key['albumYear'].')</p>';
 

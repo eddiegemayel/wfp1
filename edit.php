@@ -56,32 +56,34 @@ echo '<!DOCTYPE html>
         //fetch all the results and put them into an associative arraay
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+		echo '
+		<div class="col-xs-12">
+		<form method="POST" action="update.php" >';
 
         foreach($results as $key){
 
-        	echo '<form method="POST" action="update.php" >';
-
 ?>
 	
-	 		<p>Title: <input type="text" name ="photoName" maxlength="10" value="<?=$key['title']?>"/></p>
-	 		<p>Description: <input type="text" name ="photoDescription" value="<?=$key['description']?>"/></p>
+	 		<p>Title: <input class="inputStyled editRight" type="text" name ="photoName" maxlength="10" value="<?=$key['title']?>"/></p>
+	 		<p>Description: <input class="inputStyled editRight" type="text" name ="photoDescription" value="<?=$key['description']?>"/></p>
 	 		<!--<p>Date: <input type="text" name ="photoName" value="<?=$key['date']?>"/></p>-->
-	 		<p>People: <input type="text" name ="photoPeople" value="<?=$key['people']?>"/></p>
-	 		<p>Tags: <input type="text" name ="photoTags" value="<?=$key['tags']?>"/></p>
+	 		<p>People: <input class="inputStyled editRight" type="text" name ="photoPeople" value="<?=$key['people']?>"/></p>
+	 		<p>Tags: <input class="inputStyled editRight" type="text" name ="photoTags" value="<?=$key['tags']?>"/></p>
 						 
 			<p><input class="searchBtn" type="submit" value ="Update"/></p>	
 	
-		</form> 
+		
 
 
 <?php
 			}//end of forloop
 
-		}//end of logged in if statement
+	
 
 ?>
 
-
+		</form> 
+			</div>
 		</div><!-- end of content div-->
 		</div><!-- end of wrapper div -->
 	</body>
@@ -89,3 +91,7 @@ echo '<!DOCTYPE html>
 	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<script type="text/javascript" src="main.js"></script>
 </html>
+
+<?php
+		}//end of logged in if statement
+?>
