@@ -55,11 +55,11 @@ echo '<!DOCTYPE html>
 					<div class="col-xs-6 uploadPicture">
 						<form method="POST" action="upload.php" enctype="multipart/form-data">
 							<h2 id="normalFont">Upload Photo</h2>
-							<p><input id="upload" type="file" name="filename" accept="image/*" capture="camera" required/></p>
+							<p><input class="inputRestrict" id="upload" type="file" name="filename" accept="image/*" capture="camera" required/></p>
 							<p><input class="inputStyled" type="text" name="title" placeholder="Title" maxlength="10" required/></p>
 							<p><textarea name="desc" placeholder="Description" required maxlength="50"></textarea></p>
-							<p><input id="month" type="text" name="month" placeholder="MM" maxlength="2"/> - <input id="day" type="text" name="day" placeholder="DD" maxlength="2"/> - <input id="year" type="text" name ="year" placeholder="YYYY" maxlength="4"/></p>
-							<p><input class="inputStyled"type="text" name="people" placeholder="People" /></p>
+							<p><input class="inputRestrict" id="month" type="text" name="month" placeholder="MM" maxlength="2"/> - <input class="inputRestrict" id="day" type="text" name="day" placeholder="DD" maxlength="2"/> - <input class="inputRestrict" id="year" type="text" name ="year" placeholder="YYYY" maxlength="4"/></p>
+							<p><input class="inputStyled" type="text" name="people" placeholder="People" /></p>
 							<p><input class="inputStyled" type="text" name="tags" placeholder="Tags" required/></p>
 							<p>
 								<select name="album" required>
@@ -81,7 +81,7 @@ echo '<!DOCTYPE html>
 						<h2 id="normalFont">Create Album</h2>
 						<form method="POST" action="actions/albumCreate.php">
 							<p><input class="inputStyled" type="text" name="albumTitle" placeholder="Album Title Here"/></p>
-							<p><input class="inputStyled" type="text" name="albumYear" placeholder="Album Year"/></p>
+							<p><input class="inputStyled inputRestrict" type="text" name="albumYear" placeholder="Album Year"/></p>
 
 							<input class="createBtn" type="submit" value="Create"/>
 						</form>

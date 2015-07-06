@@ -48,35 +48,22 @@ echo '<!DOCTYPE html>
         				<li id="menu" class="active"><a href="menu.php"></a></li>
     				</ul>
 				</nav>
-			</header>';
-
-
-		
-			echo'
+			</header>
 
 			<div class="content col-xs-12"/>
 			
-			<!------------------------------------------------------------------------------------------------------------	 Tab 4 Logout Content Begins -->
+			<!------------------------------------------------------------	 Tab 4 Logout Content Begins -->
 				<h2>Settings</h2>';
-				echo '<form method="POST" action="updateInfo.php" >';
+				echo '<form method="POST" action="actions/updateInfo.php" >';
  				foreach($results as $key){
 				?>
-			<p>Email: <input type="text" name ="email" maxlength="10" value="<?=$key['email']?>"/></p>
-	 		<p>Username: <input type="text" name ="username" value="<?=$key['username']?>"/></p>
-	 		
-						 
-			<p><input type="submit" value ="Update Info"/></p>	
-	
+				<p id="normalFont">Current Email: <input class="inputStyled" type="text" name ="email" value="<?=$key['email']?>"/></p>
+	 			<p id="normalFont">Current Username: <input class="inputStyled" type="text" name ="username" value="<?=$key['username']?>"/></p>
+				<p><input class="uploadBtn" type="submit" value ="Update Info"/></p>
 			</form> 
-
-
 
 <?php 
 			}//end of forloop
-
-		}//end of logged in if statement
-
-
 ?>
 
 	</div><!-- end of content div-->
@@ -86,3 +73,6 @@ echo '<!DOCTYPE html>
 	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<script type="text/javascript" src="main.js"></script>
 </html>
+<?php
+	}//end of logged in if statement
+?>

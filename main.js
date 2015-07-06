@@ -2,7 +2,7 @@
 $(document).ready(function() {
 
   //prevents special characters being entered
-	$('input').bind('keypress', function (event) {
+	$('.inputRestrict').bind('keypress', function (event) {
     var regex = new RegExp("^[a-zA-Z0-9]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {

@@ -101,7 +101,7 @@ echo '<!DOCTYPE html>
             		//Subtract four to show user how many more photos are in the album
             		$total = $key['photoTotal'] - 4 ;
             		//echo it out
-            		echo '<p><span class="highlight">+'.$total.'</span> More...</p>';
+            		echo '<p><span class="">+'.$total.'</span> More...</p>';
             	}else{
             		echo '';
             	}
