@@ -55,7 +55,7 @@ echo '<!DOCTYPE html>
 		if($_SESSION['searchResults'] != ''){
 
 			//if so, echo the results
-			echo '<h3 id="normalFont">Results for: "'.$_SESSION['q'].'"</h3>';
+			echo '<h3 id="normalFont">All Results For : <u>"'.$_SESSION['q'].'"</u></h3>';
 
 			//loop through results
 			foreach($_SESSION['searchResults'] as $searchKey){

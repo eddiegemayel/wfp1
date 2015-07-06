@@ -18,9 +18,9 @@ $(document).ready(function() {
       $("#delete").removeClass("hidden").addClass("visible");
     },
     //if user clicks out of select input field, hide button again
-    focusout: function(){
-      $("#delete").removeClass("visible").addClass("hidden");
-    }
+    // focusout: function(){
+    //   $("#delete").removeClass("visible").addClass("hidden");
+    // }
   });
 
 });
