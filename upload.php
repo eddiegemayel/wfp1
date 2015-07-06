@@ -14,10 +14,59 @@
 	//trying to explode tags
 	// $tags = explode(" ",$_POST["tags"]);
 
-	// //if file uploads successfully
-	if(move_uploaded_file($_FILES["filename"]["tmp_name"], $_SESSION["uploadfile"])){
+	//if file is attempting to be uploaded
+	if(isset($_FILES['filename'])) {
+		//check for errors
+    	$errors     = array();
+    	$maxsize    = 2097152;
+    	$acceptable = array(
+        	'application/pdf',
+        	'image/jpeg',
+        	'image/jpg',
+        	'image/gif',
+        	'image/png'
+    	);
+    	//if filesize is too large
+    	if(($_FILES['filename']['size'] >= $maxsize) || ($_FILES["filename"]["size"] == 0)) {
+        	echo '<!DOCTYPE html>
+					<html>
+						<head>
+							<title>Create</title>
+							<meta charset="UTF-8">
+							<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+							<link rel="stylesheet" href="css/main.css" type="text/css"/>
+							<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+							<!-- Latest compiled and minified JavaScript -->
+							<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+						</head>
+	
+						<body>
+							<div class="wrapper tabs col-xs-12">
+								<header class="navbar navbar-fixed-top col-xs-12">
+									<nav class="col-lg-8 col-lg-offset-2 col-md-9 col-md-offset-1 col-sm-9 col-sm-offset-3 col-xs-12">
+										<ul class="tab-links col-md-7 col-md-offset-4 col-xs-12">
+        									<li id="albums"><a title="Albums" href="home.php"></a></li>
+        									<li id="add" class="active"><a title="Create" href="create.php"></a></li>
+        									<li id="search"><a title="Search" href="searchPage.php"></a></li>
+        									<li id="menu"><a title="Menu" href="menu.php"></a></li>
+    									</ul>
+									</nav>
+								</header>
+							<div class="content col-xs-12">
+								<h3>File size too large, must be less than 2 megabytes. <a href="create.php">Upload another photo.</a></h3>
 
-			//connect to database
+
+							</div><!-- end of content div-->
+						</div><!-- end of wrapper div -->
+					</body>
+					<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+					<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+					<script type="text/javascript" src="main.js"></script>
+				</html>';
+    	}else{
+    		//otherwise upload the file
+        	move_uploaded_file($_FILES["filename"]["tmp_name"], $_SESSION["uploadfile"]);
+        	//connect to database
 			$user="root";
 			$pass="root";
 			$dbh = new PDO("mysql:host=localhost; dbname=Retrospective; port=8889;", $user,$pass);
@@ -44,11 +93,10 @@
 			
 			//push back to their profile
 			header("Location: home.php");
+    	
 		}
-
-		else{
-			//if the upload failed	
-			echo "Failed to upload.";
-		}
+	}else{
+		echo "Error, <a href='create.php'>please try again.</a>";
+	}
 
 ?>

@@ -58,7 +58,7 @@ echo '<!DOCTYPE html>
 
 		echo '
 		<div class="col-xs-12">
-		<form method="POST" action="update.php" >';
+		<form method="POST" action="actions/update.php" >';
 
         foreach($results as $key){
 
