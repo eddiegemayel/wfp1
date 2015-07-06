@@ -70,7 +70,7 @@ echo '<!DOCTYPE html>
 	 		<p>People: <input class="inputStyled editRight" type="text" name ="photoPeople" value="<?=$key['people']?>"/></p>
 	 		<p>Tags: <input class="inputStyled editRight" type="text" name ="photoTags" value="<?=$key['tags']?>"/></p>
 						 
-			<p><input class="searchBtn" type="submit" value ="Update"/></p>	
+			<p><input class="searchBtn" type="submit" value ="Accept Edit"/></p>	
 	
 		
 
