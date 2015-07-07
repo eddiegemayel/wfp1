@@ -54,9 +54,10 @@ echo '<!DOCTYPE html>
 			</header>
 
 			<div class="content col-xs-12">
-			<h2 id="normalFont">'.$albumTitle.' ('.$albumYear.') <a class="deleteBtn" href="actions/deleteAlbum.php" title="Delete This Album" >X</a></h2>
+			<h2 id="normalFont">'.$albumTitle.' ('.$albumYear.') <a class="deleteBtn" href="actions/deleteAlbum.php" title="Delete This Album" >X</a></h2>';
 			
-			<form method="POST" action="actions/multiple.php">
+		if(!empty($results)){
+			echo'<form id="deleteMultipleForm" method="POST" action="actions/multiple.php">
 				<select id="deleteMultiple" name="multiple[]" multiple required>';
 				//loop and display all albums this user has created
         		foreach($results as $key){
@@ -72,7 +73,7 @@ echo '<!DOCTYPE html>
         //store ids in session variable to be referenced later when picture is deleted
         $_SESSION['deleteResults'] = $_GET['albumId'];
 
-
+        
            foreach($results as $key){
          	// $idCount = $idCount + 1; 
             echo ' <div class="clearfix visible-xs-block"></div>
@@ -88,10 +89,10 @@ echo '<!DOCTYPE html>
 							</div>
 						<div class="backSmall one-edge-shadow">
 							<!-- BACK-->
-							<p id="handwriting"><strong>Description:</strong> <em>'.$key['description'].'</em></p>
-							<p id="handwriting"><strong>Date:</strong> <em>'.$key['date'].'</em></p>
-							<p id="handwriting"><strong>People:</strong> <em>'.$key['people'].'</em></p>
-							<p id="handwriting"><strong>Tags:</strong> <em>'.$key['tags'].'</em></p>
+							<p class="wordWrap"><strong>Description:</strong> <em id="handwriting">'.$key['description'].'</em></p>
+							<p class="wordWrap"><strong>Date:</strong> <em id="handwriting">'.$key['date'].'</em></p>
+							<p class="wordWrap"><strong>People:</strong> <em id="handwriting">'.$key['people'].'</em></p>
+							<p class="wordWrap"><strong>Tags:</strong> <em id="handwriting">'.$key['tags'].'</em></p>
 						</div>
 					</div>
 			
@@ -100,7 +101,10 @@ echo '<!DOCTYPE html>
 		</a>';
          
         }
-        echo '';
+    }else{
+    	echo '<p>This Album Is Lonely! Go <a href="create.php">Add Some Photos</a>!</p>';
+    }
+       
 ?>
 			
 		</div><!-- end of content div-->

@@ -30,8 +30,8 @@ echo '<!DOCTYPE html>
 				<nav class="col-lg-8 col-lg-offset-2 col-md-9 col-md-offset-1 col-sm-9 col-sm-offset-3 col-xs-12">
 					<ul class="tab-links col-md-7 col-md-offset-4 col-xs-12">
         				<li id="albums" class="active"><a title="Albums" href="home.php"></a></li>
-        				<li id="add" ><a title="Create" href="create.php"></a></li>
-        				<li id="search" ><a title="Search" href="searchPage.php"></a></li>
+        				<li id="add"><a title="Create" href="create.php"></a></li>
+        				<li id="search"><a title="Search" href="searchPage.php"></a></li>
         				<li id="menu"><a title="Menu" href="menu.php"></a></li>
     				</ul>
 				</nav>
@@ -69,10 +69,10 @@ echo '<!DOCTYPE html>
 				</div>
 				<div class="back one-edge-shadow">
 					<!-- BACK-->
-					<h3 id="handwriting">Description:</h3><p id="handwriting">'.$key['description'].'</p>
-					<h3 id="handwriting">Date:</h3><p id="handwriting">'.$key['date'].' </p>
-					<h3 id="handwriting">People:</h3><p id="handwriting">'.$key['people'].' </p>
-					<h3 id="handwriting">Tags:</h3><p id="handwriting">'.$key['tags'].'</p>
+					<h2>Description:</h2><h4 id="handwriting">'.$key['description'].'</h4>
+					<h2>Date:</h2><h4 id="handwriting">'.$key['date'].' </h4>
+					<h2>People:</h2><h4 id="handwriting">'.$key['people'].' </h4>
+					<h2>Tags:</h2><h4 id="handwriting">'.$key['tags'].'</h4>
 				</div>
 			</div>
 				
@@ -91,7 +91,7 @@ echo '<!DOCTYPE html>
 				<a class="deleteBtn" href="actions/delete.php?photoId='.$key['id'].'">Delete</a>
         		<a class="downloadBtn" href="actions/download.php?url='.$key['photoUrl'].'">Download</a>
         		<a class="editBtn " href="edit.php?photoId='.$key['id'].'">Edit</a>
-        		<a class="editBtn" id="toggle" onclick="$(\'#flip-toggle\').toggleClass(\'active\');">Flip!</a>
+        		<a class="flipBtn" id="toggle" onclick="$(\'#flip-toggle\').toggleClass(\'active\');">Flip!</a>
         	</div>
         	';       
 ?>

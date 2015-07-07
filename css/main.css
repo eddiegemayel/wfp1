@@ -2,7 +2,7 @@
 Some Colors
 	#86cba4 - light green
 	#c69838 - orange
-	#000f55? - blue ink pen
+	#005FC2 - blue ink pen
 	#c88484 - light red
 	#5d5443 - brown
 	#e4e4dc - white
@@ -67,7 +67,7 @@ textarea{
 
 #handwriting{
 	font-family: MarkerFelt;
-	/*color: #000f55 ;*/
+	color: #005FC2;
 }
 
 @font-face{
@@ -97,6 +97,10 @@ textarea{
 	margin-top: 30px;
 	vertical-align: middle;
 	text-align: center;
+}
+
+.wordWrap{
+	word-wrap: break-word;
 }
 
 
@@ -194,6 +198,9 @@ textarea{
 	color:#c88484 ;
 };
 
+.ink{
+	color:#005FC2;
+}
 
 #logoContainer{
 	text-align: center;
@@ -242,7 +249,7 @@ textarea{
 
 #upload{
 	text-align: right;
-	margin-left: 470px;
+	margin-left: 430px;
 	position: relative;
 }
 
@@ -322,7 +329,7 @@ textarea{
 	font-family: Helvetica;
 	padding-top: 5px;
 	padding-left: 5px;
-	width: 100px;
+	width: 115px;
 	height: 120px;
 }
 
@@ -596,7 +603,8 @@ textarea{
   color: #ffffff;
 }
 
-.editBtn {
+
+.flipBtn {
   -webkit-border-radius: 6;
   -moz-border-radius: 6;
   border-radius: 6px;
@@ -608,8 +616,26 @@ textarea{
   text-decoration: none;
 }
 
-.editBtn:hover {
+.flipBtn:hover {
   background: #12cc63;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.editBtn {
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 17px;
+  background: #7b76b7;
+  padding: 1px 10px 1px 10px;
+  border: solid #2b2b2b 2px;
+  text-decoration: none;
+}
+
+.editBtn:hover {
+  background: #595685;
   text-decoration: none;
   color: #ffffff;
 }
