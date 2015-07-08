@@ -70,8 +70,8 @@ echo '<!DOCTYPE html>
         	foreach($results as $key){
          	
             	echo '<a id="albumDiv" class="album col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 one-edge-shadow" href="album.php?albumId='.$key['id'].'&albumTitle='.$key['albumTitle'].'&albumYear='.$key['albumYear'].'">
-            		<h3 id="normalFont">'.$key['albumTitle'].'</h3>
-            		<p id="normalFont">('.$key['albumYear'].')</p>';
+            		<h3 id="normalFont" class="white">'.$key['albumTitle'].'</h3>
+            		<p id="normalFont" class="white">('.$key['albumYear'].')</p>';
 
 				$dbh = new PDO("mysql:host=localhost; dbname=Retrospective; port=8889;", $user,$pass);
 				//display anything that matches what user searched for.
@@ -88,7 +88,7 @@ echo '<!DOCTYPE html>
 								<div class="flipperSmall" id="photo">
 									<div class="frontSmall">
 										<!--FRONT -->
-										<img height="150px" width="150px" src="'.$photoKey['photoUrl'].'"/>
+										<img height="152px" width="153px" src="'.$photoKey['photoUrl'].'"/>
 										<h3 id="handwriting">'.$photoKey['title'].'</h3>
 									</div>
 								
@@ -101,7 +101,7 @@ echo '<!DOCTYPE html>
             		//Subtract four to show user how many more photos are in the album
             		$total = $key['photoTotal'] - 4 ;
             		//echo it out
-            		echo '<p><span class="">+'.$total.'</span> More...</p>';
+            		echo '<p><span class="white">+'.$total.'</span><span class="white"> More...</span></p>';
             	}else{
             		echo '';
             	}

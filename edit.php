@@ -64,11 +64,11 @@ echo '<!DOCTYPE html>
 
 ?>
 	
-	 		<p>Title: <input class="inputStyled editRight" type="text" name="photoName" maxlength="10" value="<?=$key['title']?>"/></p>
-	 		<p>Description: <input class="inputStyled editRight" type="text" name="photoDescription" maxlength="50" value="<?=$key['description']?>"/></p>
+	 		<p>Title: <input class="inputStyled editRight" type="text" name="photoName" maxlength="14" value="<?=$key['title']?>"/></p>
+	 		<p>Description: <input class="inputStyled editRight" type="text" name="photoDescription" maxlength="55" value="<?=$key['description']?>"/></p>
 	 		<!--<p>Date: <input type="text" name ="photoName" value="<?=$key['date']?>"/></p>-->
-	 		<p>People: <input class="inputStyled editRight" type="text" name ="photoPeople" value="<?=$key['people']?>"/></p>
-	 		<p>Tags: <input class="inputStyled editRight" type="text" name ="photoTags" value="<?=$key['tags']?>"/></p>
+	 		<p>People: <input class="inputStyled editRight" type="text" name ="photoPeople" maxlength="30" value="<?=$key['people']?>"/></p>
+	 		<p>Tags: <input class="inputStyled editRight" type="text" name ="photoTags" maxlength="30" value="<?=$key['tags']?>"/></p>
 						 
 			<p><input class="searchBtn" type="submit" value ="Accept Edit"/></p>	
 	

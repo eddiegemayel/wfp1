@@ -160,7 +160,7 @@ textarea{
 /*-----------------------------------------------------------------------------album styling*/
 .album{
 	/*border: 1px solid black;*/
-	border-radius: 9px;
+	border-radius: 4px;
 	/*background-color:rgba(50, 50, 50, 0.21);*/
 	background-color: rgba(171,158,137, 0.66);
 	/*background-color:#6b6356;*/
@@ -173,6 +173,7 @@ textarea{
 	text-decoration: none;
 	color: inherit;
 	margin-top: 15px;
+	background-image: url(../images/book.jpg);
 }
 
 .albumWrapper{
@@ -523,7 +524,7 @@ textarea{
 
 .flip-containerSmall, .frontSmall, .backSmall{
 	width: 153px;
-	height: 200px;
+	height: 205px;
 }
 
 /*
@@ -561,6 +562,7 @@ textarea{
 	text-align: left;
 	padding-left: 10px;
 	padding-top: 10px;
+	overflow: scroll;
 	/*background-color: #E0A32C;*/
 	/*background-image: url(../images/p1back.jpg);*/
 }
