@@ -453,6 +453,63 @@ textarea{
 
 /*--------------------------------------------------------------------------------------------------------------------DIV FLIP CSS */
 /*container, keeps perspective*/
+.albumflip-container{
+	-webkit-perspective: 1000;
+	position: absolute;
+	top: 125px;
+	left: 1px;
+}
+
+/*flip pane when activeed*/
+.albumflip-container:active .albumflipper, .albumflip-container.active .albumflipper{
+	-webkit-transform:rotateX(180deg);
+}
+
+.albumflip-container, .albumfront, .albumback{
+	width: 440px;
+	height: 493px;
+}
+/*flip speed goes here*/
+.albumflipper{
+	-webkit-transition: 0.7s;
+	-webkit-transform-style: preserve-3d;
+	position: relative;
+}
+
+/*hide back of pane during swap*/
+.albumfront, .albumback{
+	-webkit-backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/*front pane, placed above back*/
+.albumfront{
+	-webkit-z-index: 2;
+	-webkit-transform: rotateY(0deg);
+	/*background-color: #F7E730;*/
+	background-image : url(../images/book.jpg); 
+}
+
+/*back, hidden pane*/
+.albumback{
+	-webkit-transform: rotateY(180deg);
+	text-align: left;
+	padding-left: 10px;
+	padding-top: 10px;
+	/*background-color: #E0A32C;*/
+	background-image: url(../images/book.jpg);
+}
+
+
+
+
+
+
+
+
+/*container, keeps perspective*/
 .flip-container{
 	-webkit-perspective: 1000;
 	position: absolute;

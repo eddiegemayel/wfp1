@@ -89,9 +89,14 @@ echo '<!DOCTYPE html>
 							</div>
 						<div class="backSmall one-edge-shadow">
 							<!-- BACK-->
-							<p class="wordWrap"><strong>Description:</strong> <em id="handwriting">'.$key['description'].'</em></p>
-							<p class="wordWrap"><strong>Date:</strong> <em id="handwriting">'.$key['date'].'</em></p>
-							<p class="wordWrap"><strong>People:</strong> <em id="handwriting">'.$key['people'].'</em></p>
+							<p class="wordWrap"><strong>Description:</strong> <em id="handwriting">'.$key['description'].'</em></p>';
+							if($key['date'] != '//'){
+							echo'<p class="wordWrap"><strong>Date:</strong> <em id="handwriting">'.$key['date'].'</em></p>';
+							}
+							else{
+								echo '<p class="wordWrap"><strong>Date:</strong> <em id="handwriting">N/A</em></p>';
+							}
+							echo' <p class="wordWrap"><strong>People:</strong> <em id="handwriting">'.$key['people'].'</em></p>
 							<p class="wordWrap"><strong>Tags:</strong> <em id="handwriting">'.$key['tags'].'</em></p>
 						</div>
 					</div>

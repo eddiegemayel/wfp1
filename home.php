@@ -35,7 +35,7 @@ echo '<!DOCTYPE html>
 
 			<div class="content col-xs-12">
 				<!--------------------------------------------------------------------------------------------------------------------	Tab 1(Album Feed) Content -->
-				<div id="tab1" class="tab active">
+			
 				<h2 id="normalFont">Welcome, "'.$_SESSION['username'].'"!</h2>
 				<form action="actions/sort.php" method="POST">
 					<select name="sort">
@@ -70,8 +70,11 @@ echo '<!DOCTYPE html>
         	foreach($results as $key){
          	
             	echo '<a id="albumDiv" class="album col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 one-edge-shadow" href="album.php?albumId='.$key['id'].'&albumTitle='.$key['albumTitle'].'&albumYear='.$key['albumYear'].'">
-            		<h3 id="normalFont" class="white">'.$key['albumTitle'].'</h3>
-            		<p id="normalFont" class="white">('.$key['albumYear'].')</p>';
+            			<!--<div class="albumflip-container">
+            				<div class="albumflipper" >
+            					<div class="albumfront">-->
+            					<h3 id="normalFont" class="white">'.$key['albumTitle'].'</h3>
+            					<p id="normalFont" class="white">('.$key['albumYear'].')</p>';
 
 				$dbh = new PDO("mysql:host=localhost; dbname=Retrospective; port=8889;", $user,$pass);
 				//display anything that matches what user searched for.
@@ -83,8 +86,14 @@ echo '<!DOCTYPE html>
 
 				// var_dump($count($photoResults, COUNT_RECURSIVE));
             	foreach($photoResults as $photoKey){
-            		echo '<div class="imageInAlbum">
-        				
+            		echo '
+            			
+            					<!--</div>
+            					<div class="albumback">
+            					</div>
+            			</div>-->
+
+            				<div class="imageInAlbum">
 								<div class="flipperSmall" id="photo">
 									<div class="frontSmall">
 										<!--FRONT -->
@@ -105,10 +114,10 @@ echo '<!DOCTYPE html>
             	}else{
             		echo '';
             	}
-				echo '</a><!-- End of whole album div -->';
+				echo '<!--</div>--></a><!-- End of whole album div -->';
         		}
     	}//end of if statement
-		echo '</div><!--  Tab 1 Content Ends -->'; 
+	
 	
 ?>  
 
