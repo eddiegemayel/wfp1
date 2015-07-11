@@ -78,6 +78,7 @@ echo '<!DOCTYPE html>
 					}
 					echo'<h2>People:</h2><h4 id="handwriting">'.$key['people'].' </h4>
 					<h2>Tags:</h2><h4 id="handwriting">'.$key['tags'].'</h4>
+					<a class="editBtn " href="edit.php?photoId='.$key['id'].'"><img src="images/icons/pencil.svg" width="30px" height="33px" title="Edit"/></a>
 				</div>
 			</div>
 				
@@ -93,10 +94,9 @@ echo '<!DOCTYPE html>
 
         echo '
         	<div class="buttons container">
-				<a class="deleteBtn" href="actions/delete.php?photoId='.$key['id'].'">Delete</a>
-        		<a class="downloadBtn" href="actions/download.php?url='.$key['photoUrl'].'">Download</a>
-        		<a class="editBtn " href="edit.php?photoId='.$key['id'].'">Edit</a>
-        		<a class="flipBtn" id="toggle" onclick="$(\'#flip-toggle\').toggleClass(\'active\');">Flip!</a>
+				<a class="deleteBtn" href="actions/delete.php?photoId='.$key['id'].'" ><img src="images/icons/delete.svg" width="30px" height="33px" title="Delete"/></a>
+        		<a class="downloadBtn" href="actions/download.php?url='.$key['photoUrl'].'"><img src="images/icons/download.svg" width="30px" height="33px" title="Download"/></a>
+        		<a class="flipBtn" id="toggle" onclick="$(\'#flip-toggle\').toggleClass(\'active\');"><img src="images/icons/arrow.svg" width="30px" height="33px" title="Flip"/></a>
         	</div>
         	';       
 ?>

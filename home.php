@@ -39,11 +39,11 @@ echo '<!DOCTYPE html>
 				<h2 id="normalFont">Welcome, "'.$_SESSION['username'].'"!</h2>
 				<form action="actions/sort.php" method="POST">
 					<select name="sort">
-						<option value="">Sort Albums</option>
+						<option value="">- -</option>
 						<option value="albumYear">Most Recent</option>
 						<option value="albumTitle">Title</option>
 					</select>
-					<input class="sortBtn" type="submit" value="Sort"/>
+					<input class="sortBtn" type="submit" value="Sort By"/>
 				</form>
 					';
 
