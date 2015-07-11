@@ -71,10 +71,15 @@ echo '<!DOCTYPE html>
 							</div>
 						<div class="backSmall one-edge-shadow">
 							<!-- BACK-->
-							<p id="handwriting"><strong>Description:</strong> <em>'.$searchKey['description'].'</em></p>
-							<p id="handwriting"><strong>Date:</strong> <em>'.$searchKey['date'].'</em></p>
-							<p id="handwriting"><strong>People:</strong> <em>'.$searchKey['people'].'</em></p>
-							<p id="handwriting"><strong>Tags:</strong> <em>'.$searchKey['tags'].'</em></p>
+							<p class="wordWrap"><strong>Description:</strong> <em id="handwriting">'.$searchKey['description'].'</em></p>';
+							if($searchKey['date'] != '//'){
+							echo'<p class="wordWrap"><strong>Date:</strong> <em id="handwriting">'.$searchKey['date'].'</em></p>';
+							}
+							else{
+								echo '<p class="wordWrap"><strong>Date:</strong> <em id="handwriting">N/A</em></p>';
+							}
+							echo' <p class="wordWrap"><strong>People:</strong> <em id="handwriting">'.$searchKey['people'].'</em></p>
+							<p class="wordWrap"><strong>Tags:</strong> <em id="handwriting">'.$searchKey['tags'].'</em></p>
 						</div>
 					</div>
 			

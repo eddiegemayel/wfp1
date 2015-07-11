@@ -54,7 +54,7 @@ echo '<!DOCTYPE html>
 			</header>
 
 			<div class="content col-xs-12">
-			<h2 id="normalFont">'.$albumTitle.' ('.$albumYear.') <a class="deleteBtn" href="actions/deleteAlbum.php" title="Delete This Album" >X</a></h2>';
+			<h2 id="normalFont">'.$albumTitle.' ('.$albumYear.') <a class="deleteBtn" href="actions/deleteAlbum.php" title="Delete This Album" ><img src="images/icons/delete.svg" width="30px" height="33px"/></a></h2>';
 			
 		if(!empty($results)){
 			echo'<form id="deleteMultipleForm" method="POST" action="actions/multiple.php">
