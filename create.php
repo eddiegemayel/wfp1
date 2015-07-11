@@ -80,8 +80,8 @@ echo '<!DOCTYPE html>
 					<div class="col-xs-6 createAlbum">
 						<h2 id="normalFont">Create Album</h2>
 						<form method="POST" action="actions/albumCreate.php">
-							<p><input class="inputStyled" type="text" name="albumTitle" placeholder="Album Title Here"/></p>
-							<p><input class="inputStyled inputRestrict" type="text" name="albumYear" placeholder="Album Year"/></p>
+							<p><input class="inputStyled" type="text" name="albumTitle" placeholder="Album Title Here" required/></p>
+							<p><input class="inputStyled inputRestrict" type="text" name="albumYear" placeholder="Album Year" required/></p>
 
 							<input class="createBtn" type="submit" value="Create"/>
 						</form>

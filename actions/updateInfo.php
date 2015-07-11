@@ -20,7 +20,10 @@
 		$stmt->bindParam(':email', $_POST["email"], PDO::PARAM_STR);
 		$stmt->bindParam(':id', $_SESSION['user_id'], PDO::PARAM_STR);
         $stmt->execute();
- 
+ 		
+ 		//re-assign new username to session username
+ 		$_SESSION['username'] = $_POST['username'];
+
     	//push user back to their profile
 		header("Location: ../settings.php");
 

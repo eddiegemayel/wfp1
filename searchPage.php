@@ -32,13 +32,8 @@ echo '<!DOCTYPE html>
         				<li id="menu"><a title="Menu" href="menu.php"></a></li>
     				</ul>
 				</nav>
-			</header>';
-
-
-
-
-	echo'			
-
+			</header>	
+			<!-- Search Page Content -->
 			<div class="content col-xs-12"/>
 				<div >
 				<!-----------------------------------------------------------------------------------------	 Tab 3(Search) Content Begins -->
