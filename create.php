@@ -55,7 +55,9 @@ echo '<!DOCTYPE html>
 					<div class="col-xs-6 uploadPicture">
 						<form method="POST" action="upload.php" enctype="multipart/form-data">
 							<h2 id="normalFont">Upload Photo</h2>
-							<p><input class="inputRestrict" id="upload" type="file" name="filename" accept="image/*" capture="camera" required/></p>
+							<div class="fileUpload">
+							<p><input class="inputRestrict upload" id="upload" type="file" name="filename" accept="image/*" capture="camera" required/></p>
+							</div>
 							<p><input class="inputStyled" type="text" name="title" placeholder="Title" maxlength="14" required/></p>
 							<p><textarea name="desc" placeholder="Description" required maxlength="55"></textarea></p>
 							<p><input class="inputRestrict" id="month" type="text" name="month" placeholder="MM" maxlength="2"/> - <input class="inputRestrict" id="day" type="text" name="day" placeholder="DD" maxlength="2"/> - <input class="inputRestrict" id="year" type="text" name ="year" placeholder="YYYY" maxlength="4"/></p>

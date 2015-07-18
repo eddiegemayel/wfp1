@@ -26,7 +26,7 @@ echo '<!DOCTYPE html>
 	
 	<body>
 		<div class="wrapper tabs col-xs-12">
-			<header class="navbar navbar-fixed-top col-xs-12">
+			<header id="header" class="navbar navbar-fixed-top col-xs-12">
 				<nav class="col-lg-8 col-lg-offset-2 col-md-9 col-md-offset-1 col-sm-9 col-sm-offset-3 col-xs-12">
 					<ul class="tab-links col-md-7 col-md-offset-4 col-xs-12">
         				<li id="albums" class="active"><a title="Albums" href="home.php"></a></li>
@@ -64,7 +64,7 @@ echo '<!DOCTYPE html>
 			<div class="flipper" id="photo">
 				<div class="front one-edge-shadow">
 					<!--FRONT -->
-					<img height="390px" width="437px" src="'.$key['photoUrl'].'" style="padding-top:3px;"/>
+					<img height="390px" width="454px" src="'.$key['photoUrl'].'" style="padding-top:3px;"/>
 					<h1 id="handwriting">'.$key['title'].'</h1>
 				</div>
 				<div class="back one-edge-shadow">

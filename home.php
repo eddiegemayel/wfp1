@@ -36,10 +36,10 @@ echo '<!DOCTYPE html>
 			<div class="content col-xs-12">
 				<!--------------------------------------------------------------------------------------------------------------------	Tab 1(Album Feed) Content -->
 			
-				<h2 id="normalFont">Welcome, "'.$_SESSION['username'].'"!</h2>
+				<h2 id="normalFont">Welcome back "'.$_SESSION['username'].'"!</h2>
 				<form action="actions/sort.php" method="POST">
 					<select name="sort">
-						<option value="">- -</option>
+						<option value="">-Sort Albums-</option>
 						<option value="albumYear">Most Recent</option>
 						<option value="albumTitle">Title</option>
 					</select>

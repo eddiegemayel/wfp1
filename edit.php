@@ -64,11 +64,11 @@ echo '<!DOCTYPE html>
 
 ?>
 	
-	 		<p>Title: <input class="inputStyled editRight" type="text" name="photoName" maxlength="14" value="<?=$key['title']?>"/></p>
-	 		<p>Description: <input class="inputStyled editRight" type="text" name="photoDescription" maxlength="55" value="<?=$key['description']?>"/></p>
+	 		<p>Title:</p><p> <input class="inputStyled editRight" type="text" name="photoName" maxlength="14" value="<?=$key['title']?>"/></p>
+	 		<p>Description:</p><p> <input class="inputStyled editRight" type="text" name="photoDescription" maxlength="55" value="<?=$key['description']?>"/></p>
 	 		<!--<p>Date: <input type="text" name ="photoName" value="<?=$key['date']?>"/></p>-->
-	 		<p>People: <input class="inputStyled editRight" type="text" name ="photoPeople" maxlength="40" value="<?=$key['people']?>"/></p>
-	 		<p>Tags: <input class="inputStyled editRight" type="text" name ="photoTags" maxlength="40" value="<?=$key['tags']?>"/></p>
+	 		<p>People:</p><p> <input class="inputStyled editRight" type="text" name ="photoPeople" maxlength="40" value="<?=$key['people']?>"/></p>
+	 		<p>Tags:</p><p> <input class="inputStyled editRight" type="text" name ="photoTags" maxlength="40" value="<?=$key['tags']?>"/></p>
 						 
 			<p><input class="searchBtn" type="submit" value ="Accept Edit"/></p>	
 	

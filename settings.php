@@ -57,8 +57,8 @@ echo '<!DOCTYPE html>
 				echo '<form method="POST" action="actions/updateInfo.php" >';
  				foreach($results as $key){
 				?>
-				<p id="normalFont">Current Email: <input class="inputStyled" type="text" name ="email" value="<?=$key['email']?>"/></p>
-	 			<p id="normalFont">Current Username: <input class="inputStyled" type="text" name ="username" value="<?=$key['username']?>"/></p>
+				<p id="normalFont">Current Email:</p><p> <input class="inputStyled" type="text" name ="email" value="<?=$key['email']?>"/></p>
+	 			<p id="normalFont">Current Username:</p><p> <input class="inputStyled" type="text" name ="username" value="<?=$key['username']?>"/></p>
 				<p><input class="uploadBtn" type="submit" value ="Update Info"/></p>
 			</form> 
 

@@ -25,11 +25,11 @@
 					<h5 class="white"><span class="highlight">+</span> Redownload your photos at any time </h5>
 					<form id="normalFont" method="POST" action="actions/signup.php">
 						<p class="white">Email </p>
-						<p><input class="inputStyled" type="email" name="newEmail" placeholder="example@email.com"/></p>
+						<p><input class="inputStyled" type="email" name="newEmail" placeholder="example@email.com" required/></p>
 						<p class="white">Username </p>
-						<p><input class="inputStyled" type="text" name="newUsername" placeholder="6-12 Characters"/></p>
+						<p><input class="inputStyled" type="text" name="newUsername" placeholder="6-12 Characters" required/></p>
 						<p class="white">Password </p>
-						<p><input class="inputStyled" type="password" name="newPassword" placeholder="*******"/></p>
+						<p><input class="inputStyled" type="password" name="newPassword" placeholder="*******" required/></p>
 						<button class="signupBtn">Join</button>
 					</form>
 				</div>
@@ -38,8 +38,8 @@
 				<div class="login col-xs-6 col-lg-4">
 					<h1 id="normalFont">Already A User?</h1>
 					<form id="normalFont" method="POST" action="actions/login.php">
-						<p><input class="inputStyled" type="text" name="username" placeholder="Username"/></p>
-						<p><input class="inputStyled" type="password" name="password" placeholder="*******"/></p>
+						<p><input class="inputStyled" type="text" name="username" placeholder="Username" required/></p>
+						<p><input class="inputStyled" type="password" name="password" placeholder="*******" required/></p>
 						<button class="loginBtn">Login</button>
 					</form>
 				</div>
