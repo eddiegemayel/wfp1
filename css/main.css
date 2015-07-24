@@ -389,22 +389,22 @@ textarea{
 
 /*----------------------------------------------------------------------------------------------Icons*/
 #albums{
-	background-image: url(../images/albums.png);
+	background-image: url(../images/icons/albums.png);
 	background-repeat: no-repeat;
 }	
 
 #add{
-	background-image: url(../images/add.png);
+	background-image: url(../images/icons/add.png);
 	background-repeat: no-repeat;
 }
 
 #search{
-	background-image: url(../images/search.png);
+	background-image: url(../images/icons/search.png);
 	background-repeat: no-repeat;
 }
 
 #menu{
-	background-image: url(../images/menu.png);
+	background-image: url(../images/icons/menu.png);
 	background-repeat: no-repeat;
 }
 
@@ -529,11 +529,6 @@ textarea{
 
 
 
-
-
-
-
-
 /*container, keeps perspective*/
 .flip-container{
 	-webkit-perspective: 1000;
@@ -548,7 +543,7 @@ textarea{
 }
 
 .flip-container, .front, .back{
-	width: 440px;
+	width: 455px;
 	height: 493px;
 }
 /*flip speed goes here*/
@@ -598,6 +593,12 @@ textarea{
 	top: 125px;
 	left: 1px;
 }
+
+/* flip the pane when hovered */
+	.flip-containerSmall:hover .flipperSmall, .flip-containerSmall.hover .flipperSmall {
+		transform: rotateY(180deg);
+	}
+
 
 /*flip pane when activeed*/
 .flip-containerSmall:active .flipperSmall, .flip-containerSmall.active .flipperSmall{

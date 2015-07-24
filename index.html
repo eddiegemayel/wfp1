@@ -6,13 +6,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<link rel="stylesheet" href="css/main.css" type="text/css"/>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<link rel="icon" type="image/png" href="images/icons/favicon.png" />
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 	</head>
 	<body id="landingPageContent">
 		<div id="bgWrapper">
 		<div id="logoContainer" class="col-xs-12 col-lg-8 col-lg-offset-2">
-			<img id="logo" class="img-responsive" height="307" width="959" src="images/logoMain.png"/>
+			<img id="logo" class="img-responsive" height="310" width="959" src="images/logoMain.png"/>
 		</div>
 
 		<div class="wrapper col-xs-12">
@@ -27,9 +28,9 @@
 						<p class="white">Email </p>
 						<p><input class="inputStyled" type="email" name="newEmail" placeholder="example@email.com" required/></p>
 						<p class="white">Username </p>
-						<p><input class="inputStyled" type="text" name="newUsername" placeholder="6-12 Characters" required/></p>
+						<p><input class="inputStyled" type="text" name="newUsername" placeholder="15 Characters Max" required maxlength="15"/></p>
 						<p class="white">Password </p>
-						<p><input class="inputStyled" type="password" name="newPassword" placeholder="*******" required/></p>
+						<p><input class="inputStyled" type="password" name="newPassword" placeholder="*******" required /></p>
 						<button class="signupBtn">Join</button>
 					</form>
 				</div>
@@ -38,7 +39,7 @@
 				<div class="login col-xs-6 col-lg-4">
 					<h1 id="normalFont">Already A User?</h1>
 					<form id="normalFont" method="POST" action="actions/login.php">
-						<p><input class="inputStyled" type="text" name="username" placeholder="Username" required/></p>
+						<p><input class="inputStyled" type="text" name="username" placeholder="Username" required maxlength="15"/></p>
 						<p><input class="inputStyled" type="password" name="password" placeholder="*******" required/></p>
 						<button class="loginBtn">Login</button>
 					</form>

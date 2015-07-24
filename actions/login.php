@@ -38,7 +38,7 @@
       	
     //see if the user exists
     if($id == false){
-            header("Location: ../index.html");
+            header("Location: ../loginfail.html");
             //if they are not in database tell them the error
             $_SESSION['loginFail'] = true;
             
