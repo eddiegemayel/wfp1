@@ -9,6 +9,7 @@ if(!isset($_SESSION['username'])){
 	//This page displays an album a user has clicked on and all the photos inside it
 	//Get the albums information from the GET anchor link
 	$albumId = $_GET['albumId'];
+	$_SESSION['albumId'] = $albumId;
 	$albumTitle = $_GET['albumTitle'];
 	$albumYear = $_GET['albumYear'];
 	$idCount = 0;

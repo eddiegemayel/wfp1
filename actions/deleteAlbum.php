@@ -13,10 +13,11 @@
   
     //subtract 1 from total photo count of specific album  
     $stmt = $dbh->prepare("DELETE FROM albums WHERE id = :id");
-    $stmt->bindParam(':id', $_SESSION['deleteResults']);
+    $stmt->bindParam(':id', $_SESSION['albumId']);
     $stmt->execute();     
 
     //push them back to profile php with updated information
 	header("Location: ../home.php");
+	// var_dump($_SESSION['albumId']);
 
 ?>
