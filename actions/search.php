@@ -12,7 +12,7 @@
 	$dbh = new PDO("mysql:host=localhost; dbname=Retrospective; port=8889;", $user,$pass);
 	//display anything that matches what user searched for.
 	//tags, photoname, username, whatever they searched for
-	$stmt = $dbh->prepare("SELECT * FROM photos WHERE (title LIKE '%$q%' OR description LIKE '%$q%' OR people LIKE '%$q%' OR tags LIKE '%$q%' )");
+	$stmt = $dbh->prepare("SELECT * FROM photos WHERE (title LIKE '%$q%' OR description LIKE '%$q%' OR people LIKE '%$q%' OR tags LIKE '%$q%') AND uploadedBy =".$_SESSION['user_id']." ");
 	$stmt->bindParam(":title", $_SESSION['q'], PDO::PARAM_STR);
 	$stmt->execute();
 	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
