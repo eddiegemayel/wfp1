@@ -113,15 +113,15 @@ textarea{
 
 /*Call to action*/
 .CTA h1{
-	color: #e4e4dc;
+	/*color: #e4e4dc;*/
 }
 
-.CTA{
+/*.CTA{
 	background-color:rgba(0, 0, 0, 0.30);
 	border-radius: 9px;
 	height: 700px;
 	border-radius: 10px;
-}
+}*/
 
 /*image page styling*/
 .image{
@@ -225,6 +225,10 @@ textarea{
 
 .ink{
 	color:#005FC2;
+}
+
+.black{
+	color:#09140B;
 }
 
 #logoContainer{
@@ -731,15 +735,15 @@ textarea{
   border-radius: 6px;
   color: #ffffff;
   font-size: 26px;
-  background: #7b76b7;
+  background: #86cba4;
   padding: 1px 28px 1px 28px;
-  border: solid #2b2b2b 2px;
+  /*border: solid #2b2b2b 2px;*/
   text-decoration: none;
 }
 
 .loginBtn:hover {
   /*background: #42bd77;*/
-  background: #595685;
+  background: #55BE68;
   text-decoration: none;
 }
 
@@ -752,7 +756,7 @@ textarea{
   font-size: 26px;
   background: #7b76b7;
   padding: 1px 28px 1px 28px;
-  border: solid #2b2b2b 2px;
+  /*border: solid #2b2b2b 2px;*/
   text-decoration: none;
 }
 
@@ -766,9 +770,9 @@ textarea{
   -moz-border-radius: 6;
   border-radius: 6px;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 15px;
   background: #7b76b7;
-  padding: 0px 3px 0px 3px;
+  padding: 3px 10px 3px 10px;
   /*border: solid #2b2b2b 2px;*/
   text-decoration: none;
 }
