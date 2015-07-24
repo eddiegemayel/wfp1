@@ -1,9 +1,22 @@
 <?php
 	session_start();
 
-	//allows user to download selected image
-	//url is passed through anchor tag and retrieved in this file
-	header('Content-Disposition: attachment; filename="'.$_GET['url'].'"'); 
-	readfile($_GET['url']); 
+	//start session
+	session_start();
+
+	$file = $_GET['url'];
+	// $size = filesize($file);
+
+	if(is_file($file)){
+		//allows user to download selected image
+		//url is passed through anchor tag and retrieved in this file
+		header('Content-Description: File Transfer');
+		header("Content-type:application/pdf");
+		header('Content-Disposition: attachment; filename='.basename($file));
+		header('Content-Length: ' . filesize($file));
+		readfile($_GET['url']); 
+	}else{
+		echo 'Error! <a href="home.php">Try again</a>.';
+	}
 
 ?>
