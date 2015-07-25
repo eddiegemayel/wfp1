@@ -14,11 +14,11 @@
 		//make new database connection
 		$dbh=new PDO('mysql:host=localhost; dbname=Retrospective; port=8889;', $user, $pass);
 		$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);//sets the error mode to exceptions        
-		$stmt = $dbh ->prepare("SELECT id,email, password FROM users WHERE email = :email and password = :password");
+		$stmt = $dbh ->prepare("SELECT id,email, password FROM users WHERE email = :email");
 
 		//grab a user that matched
 		$stmt->bindParam(':email', $new_email , PDO::PARAM_STR);
-    	$stmt->bindParam(':password', $new_password, PDO::PARAM_STR);
+    	// $stmt->bindParam(':password', $new_password, PDO::PARAM_STR);
 
     	//execute the connection
     	$stmt->execute();
@@ -26,29 +26,10 @@
 
     	//store into variables
     	$id = $results[0]['id'];
-    	// $user_name = $results[0]['username'];
-    	// $pass_word = $results[0]['password'];
-      	
+
     	//see if the user exists
-    	if($id == false){
-         	$stmt2 = $dbh->prepare("INSERT INTO users (email, password)
-				VALUES (:email, :pass)");
-			$stmt2->bindParam(":email", $new_email);
-			$stmt2->bindParam(":pass",$new_password);
-			
-			//execute action
-			$stmt2->execute();
-			// $results2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-
-			$_SESSION['username'] = $email;
-
-			// point them to home logged in page
-			header("Location: ../signup.html");
-            
-      	}
-      	//if the login is correct store into session variables for easy global access across all php files
-    	else{
-              		//something went wrong!
+    	if($id){
+               		//something went wrong!
 			echo '<!DOCTYPE html>
 <html>
 	<head>
@@ -77,10 +58,23 @@
 		</div>
 	</div>
 	</body>
-</html>
+</html>';
+      	}
+      	//if the login is correct store into session variables for easy global access across all php files
+    	else{
+		$stmt2 = $dbh->prepare("INSERT INTO users (email, password)
+				VALUES (:email, :pass)");
+			$stmt2->bindParam(":email", $new_email);
+			$stmt2->bindParam(":pass",$new_password);
+			
+			//execute action
+			$stmt2->execute();
+			// $results2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
+			$_SESSION['username'] = $email;
 
-			';
+			// point them to home logged in page
+			header("Location: ../signup.html");
         }
   	//if something goes wrong
 	} catch(Exception $e) {
