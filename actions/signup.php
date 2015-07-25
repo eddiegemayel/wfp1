@@ -62,7 +62,11 @@
       	}
       	//if the login is correct store into session variables for easy global access across all php files
     	else{
-		$stmt2 = $dbh->prepare("INSERT INTO users (email, password)
+    		$_SESSION['sortVariable1'] = 'albumYear';
+  			$_SESSION['sortVariable2'] = 'DESC';
+			$_SESSION['user_id'] = $id;
+			$_SESSION['username'] = $new_email;
+			$stmt2 = $dbh->prepare("INSERT INTO users (email, password)
 				VALUES (:email, :pass)");
 			$stmt2->bindParam(":email", $new_email);
 			$stmt2->bindParam(":pass",$new_password);
@@ -70,11 +74,10 @@
 			//execute action
 			$stmt2->execute();
 			// $results2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-
-			$_SESSION['username'] = $email;
+			
 
 			// point them to home logged in page
-			header("Location: ../signup.html");
+			header("Location: ../home.php");
         }
   	//if something goes wrong
 	} catch(Exception $e) {
