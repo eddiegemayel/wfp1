@@ -36,9 +36,15 @@ echo '<!DOCTYPE html>
 
 			<div class="content col-xs-12">
 				<!--------------------------------------------------------------------------------------------------------------------	Tab 1(Album Feed) Content -->
-			
-				<h2 id="normalFont">Welcome back "'.$_SESSION['username'].'"!</h2>
-				<form action="actions/sort.php" method="POST">
+			';
+			if($_SESSION['name']){
+				echo'<h2 id="normalFont">Welcome back '.$_SESSION['name'].'!</h2>';
+			}else{
+				echo'<h2 id="normalFont">All Albums</h2>';
+			}
+				
+
+				echo'<form action="actions/sort.php" method="POST">
 					<select name="sort">
 						<option value="">-Sort Albums-</option>
 						<option value="albumYear">Most Recent</option>
@@ -64,7 +70,7 @@ echo '<!DOCTYPE html>
 
         //if users have no albums
         if($results == null){
-        	echo'<h4 style="margin-top:50px;">You Have No Albums Yet!</h4>
+        	echo'<h4 style="margin-top:50px;">This is where your albums would be....IF YOU HAD SOME.</h4>
         			<h5>Create an <a href="create.php">Album</a> First, Then Upload Some Photos!</h5>';
         }else{
         	//loop and display albums
