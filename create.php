@@ -61,7 +61,7 @@ echo '<!DOCTYPE html>
 							</div>
 							<p><input class="inputStyled" type="text" name="title" placeholder="Title" maxlength="14" required/></p>
 							<p><textarea name="desc" placeholder="Description" required maxlength="55"></textarea></p>
-							<p><input class="inputRestrict" id="month" type="text" name="month" placeholder="MM" maxlength="2"/> - <input class="inputRestrict" id="day" type="text" name="day" placeholder="DD" maxlength="2"/> - <input class="inputRestrict" id="year" type="text" name ="year" placeholder="YYYY" maxlength="4"/></p>
+							<p><input class="letterRestrict" id="month" type="text" name="month" placeholder="MM" maxlength="2"/> - <input class="letterRestrict" id="day" type="text" name="day" placeholder="DD" maxlength="2"/> - <input class="letterRestrict" id="year" type="text" name ="year" placeholder="YYYY" maxlength="4"/></p>
 							<p><input class="inputStyled" type="text" name="people" placeholder="People" maxlength="40"/></p>
 							<p><input class="inputStyled" type="text" name="tags" placeholder="Tags" required maxlength="40"/></p>
 							<p>
@@ -84,7 +84,7 @@ echo '<!DOCTYPE html>
 						<h2 id="normalFont">Create Album</h2>
 						<form method="POST" action="actions/albumCreate.php">
 							<p><input class="inputStyled" type="text" name="albumTitle" placeholder="Album Title Here" required/></p>
-							<p><input class="inputStyled inputRestrict" type="text" name="albumYear" placeholder="Album Year" required/></p>
+							<p><input class="inputStyled letterRestrict" type="text" name="albumYear" placeholder="Album Year" required/></p>
 
 							<input class="createBtn" type="submit" value="Create"/>
 						</form>

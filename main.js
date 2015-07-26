@@ -11,6 +11,16 @@ $(document).ready(function() {
     }
   });
 
+    //prevents letters being entered, only numbers
+  $('.letterRestrict').bind('keypress', function (event) {
+    var regex = new RegExp("^[0-9]*$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+       event.preventDefault();
+       return false;
+    }
+  });
+
   //if deleting multiple photos select input is clicked on
   $( "#deleteMultiple" ).bind({
     //if it's clicked on, show the delete button
