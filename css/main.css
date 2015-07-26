@@ -25,7 +25,7 @@ body{
 header{
 	background-color: #1F211D;
 	color: #E7E6E8;
-	height: 48px;
+	height: 45px;
 	width: 100%;
 	position: fixed;
 	top: 0px;
@@ -431,15 +431,17 @@ textarea{
         float:left;
         list-style:none;
         text-align: center;
-        width:72px;
-    	height:48px;
+       /* width:72px;
+    	height:48px;*/
+    	 width:68px;
+    	height:45px;
     }
  
         .tab-links a {
             /*padding:9px 15px;*/
             display:inline-block;
             border-radius:0px 0px 0px 0px;
-            width:72px;
+            width:68px;
     		height:50px;
             /*background:#7FB5DA;*/
             font-size:16px;
