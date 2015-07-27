@@ -116,12 +116,12 @@ textarea{
 	/*color: #e4e4dc;*/
 }
 
-/*.CTA{
-	background-color:rgba(0, 0, 0, 0.30);
-	border-radius: 9px;
-	height: 700px;
-	border-radius: 10px;
-}*/
+.CTA{
+	/*background-color:rgba(0, 0, 0, 0.30);*/
+	background-color: #5d5443;
+	height: 350px;
+	border-radius: 6px;
+}
 
 /*image page styling*/
 .image{
@@ -212,6 +212,10 @@ textarea{
 
 .black{
 	color:#09140B;
+}
+
+.orange{
+	color:#c69838;
 }
 
 #logoContainer{
