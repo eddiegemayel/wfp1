@@ -56,9 +56,12 @@ echo '<!DOCTYPE html>
 					<div class="col-xs-6 uploadPicture">
 						<form method="POST" action="upload.php" enctype="multipart/form-data">
 							<h2 id="normalFont">Upload Photo</h2>
-							<div class="fileUpload">
-							<p><input class="inputRestrict upload" id="upload" type="file" name="filename" accept="image/*" capture="camera" required/></p>
+							<div class="fileUpload fileBtn">
+								<span>Pick Image...</span>
+								<input class="inputRestrict upload" id="upload" type="file" name="filename" accept="image/*" capture="camera" required/>
 							</div>
+							<div class="uploadInputs">
+							<p><input class="inputStyled" type="text" id="path" placeholder="(Path to image)" readonly/> </p>
 							<p><input class="inputStyled" type="text" name="title" placeholder="Title" maxlength="14" required/></p>
 							<p><textarea name="desc" placeholder="Description" required maxlength="55"></textarea></p>
 							<p><input class="letterRestrict" id="month" type="text" name="month" placeholder="MM" maxlength="2"/> - <input class="letterRestrict" id="day" type="text" name="day" placeholder="DD" maxlength="2"/> - <input class="letterRestrict" id="year" type="text" name ="year" placeholder="YYYY" maxlength="4"/></p>
@@ -78,6 +81,7 @@ echo '<!DOCTYPE html>
 
 							</p>
 							<input class="uploadBtn" type="submit" value="Upload"/>
+						</div>
 						</form>
 					</div>
 					<div class="col-xs-6 createAlbum">

@@ -33,4 +33,8 @@ $(document).ready(function() {
     // }
   });
 
+  $('#upload').change(function(){
+    $('#path').val($(this).val());
+  });
+
 });
