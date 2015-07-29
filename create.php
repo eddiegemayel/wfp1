@@ -52,7 +52,16 @@ echo '<!DOCTYPE html>
 
 			echo'<!------------------------------------------------------------------------------	 Tab 2(Add) Content Begins -->
 				<div class="wrapper col-xs-12">
-					<div class="content col-xs-12" >
+					<div class="content col-xs-12">
+					<div class="col-xs-6 createAlbum">
+						<h2 id="normalFont">Create Album</h2>
+						<form method="POST" action="actions/albumCreate.php">
+							<p><input class="inputStyled" type="text" name="albumTitle" placeholder="Album Title Here" required/></p>
+							<p><input class="inputStyled letterRestrict" type="text" name="albumYear" placeholder="Album Year" required/></p>
+
+							<input class="createBtn" type="submit" value="Create"/>
+						</form>
+					</div>
 					<div class="col-xs-6 uploadPicture">
 						<form method="POST" action="upload.php" enctype="multipart/form-data">
 							<h2 id="normalFont">Upload Photo</h2>
@@ -82,15 +91,6 @@ echo '<!DOCTYPE html>
 							</p>
 							<input class="uploadBtn" type="submit" value="Upload"/>
 						</div>
-						</form>
-					</div>
-					<div class="col-xs-6 createAlbum">
-						<h2 id="normalFont">Create Album</h2>
-						<form method="POST" action="actions/albumCreate.php">
-							<p><input class="inputStyled" type="text" name="albumTitle" placeholder="Album Title Here" required/></p>
-							<p><input class="inputStyled letterRestrict" type="text" name="albumYear" placeholder="Album Year" required/></p>
-
-							<input class="createBtn" type="submit" value="Create"/>
 						</form>
 					</div>
 				</div>';

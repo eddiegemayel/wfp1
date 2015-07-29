@@ -255,12 +255,12 @@ textarea{
 }
 
 .uploadPicture{
-	text-align: right;
-	border-right: solid 1px black;
+	text-align: left;
+	border-left: solid 1px black;
 }
 
 .createAlbum{
-	text-align: left;
+	text-align: right;
 }
 
 #upload{
@@ -279,8 +279,8 @@ textarea{
 
 .fileUpload {
     position: relative;
-    float: right;
-    clear: left;
+    float: left;
+    clear: right;
     text-align: right;
     overflow: hidden;
     margin: 5px;
