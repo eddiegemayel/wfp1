@@ -34,7 +34,8 @@ $(document).ready(function() {
   });
 
   $('#upload').change(function(){
-    $('#path').val($(this).val());
+    // $(this).value.replace("C:\\fakepath\\", "");
+    $('#path').val($(this).val().replace("C:\\fakepath\\", ""));
   });
 
 });
