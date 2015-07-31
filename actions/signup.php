@@ -7,6 +7,7 @@
 	$new_password = md5($_POST['newPassword']);
 	$new_email = $_POST['newEmail'];
 
+	//try what the user entered against the database
 	try{
         //connnect to database, check login against users table in the database
 		$user="root";
@@ -25,11 +26,11 @@
     	$results= $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     	//store into variables
-    	$id = $results[0]['id'];
+    	$exist = $results[0]['id'];
 
     	//see if the user exists
-    	if($id){
-               		//something went wrong!
+    	if($exist){
+             //if the user exists, tell them sorry, that email has been taken.
 			echo '<!DOCTYPE html>
 <html>
 	<head>
@@ -60,11 +61,12 @@
 	</body>
 </html>';
       	}
-      	//if the login is correct store into session variables for easy global access across all php files
+      	//if signup isnt taken
     	else{
+    		//insert the new user
     		$_SESSION['sortVariable1'] = 'albumYear';
   			$_SESSION['sortVariable2'] = 'DESC';
-			$_SESSION['user_id'] = $id;
+			// $_SESSION['user_id'] = $id;
 			$_SESSION['username'] = $new_email;
 			$stmt2 = $dbh->prepare("INSERT INTO users (email, password)
 				VALUES (:email, :pass)");
@@ -74,10 +76,49 @@
 			//execute action
 			$stmt2->execute();
 			// $results2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-			
+				try{
+    			//connnect to database, check login against users table in the database
+		
+				//make new database connection
+				$dbh=new PDO('mysql:host=localhost; dbname=Retrospective; port=8889;', $user, $pass);
+				$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);//sets the error mode to exceptions        
+				$stmt = $dbh ->prepare("SELECT id,email, password FROM users WHERE email = :email and password = :password");
+
+				//grab a user that matched
+				$stmt->bindParam(':email', $new_email , PDO::PARAM_STR);
+    			$stmt->bindParam(':password', $new_password, PDO::PARAM_STR);
+
+    			//execute the connection
+    			$stmt->execute();
+    			$results= $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    			//store into variables
+    			$id = $results[0]['id'];
+  
+      	
+    			//see if the user exists
+    			if($id == false){
+            			header("Location: ../loginfail.html");
+            			//if they are not in database tell them the error
+            			$_SESSION['loginFail'] = true;
+            
+      			}
+      			//if the login is correct store into session variables for easy global access across all php files
+    			else{
+              	$_SESSION['user_id'] = $id;
+              	$_SESSION['username'] = $new_email;
+          
+              	//go their profile page
+             	 header('Location: ../home.php'); 
+       			 }
+  			//if something goes wrong
+			} catch(Exception $e) {
+    			echo 'Error -'. $e->getMessage();
+  			}
 
 			// point them to home logged in page
-			header("Location: ../home.php");
+
+			// header("Location: ../signup.html");
         }
   	//if something goes wrong
 	} catch(Exception $e) {

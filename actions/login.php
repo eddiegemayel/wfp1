@@ -13,7 +13,7 @@
   $_SESSION['sortVariable2'] = 'DESC';
 
 	try{
-        //connnect to database, check login against users table in the database
+    //connnect to database, check login against users table in the database
 		$user="root";
 		$pass="root";
 		//make new database connection

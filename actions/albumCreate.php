@@ -30,5 +30,7 @@ session_start();
 		//push back to their profile
 		header("Location: ../home.php");
 
+		// var_dump( $_SESSION['user_id']);
+
 
 ?>

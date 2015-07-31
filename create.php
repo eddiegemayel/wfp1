@@ -57,7 +57,7 @@ echo '<!DOCTYPE html>
 						<h2 id="normalFont">Create Album</h2>
 						<form method="POST" action="actions/albumCreate.php">
 							<p><input class="inputStyled" type="text" name="albumTitle" placeholder="Album Title Here" required/></p>
-							<p><input class="inputStyled letterRestrict" type="text" name="albumYear" placeholder="Album Year" required/></p>
+							<p><input class="inputStyled letterRestrict" type="text" name="albumYear" placeholder="Album Year" required maxlength="4"/></p>
 
 							<input class="createBtn" type="submit" value="Create"/>
 						</form>
